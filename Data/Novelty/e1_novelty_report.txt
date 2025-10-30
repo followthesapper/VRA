@@ -1,0 +1,79 @@
+======================================================================
+VRA NOVELTY EVALUATION REPORT
+======================================================================
+
+Total test cases: 62
+
+----------------------------------------------------------------------
+OVERALL ACCURACY (E1)
+----------------------------------------------------------------------
+VRA Precision:       0.516
+RPT Precision:       0.156
+Difference (VRA-RPT): 0.361
+95% CI:              [0.225, 0.494]
+
+✅ PASS
+   Threshold: Δ ≥ 0.05 with CI > 0
+
+----------------------------------------------------------------------
+REGIME-SPECIFIC ACCURACY
+----------------------------------------------------------------------
+
+HIGH SNR (n=18):
+  VRA Precision: 0.611
+  RPT Precision: 0.306
+  Difference:    0.307 [0.056, 0.545]
+  ✅ PASS (threshold: Δ ≥ 0.10)
+
+TRANSITION SNR (n=20):
+  VRA Precision: 0.650
+  RPT Precision: 0.150
+  Difference:    0.500 [0.250, 0.732]
+
+LOW SNR (n=24):
+  VRA Precision: 0.333
+  RPT Precision: 0.049
+  Difference:    0.282 [0.098, 0.479]
+
+----------------------------------------------------------------------
+√M SCALING QUALITY
+----------------------------------------------------------------------
+
+HIGH SNR:
+  R² fit:      0.0466
+  √M slope:    -0.0068
+  Intercept:   0.0439
+
+TRANSITION SNR:
+  R² fit:      0.4430
+  √M slope:    0.0022
+  Intercept:   0.0004
+
+LOW SNR:
+  R² fit:      0.2541
+  √M slope:    0.0003
+  Intercept:   0.0026
+
+----------------------------------------------------------------------
+RUNTIME COMPARISON (E4)
+----------------------------------------------------------------------
+Median speedup (RPT/VRA): 180.58×
+Mean speedup:             234.43×
+Range:                    [0.29×, 874.01×]
+95% CI:                   [2.39×, 835.07×]
+
+✅ PASS
+   Threshold: Median speedup ≥ 1.3×
+
+======================================================================
+NOVELTY VERDICT
+======================================================================
+Criteria passed: 3/3
+
+✅ VRA demonstrates NOVEL capability
+   VRA shows statistically significant advantages over RPT baseline
+   in accuracy and/or runtime. Contribution is publication-worthy.
+
+======================================================================
+END REPORT
+======================================================================

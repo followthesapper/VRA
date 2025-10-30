@@ -1,0 +1,26 @@
+======================================================================
+VRA NOVELTY: STATISTICAL TEST REPORT
+======================================================================
+
+n_cases: 62
+
+E1: Overall accuracy advantage (VRA - RPT)
+  mean Δprecision = 0.361
+  95% bootstrap CI = [0.225, 0.494]
+  permutation p-value (two-sided) = 5.000e-05
+  PASS? True (threshold Δ≥0.05 & CI>0)
+
+E1: High-SNR regime
+  mean Δprecision = 0.307
+  95% bootstrap CI = [0.056, 0.545]
+  permutation p-value (two-sided) = 1.635e-02
+  PASS? True (threshold Δ≥0.10 & CI>0)
+
+E4: Runtime advantage
+  median speedup (RPT/VRA) = 180.58×
+  95% CI (empirical) = [2.39×, 835.07×]
+  PASS? True (threshold ≥1.3×)
+
+======================================================================
+VERDICT: ✅ NOVEL  (passed 3/3 criteria)
+======================================================================
