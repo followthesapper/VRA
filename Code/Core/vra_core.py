@@ -143,7 +143,14 @@ def compute_spectrum(N, a, x0, length, zp, window="hann"):
 
 
 def compute_averaged_spectrum(N, bases, x0, length, zp, window="hann"):
-    """Compute M-base averaged power spectrum.
+    """Compute M-base COHERENTLY averaged power spectrum.
+
+    CRITICAL: This performs coherent averaging by summing complex FFTs
+    before squaring, NOT by averaging power spectra. This preserves
+    phase relationships and enables √M SNR scaling.
+
+    Coherent: |Σ U_m / M|² → SNR scales as √M
+    Incoherent: Σ|U_m|²/M → No SNR gain
 
     Parameters:
         N (int): Modulus
@@ -154,16 +161,38 @@ def compute_averaged_spectrum(N, bases, x0, length, zp, window="hann"):
         window (str): Window function type
 
     Returns:
-        numpy.ndarray: Averaged power spectrum
+        numpy.ndarray: Coherently averaged power spectrum
     """
     M = len(bases)
-    spectra = []
+    L = length * zp
+    U_sum = None
 
     for a in bases:
-        mag2 = compute_spectrum(N, a, x0, length, zp, window)
-        spectra.append(mag2)
+        # Generate sequence
+        xs = modular_sequence(N, a, x0, length)
 
-    mag2_avg = np.mean(spectra, axis=0)
+        # Phase embed
+        us = phase_embed(xs, N)
+
+        # Window
+        us_windowed = apply_window(us, window)
+
+        # Zero-pad
+        us_padded = np.zeros(L, dtype=np.complex128)
+        us_padded[:length] = us_windowed
+
+        # FFT (keep complex!)
+        U = np.fft.fft(us_padded)
+
+        # Sum complex FFTs
+        if U_sum is None:
+            U_sum = np.zeros_like(U, dtype=np.complex128)
+        U_sum += U
+
+    # Average THEN square (coherent)
+    U_mean = U_sum / M
+    mag2_avg = np.abs(U_mean) ** 2
+
     return mag2_avg
 
 
