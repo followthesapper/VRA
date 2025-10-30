@@ -1,0 +1,128 @@
+\subsection{Modular Arithmetic and Multiplicative Order}
+
+\begin{definition}[Multiplicative Order]
+Let $N \in \N$ be a modulus and $a \in \Z$ with $\gcd(a,N) = 1$. The \textbf{multiplicative order} of $a$ modulo $N$, denoted $\text{ord}_N(a)$, is the smallest positive integer $r$ such that $a^r \equiv 1 \pmod{N}$.
+\end{definition}
+
+By Lagrange's theorem, $r \mid \phi(N)$ where $\phi$ is Euler's totient function. For prime $N$, $\phi(N) = N-1$, so $1 \leq r \leq N-1$.
+
+\begin{definition}[Modular Dynamical System]
+Given modulus $N$, base $a$ with $\gcd(a,N)=1$, and seed $x_0 \in \Z_N$, the \textbf{modular sequence} is defined by the recurrence
+\begin{equation}
+x_{i+1} = a x_i \bmod N, \quad i = 0, 1, 2, \ldots
+\end{equation}
+\end{definition}
+
+If $x_0 \neq 0$ and $\gcd(x_0, N) = 1$, then $x_i = a^i x_0 \bmod N$, so the sequence has period $r = \text{ord}_N(a)$.
+
+\subsection{Phase Embedding and Complex Signals}
+
+\begin{definition}[Phase Embedding]
+The \textbf{phase embedding} $\phi: \Z_N \to [0, 2\pi)$ is defined by
+\begin{equation}
+\phi(x) = \frac{2\pi x}{N}
+\end{equation}
+The corresponding \textbf{unit circle embedding} $u: \Z_N \to \C$ is
+\begin{equation}
+u(x) = e^{j\phi(x)} = e^{2\pi j x / N}
+\end{equation}
+where $j = \sqrt{-1}$.
+\end{definition}
+
+The embedded signal $u_i = u(x_i)$ lies on the complex unit circle and inherits the periodicity of $x_i$.
+
+\subsection{Discrete Fourier Transform}
+
+\begin{definition}[DFT]
+For a complex signal $u = (u_0, u_1, \ldots, u_{n-1}) \in \C^n$, the \textbf{Discrete Fourier Transform (DFT)} is
+\begin{equation}
+U[k] = \sum_{i=0}^{n-1} u_i e^{-2\pi j k i / n}, \quad k = 0, 1, \ldots, n-1
+\end{equation}
+\end{definition}
+
+The \textbf{power spectrum} is $|U[k]|^2$. For periodic signals, the DFT concentrates energy at harmonics of the fundamental frequency.
+
+\subsection{Windowing and Zero-Padding}
+
+\begin{definition}[Window Function]
+A \textbf{window} $w = (w_0, \ldots, w_{n-1})$ with $w_i \in [0,1]$ tapers the signal to reduce spectral leakage. The \textbf{windowed signal} is $\tilde{u}_i = u_i w_i$.
+\end{definition}
+
+Common windows include:
+\begin{align}
+\text{Hann:} \quad w_i &= \frac{1}{2}\left(1 - \cos\frac{2\pi i}{n-1}\right) \\
+\text{Hamming:} \quad w_i &= 0.54 - 0.46\cos\frac{2\pi i}{n-1}
+\end{align}
+
+\textbf{Zero-padding} extends a length-$n$ signal to length $L > n$ by appending zeros, increasing FFT resolution without altering spectral content.
+
+\subsection{VRA Pipeline}
+
+The VRA pipeline for a single base $a$ with order $r$ proceeds as follows:
+
+\begin{enumerate}
+    \item \textbf{Generate modular sequence:} $x_i = a^i x_0 \bmod N$ for $i = 0, \ldots, n-1$
+    \item \textbf{Phase embed:} $u_i = e^{2\pi j x_i / N}$
+    \item \textbf{Window:} $\tilde{u}_i = u_i w_i$
+    \item \textbf{Zero-pad:} Extend $\tilde{u}$ from length $n$ to length $L$ (typically $L = 8n$)
+    \item \textbf{FFT:} Compute $U[k]$ for $k = 0, \ldots, L-1$
+    \item \textbf{Power spectrum:} $|U[k]|^2$
+\end{enumerate}
+
+For $M$ bases $\{a_1, \ldots, a_M\}$ sharing order $r$, VRA computes $M$ power spectra and averages:
+\begin{equation}
+\overline{|U[k]|^2} = \frac{1}{M} \sum_{m=1}^{M} |U_m[k]|^2
+\end{equation}
+
+\subsection{Key Metrics}
+
+\begin{definition}[Concentration]
+The \textbf{concentration} of a power spectrum $S = |U|^2$ is
+\begin{equation}
+C = \frac{\max_k S[k]}{\sum_k S[k]}
+\end{equation}
+\end{definition}
+
+High concentration ($C \approx 1$) indicates energy focused at few frequencies; low concentration ($C \approx 1/L$) indicates uniform spread.
+
+\begin{definition}[Expected Harmonic Bins]
+For a signal with period $r$ and FFT length $L$, the \textbf{expected harmonic bins} are
+\begin{equation}
+B_{\text{exp}} = \left\{ \left\lfloor \frac{kL}{r} \right\rfloor \bmod L : k = 0, 1, \ldots, r-1 \right\}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Validated Radius]
+The \textbf{validated radius} is
+\begin{equation}
+R = \left\lfloor \frac{1}{2} \log_2(L) \right\rfloor
+\end{equation}
+A peak at bin $b$ is a \textbf{true positive} if $\min_{b' \in B_{\text{exp}}} |b - b'| \leq R$.
+\end{definition}
+
+\begin{definition}[Precision and Recall]
+Let $P$ be the set of detected peaks (above threshold) and $B_{\text{exp}}$ be expected bins. Then
+\begin{align}
+\text{Precision} &= \frac{|\{p \in P : \exists b \in B_{\text{exp}}, |p-b| \leq R\}|}{|P|} \\
+\text{Recall} &= \frac{|\{b \in B_{\text{exp}} : \exists p \in P, |p-b| \leq R\}|}{|B_{\text{exp}}|}
+\end{align}
+\end{definition}
+
+\subsection{Regime Parameter}
+
+\begin{definition}[Regime Parameter]
+The \textbf{regime parameter} is the ratio
+\begin{equation}
+\rho = \frac{r}{N}
+\end{equation}
+where $r$ is multiplicative order and $N$ is modulus.
+\end{definition}
+
+VRA performance depends critically on $\rho$:
+\begin{itemize}
+    \item \textbf{HIGH SNR:} $\rho < 0.15$ (small $r$, strong coherence, requires phase alignment)
+    \item \textbf{TRANSITION:} $0.15 \leq \rho < 0.26$ (moderate $r$, any bases work)
+    \item \textbf{LOW SNR:} $\rho \geq 0.26$ (large $r$, robust, any bases work)
+\end{itemize}
+
+These boundaries are established empirically in Section~\ref{sec:regime}.

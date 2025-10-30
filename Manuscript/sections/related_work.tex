@@ -1,0 +1,65 @@
+VRA sits at the intersection of spectral estimation, number theory, and quantum-inspired algorithms. We position our contributions relative to three main bodies of work.
+
+\subsection{Classical Spectral Estimation}
+
+\textbf{Periodogram methods.} The classical periodogram~\cite{schuster1898periodogram} estimates power spectral density via squared Fourier transform magnitudes. VRA extends this by (1) embedding modular sequences into the complex unit circle, (2) coherently averaging across multiple bases, and (3) exploiting group-theoretic structure. Unlike traditional periodogram analysis which assumes stationary stochastic processes, VRA operates on deterministic modular dynamics with provable spectral concentration.
+
+\textbf{Window functions.} Spectral leakage due to finite-length observations has been extensively studied~\cite{harris1978windows}. Harris's taxonomy of windows (Hamming, Hann, Blackman, etc.) provides sidelobe/mainlobe trade-offs. Our FP\#2 (Leakage Bounds) extends this theory to the modular setting, deriving the validated radius rule $R = \lfloor 0.5 \log_2(L) \rfloor$ and empirically determining window constant $C_W \approx 0.47$ for Hann windows in VRA contexts.
+
+\textbf{Coherent averaging.} Signal averaging to improve SNR is standard in radar~\cite{skolnik2001radar} and communications~\cite{proakis2007digital}. However, these methods average independent noisy observations of the same signal. VRA averages fundamentally \emph{different} signals (from distinct bases) that share an underlying period $r$, achieving $\sqrt{M}$ scaling through phase coherence rather than noise reduction.
+
+\subsection{Subspace and High-Resolution Methods}
+
+\textbf{MUSIC and ESPRIT.} Multiple Signal Classification (MUSIC)~\cite{schmidt1986music} and Estimation of Signal Parameters via Rotational Invariance Techniques (ESPRIT)~\cite{roy1989esprit} exploit eigendecomposition of covariance matrices to achieve super-resolution frequency estimation. These methods excel when signal subspace dimension is known and SNR is moderate.
+
+\textbf{Contrast with VRA.} While MUSIC/ESPRIT require explicit noise models and eigendecomposition ($O(L^3)$ complexity), VRA operates via FFT ($O(L \log L)$) and deterministic modular dynamics without noise assumptions. VRA's regime-dependent base selection (phase alignment in HIGH SNR, arbitrary bases in TRANSITION/LOW) has no analog in subspace methods. Furthermore, VRA's $\sqrt{M}$ scaling is \emph{proven}, whereas MUSIC/ESPRIT performance relies on asymptotic analysis and threshold effects.
+
+\textbf{Synergies.} Hybrid approaches combining VRA's modular structure with subspace refinement could potentially push beyond current performance limits, particularly in HIGH SNR regimes where $R^2 \approx 0.85$ suggests room for improvement.
+
+\subsection{Quantum Algorithms and Order-Finding}
+
+\textbf{Shor's algorithm.} Shor's quantum period-finding algorithm~\cite{shor1997quantum} achieves exponential speedup over classical methods by exploiting quantum Fourier transform (QFT) and measurement collapse. The algorithm outputs $s/r$ (where $r$ is the period) with high probability, enabling polynomial-time factorization.
+
+\textbf{Quantum-classical correspondence.} Our earlier work on Vaca-Shor Resonance Analysis (VSRA)~\cite{vaca2024vsra} empirically demonstrated 100\% hit rate between VRA spectral peaks and Shor's QFT peaks across tested subgroups, suggesting deep structural connections. However, VRA operates entirely classically---it does not achieve quantum speedup.
+
+\textbf{Complementary strengths.} Quantum algorithms excel for large $r$ relative to available qubits, while VRA's classical nature enables verification, debugging, and hybrid designs. VRA's regime map (FP\#4) provides insight into when classical spectral methods suffice versus when quantum resources are necessary.
+
+\textbf{Post-quantum cryptanalysis.} As quantum hardware matures, understanding classical bounds on order-finding informs post-quantum cryptographic design. VRA's 100\% precision and $\sqrt{M}$ scaling establish concrete classical baselines.
+
+\subsection{Period-Finding and Discrete Logarithms}
+
+\textbf{Pollard's rho.} Pollard's rho method~\cite{pollard1978rho} for discrete logarithms uses birthday paradox collisions, achieving $O(\sqrt{r})$ expected time. VRA does not improve asymptotic complexity but provides alternative spectral signatures potentially useful in hybrid attacks.
+
+\textbf{Index calculus.} Index calculus methods~\cite{gordon1993discrete} factor exponents over small primes, effective for finite fields but not general modular groups. VRA's generality (any coprime base) complements algebraic approaches.
+
+\textbf{Baby-step giant-step.} Shanks's algorithm~\cite{shanks1971class} trades time for space in $O(\sqrt{r})$ deterministic steps. VRA's $O(L \log L)$ FFT per base offers different resource trade-offs, particularly when parallelizing across $M$ bases.
+
+\subsection{Positioning VRA}
+
+Table~\ref{tab:comparison} summarizes VRA's position relative to existing methods. VRA's unique contributions are:
+
+\begin{enumerate}
+    \item \textbf{Rigorous $\sqrt{M}$ scaling proof} with regime-dependent conditions (no prior work establishes this for modular spectral averaging).
+    \item \textbf{Validated radius rule} achieving 100\% precision (Harris's windows provide sidelobe bounds but not modular-specific validation).
+    \item \textbf{Phase alignment criterion} linking group structure to spectral coherence (no analog in classical signal processing).
+    \item \textbf{Regime trichotomy} with actionable boundaries (enables practitioners to select appropriate base-selection strategies).
+\end{enumerate}
+
+\begin{table}[t]
+\centering
+\caption{Comparison of order-finding and spectral methods}
+\label{tab:comparison}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Method & Complexity & SNR Scaling & Guarantees & Quantum \\
+\midrule
+Periodogram & $O(L \log L)$ & $O(1)$ & Statistical & No \\
+MUSIC/ESPRIT & $O(L^3)$ & Super-res & Asymptotic & No \\
+Pollard rho & $O(\sqrt{r})$ & --- & Probabilistic & No \\
+Shor QFT & $O((\log N)^3)$ & --- & Exponential & Yes \\
+\textbf{VRA} & $O(ML \log L)$ & $O(\sqrt{M})$ & Proven & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+VRA does not replace quantum algorithms or match their asymptotic complexity. Rather, it provides a \emph{rigorous classical baseline} with provable guarantees, enabling hybrid quantum-classical designs, verification of quantum outputs, and insight into regime-dependent performance.

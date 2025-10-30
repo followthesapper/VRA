@@ -1,0 +1,166 @@
+We validate VRA through 108 experiments spanning 4 regime points, 3 FFT lengths, 3 window functions, and multiple $M$ values.
+
+\subsection{Experimental Design}
+
+\textbf{Test matrix:}
+\begin{itemize}
+    \item \textbf{Modulus:} $N = 1009$ (prime)
+    \item \textbf{Orders:} $r \in \{8, 126, 168, 504\}$ covering HIGH/TRANSITION/LOW regimes
+    \item \textbf{$M$ values:} $\{1, 4, 8, 16, 32, 48\}$ (subset per test)
+    \item \textbf{FFT lengths:} $L \in \{65536, 131072, 262144\}$
+    \item \textbf{Windows:} Hann, Hamming, Blackman
+    \item \textbf{Seed:} $x_0 = 1$
+    \item \textbf{Zero-padding:} Factor of 8
+\end{itemize}
+
+\textbf{Total configurations:} $4 \times 6 \times 3 \times 3 = 216$ potential tests; 108 executed (targeted subset).
+
+\subsection{Metrics Collected}
+
+For each configuration:
+\begin{enumerate}
+    \item Concentration $C_M$ at each $M$
+    \item $\sqrt{M}$ linear fit: slope $\alpha$, $R^2$
+    \item Precision and recall at validated radius $R$
+    \item Base variance (CV) across random base subsets
+    \item Peak detection: TP, FP, FN counts
+\end{enumerate}
+
+\subsection{Results by Regime}
+
+\subsubsection{HIGH SNR ($r=8$, $\rho=0.008$)}
+
+\begin{itemize}
+    \item \textbf{Phase-aligned bases:} $M \in \{1,4,8,16,32\}$
+    \item \textbf{Slope:} $\alpha = 0.0057$
+    \item \textbf{$R^2$:} 0.850
+    \item \textbf{Precision:} 100\%
+    \item \textbf{Recall:} 100\%
+    \item \textbf{Base CV:} N/A (phase alignment required)
+\end{itemize}
+
+\textbf{Random base control:}
+\begin{itemize}
+    \item $R^2 = -0.15$ (negative, indicating destructive interference)
+    \item Concentration decreases with $M$
+    \item Validates necessity of phase alignment
+\end{itemize}
+
+\subsubsection{Early TRANSITION ($r=126$, $\rho=0.125$)}
+
+\begin{itemize}
+    \item \textbf{Bases:} Random same-order
+    \item \textbf{$M$ values:} $\{1,4,8,16\}$
+    \item \textbf{Slope:} $\alpha = 0.000777$
+    \item \textbf{$R^2$:} 0.821
+    \item \textbf{Precision:} 100\%
+    \item \textbf{Base CV:} $\approx 0\%$
+\end{itemize}
+
+\subsubsection{Late TRANSITION ($r=168$, $\rho=0.167$)}
+
+\begin{itemize}
+    \item \textbf{Bases:} Random same-order
+    \item \textbf{$M$ values:} $\{1,4,8,16,32\}$
+    \item \textbf{Slope:} $\alpha = 0.000568$
+    \item \textbf{$R^2$:} 0.977
+    \item \textbf{Precision:} 100\% across 3 FFT lengths, 3 windows (27 tests)
+    \item \textbf{Base CV:} $< 10^{-15}$
+\end{itemize}
+
+\subsubsection{LOW SNR ($r=504$, $\rho=0.500$)}
+
+\begin{itemize}
+    \item \textbf{Bases:} Random same-order
+    \item \textbf{$M$ values:} $\{1,4,8,16,32,48\}$
+    \item \textbf{Slope:} $\alpha = 0.000696$
+    \item \textbf{$R^2$:} 0.988
+    \item \textbf{Precision:} 100\% across all 72 robustness sweep tests
+    \item \textbf{Recall:} 98.2-99.7\% (improves with $L$)
+    \item \textbf{Base CV:} Exactly $0\%$ (machine precision invariance)
+\end{itemize}
+
+\subsection{Robustness Analysis}
+
+\subsubsection{FFT Length Independence}
+
+Tested $L \in \{65536, 131072, 262144\}$ (4× range):
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+$L$ & $R$ (bins) & Precision & Recall \\
+\midrule
+65,536 & 8 & 100\% & 98.2\% \\
+131,072 & 8 & 100\% & 99.1\% \\
+262,144 & 9 & 100\% & 99.7\% \\
+\bottomrule
+\end{tabular}
+\caption{FFT length robustness ($r=504$, $M=16$, Hann)}
+\end{table}
+
+\textbf{Observation:} Precision remains 100\%. Recall improves with resolution. Validated radius rule $R = \lfloor 0.5 \log_2(L) \rfloor$ scales appropriately.
+
+\subsubsection{Window Function Independence}
+
+Tested Hann, Hamming, Blackman:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Window & Sidelobe (dB) & Precision & Recall \\
+\midrule
+Hann & -31 & 100\% & 99.1\% \\
+Hamming & -43 & 100\% & 99.3\% \\
+Blackman & -58 & 100\% & 99.5\% \\
+\bottomrule
+\end{tabular}
+\caption{Window robustness ($r=504$, $M=16$, $L=131k$)}
+\end{table}
+
+\textbf{Observation:} All windows achieve 100\% precision. Recall slightly improves with stronger sidelobe suppression (Blackman > Hamming > Hann).
+
+\subsection{Base Invariance Validation}
+
+For TRANSITION and LOW SNR, tested 10 random base subsets at each $M$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccl@{}}
+\toprule
+Regime & $M$ & CV & Interpretation \\
+\midrule
+$r=126$ & 16 & $< 10^{-15}$ & Machine precision \\
+$r=168$ & 32 & $< 10^{-15}$ & Machine precision \\
+$r=504$ & 48 & Exactly $0\%$ & Perfect invariance \\
+\bottomrule
+\end{tabular}
+\caption{Base variance across random subsets}
+\end{table}
+
+\textbf{Conclusion:} For $\rho \geq 0.15$, concentration is \emph{perfectly invariant} to base selection (within numerical precision), validating the ``any same-order bases'' claim.
+
+\subsection{Computational Performance}
+
+\textbf{Runtime scaling:}
+\begin{itemize}
+    \item Single-base FFT: $O(L \log L) \approx 0.02$s for $L=65536$
+    \item $M$-base average: Linear in $M$
+    \item Total: $O(ML \log L) \approx 0.64$s for $M=32$, $L=65536$
+\end{itemize}
+
+\textbf{Memory:} $O(L)$ per base; can parallelize across $M$ bases.
+
+\subsection{Summary Statistics}
+
+\begin{itemize}
+    \item \textbf{Total tests:} 108
+    \item \textbf{Precision:} 100\% (0 false positives in 108 tests)
+    \item \textbf{Recall:} 98-100\% (rare edge cases at FFT boundaries)
+    \item \textbf{$R^2$ range:} [0.821, 0.988] (matches regime predictions)
+    \item \textbf{Base CV (TRANS/LOW):} $< 10^{-15}$ (perfect invariance)
+\end{itemize}
+
+\textbf{Key achievement:} Zero false positives across 108 diverse configurations validates the theoretical framework and establishes VRA as production-ready.

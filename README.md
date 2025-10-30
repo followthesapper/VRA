@@ -92,6 +92,43 @@ Read the papers in order:
 5. `3_FP3_Phase_Alignment/` - HIGH SNR requirements
 6. `4_FP4_Regime_Map/` - Complete characterization
 
+### Using the CLI
+
+Quick examples with the VRA command-line tool:
+
+```bash
+# Install dependencies
+make install
+
+# Run quick test
+make test
+
+# Run analysis
+python vra.py run --N 1009 --r 168 --M 1,4,8,16
+
+# See more examples
+python vra.py examples
+
+# Full reproduction
+make all
+```
+
+### LaTeX Manuscript
+
+A formal manuscript (LaTeX) is available in `Manuscript/vra_manuscript.tex`:
+- Complete theorem statements with proofs
+- Related work positioning VRA relative to spectral estimation, subspace methods, and quantum algorithms
+- Full experimental validation section
+
+Compile with:
+```bash
+cd Manuscript
+pdflatex vra_manuscript.tex
+bibtex vra_manuscript
+pdflatex vra_manuscript.tex
+pdflatex vra_manuscript.tex
+```
+
 ---
 
 ## Theory Summary
