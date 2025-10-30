@@ -82,17 +82,40 @@ def compute_spectrum(N, a, x0, length, zp, window="hann"):
     return mag2
 
 def compute_averaged_spectrum(N, bases, x0, length, zp, window="hann"):
-    """Compute M-base averaged spectrum"""
+    """Compute M-base COHERENTLY averaged power spectrum.
+
+    CRITICAL: This performs coherent averaging by summing complex FFTs
+    before squaring, NOT by averaging power spectra. This preserves
+    phase relationships and enables √M SNR scaling.
+
+    Coherent: |Σ U_m / M|² → SNR scales as √M
+    Incoherent: Σ|U_m|²/M → No SNR gain
+    """
     M = len(bases)
+    L = length * zp
+    U_sum = None
 
-    # Compute individual spectra
-    spectra = []
     for a in bases:
-        mag2 = compute_spectrum(N, a, x0, length, zp, window)
-        spectra.append(mag2)
+        # Generate sequence
+        xs = modular_sequence(N, a, x0, length)
+        us = phase_embed(xs, N)
+        us_windowed = apply_window(us, window)
 
-    # Average
-    mag2_avg = np.mean(spectra, axis=0)
+        # Zero-pad
+        us_padded = np.zeros(L, dtype=np.complex128)
+        us_padded[:length] = us_windowed
+
+        # FFT (keep complex!)
+        U = np.fft.fft(us_padded)
+
+        # Sum complex FFTs
+        if U_sum is None:
+            U_sum = np.zeros_like(U, dtype=np.complex128)
+        U_sum += U
+
+    # Average THEN square (coherent)
+    U_mean = U_sum / M
+    mag2_avg = np.abs(U_mean) ** 2
 
     return mag2_avg
 
@@ -238,47 +261,72 @@ def run_robustness_sweep():
     print("="*70)
     print()
 
-    # Define regimes to test (use existing configs)
+    # Define regimes to test
     regimes = []
+    N = 1009
 
     # HIGH SNR: r=8 phase-aligned
-    regimes.append({
-        'name': 'HIGH_SNR_r8',
-        'N': 1009,
-        'order': 8,
-        'bases': [2, 8, 32, 128],  # Phase-aligned
-        'regime': 'HIGH_SNR',
-        'r_over_N': 8/1009
-    })
+    # Find a generator with order 8
+    r8_generator = None
+    for a in range(2, N):
+        if np.gcd(a, N) == 1 and multiplicative_order(a, N) == 8:
+            r8_generator = a
+            break
 
-    # TRANSITION: r=126
-    # Load from previous test
-    r126_path = Path('../../4_Transition_Regime_Map/Code/same_order_bases_1009_r121.json')
-    if r126_path.exists():
-        with open(r126_path) as f:
-            r126_config = json.load(f)
+    if r8_generator:
+        # Generate phase-aligned bases: {a^k : gcd(k,8)=1} = {a^1, a^3, a^5, a^7}
+        r8_bases = [pow(r8_generator, k, N) for k in [1, 3, 5, 7]]
         regimes.append({
-            'name': 'TRANSITION_r126',
-            'N': r126_config['N'],
-            'order': r126_config['order'],
-            'bases': r126_config['bases'][:20],  # Use subset
+            'name': 'HIGH_SNR_r8',
+            'N': N,
+            'order': 8,
+            'bases': r8_bases,
+            'regime': 'HIGH_SNR',
+            'r_over_N': 8/N
+        })
+        print(f"Found HIGH SNR bases (r=8): generator={r8_generator}, bases={r8_bases}")
+
+    # TRANSITION: r=168
+    # Find bases with order 168
+    r168_bases = []
+    for a in range(2, N):
+        if len(r168_bases) >= 20:
+            break
+        if np.gcd(a, N) == 1 and multiplicative_order(a, N) == 168:
+            r168_bases.append(a)
+
+    if len(r168_bases) >= 4:
+        regimes.append({
+            'name': 'TRANSITION_r168',
+            'N': N,
+            'order': 168,
+            'bases': r168_bases[:20],
             'regime': 'TRANSITION',
-            'r_over_N': r126_config['order'] / r126_config['N']
+            'r_over_N': 168/N
         })
+        print(f"Found TRANSITION bases (r=168): {len(r168_bases)} bases")
 
-    # LOW SNR: r=168
-    r168_path = Path('../../4_Transition_Regime_Map/Code/same_order_bases_1009_r168.json')
-    if r168_path.exists():
-        with open(r168_path) as f:
-            r168_config = json.load(f)
+    # LOW SNR: r=504
+    # Find bases with order 504
+    r504_bases = []
+    for a in range(2, N):
+        if len(r504_bases) >= 20:
+            break
+        if np.gcd(a, N) == 1 and multiplicative_order(a, N) == 504:
+            r504_bases.append(a)
+
+    if len(r504_bases) >= 4:
         regimes.append({
-            'name': 'LOW_SNR_r168',
-            'N': r168_config['N'],
-            'order': r168_config['order'],
-            'bases': r168_config['bases'][:20],  # Use subset
+            'name': 'LOW_SNR_r504',
+            'N': N,
+            'order': 504,
+            'bases': r504_bases[:20],
             'regime': 'LOW_SNR',
-            'r_over_N': r168_config['order'] / r168_config['N']
+            'r_over_N': 504/N
         })
+        print(f"Found LOW SNR bases (r=504): {len(r504_bases)} bases")
+
+    print()
 
     # Define FFT length configurations
     length_configs = [
@@ -379,8 +427,8 @@ def run_robustness_sweep():
                   f"{v['window']}, M={v['M']}: P={v['precision']:.3f} (FP={v['FP']})")
 
     # Save results
-    output_dir = Path('../Results')
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path(__file__).parent.parent.parent / 'Data' / 'robustness_sweep'
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     results_path = output_dir / f'{timestamp}_robustness_sweep.json'
@@ -408,7 +456,9 @@ def run_robustness_sweep():
 
     # Create visualization if matplotlib available
     if HAS_MATPLOTLIB:
-        create_robustness_plot(all_results, output_dir, timestamp)
+        figures_dir = Path(__file__).parent.parent.parent / 'Figures' / 'FP2_Leakage'
+        figures_dir.mkdir(parents=True, exist_ok=True)
+        create_robustness_plot(all_results, figures_dir, timestamp)
 
     print("\n" + "="*70)
     print("ROBUSTNESS SWEEP COMPLETE")
@@ -430,7 +480,7 @@ def create_robustness_plot(results, output_dir, timestamp):
     # Panel A: Precision vs L (should all be 1.0)
     ax = axes[0, 0]
 
-    for regime_idx, regime_name in enumerate(['HIGH_SNR_r8', 'TRANSITION_r126', 'LOW_SNR_r168']):
+    for regime_idx, regime_name in enumerate(['HIGH_SNR_r8', 'TRANSITION_r168', 'LOW_SNR_r504']):
         precisions = []
         for L_name in L_names:
             if regime_name in results[L_name]['regime_results']:
@@ -487,7 +537,7 @@ def create_robustness_plot(results, output_dir, timestamp):
     regime_labels = ['HIGH_SNR', 'TRANSITION', 'LOW_SNR']
 
     for i, L_name in enumerate(L_names):
-        for j, regime_name in enumerate(['HIGH_SNR_r8', 'TRANSITION_r126', 'LOW_SNR_r168']):
+        for j, regime_name in enumerate(['HIGH_SNR_r8', 'TRANSITION_r168', 'LOW_SNR_r504']):
             if regime_name in results[L_name]['regime_results']:
                 window_results = results[L_name]['regime_results'][regime_name]['window_results']
                 total_fp = sum(m['FP'] for window_data in window_results.values()
@@ -517,7 +567,7 @@ def create_robustness_plot(results, output_dir, timestamp):
         recalls = []
         regime_names_short = []
 
-        for regime_name in ['HIGH_SNR_r8', 'TRANSITION_r126', 'LOW_SNR_r168']:
+        for regime_name in ['HIGH_SNR_r8', 'TRANSITION_r168', 'LOW_SNR_r504']:
             if regime_name in results[L_name]['regime_results']:
                 window_results = results[L_name]['regime_results'][regime_name]['window_results']
                 all_recalls = []

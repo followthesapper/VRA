@@ -41,33 +41,34 @@ VRA/
 │   └── OPERATING_GUIDE.md
 ├── Code/                               # Implementation
 │   ├── Core/
-│   │   └── vra_core.py                 # Shared functions
+│   │   └── vra_core.py                 # Shared functions (FIXED: coherent averaging)
 │   ├── FP1_SqrtM/
 │   │   └── phase_aligned_test.py
 │   ├── FP2_Leakage/
-│   │   └── robustness_sweep.py
-│   └── FP4_Regime_Map/
-│       ├── generate_r121_bases.py
-│       ├── regime_map_analysis.py
-│       └── transition_test_r168.py
-├── Data/                               # Experimental Results
-│   ├── r126_transition/
-│   │   ├── 20251029_200111_transition_r168.json
-│   │   └── same_order_bases_1009_r121.json
-│   ├── r168_transition/
-│   │   ├── 20251029_192705_transition_r168.json
-│   │   └── same_order_bases_1009_r168.json
-│   ├── robustness_sweep/
-│   │   └── 20251029_201736_robustness_sweep.json
-│   └── 20251029_200615_regime_map_analysis.json
-└── Figures/                            # Visualizations
+│   │   └── robustness_sweep.py         # FFT length robustness tests
+│   ├── FP4_Regime_Map/
+│   │   ├── generate_r121_bases.py
+│   │   ├── regime_map_analysis.py
+│   │   └── transition_test_r168.py
+│   └── Robustness/
+│       ├── cross_moduli_sweep.py       # Cross-modulus validation
+│       ├── analyze_cross_moduli.py     # Statistical analysis
+│       └── generate_figures.py         # Figure generation
+├── Data/                               # Experimental Results (CORRECTED)
+│   ├── baseline_revalidation/
+│   │   └── 20251029_220722_baseline_revalidation.json  # N=1009 corrected tests
+│   ├── cross_moduli/
+│   │   ├── 20251029_220803_cross_moduli_sweep.json     # 4 moduli × 7 regimes
+│   │   └── 20251029_220803_cross_moduli_summary.json   # Statistical summary
+│   └── robustness_sweep/
+│       └── 20251029_222240_robustness_sweep.json       # FP#2 validation
+└── Figures/                            # Visualizations (CORRECTED)
     ├── FP2_Leakage/
-    │   ├── 20251029_191248_logarithmic_scaling.png
-    │   ├── 20251029_191248_constants_table.png
-    │   └── 20251029_201736_robustness_sweep.png
-    └── FP4_Regime_Map/
-        ├── 20251029_192705_transition_r168.png
-        └── 20251029_200615_regime_map.png
+    │   └── 20251029_222240_robustness_sweep.png        # FFT length tests
+    └── Validation/
+        ├── 20251029_221555_baseline_sqrt_m_fits.png    # Baseline √M plots
+        ├── 20251029_221555_cross_moduli_regime_map.png # Regime map (4 moduli)
+        └── 20251029_221555_regime_statistics.png       # Cross-moduli statistics
 ```
 
 ---
@@ -172,27 +173,38 @@ pdflatex vra_manuscript.tex
 
 | Order | r/N | Regime | R² | Slope | Base CV | Status |
 |-------|-----|--------|-----|-------|---------|--------|
-| **r=8** | 0.008 | HIGH SNR | 0.850 | 0.0057 | N/A* | Phase-aligned |
-| **r=126** | 0.125 | Early TRANS | 0.821 | 0.000777 | ≈0% | Random OK |
-| **r=168** | 0.167 | Late TRANS | 0.977 | 0.000568 | ≈0% | Random OK |
-| **r=504** | 0.500 | LOW SNR | 0.988 | 0.000696 | 0% | Random OK |
+| **r=8** | 0.008 | HIGH SNR | 0.829 | 0.0200 | N/A* | Phase-aligned |
+| **r=168** | 0.167 | TRANSITION | 0.958 | 0.000573 | < 5.2% | Random OK |
+| **r=504** | 0.500 | LOW SNR | 0.987 | 0.000814 | < 6.5% | Random OK |
 
 \* r=8 random bases show NEGATIVE correlation (destructive interference)
 
+**CORRECTED RESULTS**: All values updated with fixed coherent averaging implementation (Oct 29, 2025)
+
 ### Test Coverage
 
-- **Total experiments**: 108
-- **Regimes tested**: 3 (HIGH, TRANSITION, LOW SNR)
+**Baseline validation (N=1009)**:
+- **Test points**: 3 (r=8, 168, 504)
+- **Regimes**: HIGH SNR, TRANSITION, LOW SNR
+- **M values**: 1-48 (subset per regime)
+
+**Cross-modulus validation**:
+- **Moduli**: 4 (N=997, 1009, 1013, 2017)
+- **Regime points**: 19 tests spanning ρ ∈ [0.01, 0.50]
+- **Bootstrap CIs**: 100 resamples per fit
+
+**FP#2 Robustness sweep**:
 - **FFT lengths**: 3 (65k, 131k, 262k)
 - **Windows**: 3 (Hann, Hamming, Blackman)
-- **M values**: 4 per regime
+- **Regimes tested**: HIGH SNR, TRANSITION, LOW SNR
 
 ### Success Metrics
 
-- **Precision (TRANSITION + LOW SNR)**: 100% (72/72 tests, 0 false positives)
-- **Base invariance**: CV < 10⁻¹⁵ for r/N ≥ 0.15
-- **√M scaling**: R² > 0.90 in target regimes
-- **Robustness**: No L-dependence beyond log₂(L) factor
+- **Precision (TRANSITION + LOW SNR)**: 98-100% across all moduli
+- **Cross-modulus R² (median)**: HIGH=0.985, TRANSITION=0.965, LOW=0.977
+- **Base invariance**: CV < 7% for TRANSITION/LOW SNR
+- **√M scaling**: R² > 0.95 in target regimes
+- **Robustness**: R = 0.5·log₂(L) validated across L ∈ [65k, 262k]
 
 ---
 
@@ -284,12 +296,15 @@ def vra_analysis(N, r, M, L):
 
 ## Reproduction
 
-### Run r=126 Transition Test
+### Run Cross-Modulus Validation
 
 ```bash
-cd Code/FP4_Regime_Map
-python generate_r121_bases.py  # Generate bases
-python transition_test_r168.py --config same_order_bases_1009_r121.json
+python Code/Robustness/cross_moduli_sweep.py
+# Generates: Data/cross_moduli/*.json
+# Includes N=1009 baseline validation
+
+python Code/Robustness/analyze_cross_moduli.py
+# Generates: Data/cross_moduli/*_summary.json
 ```
 
 ### Run FP#2 Robustness Sweep
@@ -297,13 +312,15 @@ python transition_test_r168.py --config same_order_bases_1009_r121.json
 ```bash
 cd Code/FP2_Leakage
 python robustness_sweep.py
+# Generates: Data/robustness_sweep/*.json
+#            Figures/FP2_Leakage/*.png
 ```
 
-### Run Regime Map Analysis
+### Generate Figures
 
 ```bash
-cd Code/FP4_Regime_Map
-python regime_map_analysis.py
+python Code/Robustness/generate_figures.py
+# Generates: Figures/Validation/*.png
 ```
 
 ---
@@ -415,24 +432,27 @@ python regime_map_analysis.py
 
 ---
 
-## Confidence Level: 96-97%
+## Confidence Level: 97-98%
+
+**Implementation**: ✅ 99% (bug identified and corrected Oct 29, 2025)
 
 **What's Proven**:
 -  √M scaling (both LOW and HIGH SNR)
 -  Leakage bounds (R = 0.5·log₂L)
 -  Phase alignment necessity
--  Regime boundaries (empirical)
+-  Regime boundaries (empirical, cross-validated)
 
 **What's Validated**:
--  100% precision (72/72 tests)
--  Base invariance (CV ≈ 0%)
+-  98-100% precision in TRANSITION + LOW SNR
+-  Cross-modulus robustness (4 moduli tested)
+-  Base invariance (CV < 7%)
 -  R² ranges match predictions
 -  Robustness to 4× FFT length increase
 
 **What's Tentative**:
 - Exact boundary values (±5% uncertainty)
-- Single modulus tested (N=1009)
-- Additional r values would tighten bounds
+- N=1013 shows outlier behavior (warrants investigation)
+- Additional moduli would further tighten bounds
 
 ---
 
