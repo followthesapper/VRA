@@ -1,0 +1,33 @@
+# Docker ignore file for VRA reproducibility
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Large data files (will be regenerated)
+*.png
+*.jpg
+*.pdf
+
+# Temporary files
+*.log
+*.tmp
+temp/

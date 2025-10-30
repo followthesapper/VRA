@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "date": "2025-10-29T23:27:56.810199",
+    "test_types": [
+      "adversarial_base_selection",
+      "pathological_orders"
+    ],
+    "M_values": [
+      4,
+      8,
+      16,
+      32
+    ]
+  },
+  "adversarial_base_selection": [
+    {
+      "N": 997,
+      "r": 83,
+      "rho": 0.08324974924774323,
+      "num_available_bases": 82,
+      "strategies": [
+        {
+          "strategy": "random",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.005567606055523701,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 8,
+              "concentration": 0.009366021739457569,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 16,
+              "concentration": 0.018315088063209722,
+              "precision": 0.9696969696969697,
+              "recall": 0.7710843373493976
+            },
+            {
+              "M": 32,
+              "concentration": 0.0333910674690095,
+              "precision": 0.9090909090909091,
+              "recall": 0.7228915662650602
+            }
+          ]
+        },
+        {
+          "strategy": "max_phase_spread",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.005282624166347935,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 8,
+              "concentration": 0.012269826043479181,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 16,
+              "concentration": 0.01989133258919342,
+              "precision": 0.9393939393939394,
+              "recall": 0.7469879518072289
+            },
+            {
+              "M": 32,
+              "concentration": 0.027931702661909082,
+              "precision": 0.9090909090909091,
+              "recall": 0.7228915662650602
+            }
+          ]
+        },
+        {
+          "strategy": "clustered_phases",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0054774827265234565,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 8,
+              "concentration": 0.008935343593606622,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 16,
+              "concentration": 0.01446244291777581,
+              "precision": 0.9696969696969697,
+              "recall": 0.7710843373493976
+            },
+            {
+              "M": 32,
+              "concentration": 0.02549477344083099,
+              "precision": 0.9393939393939394,
+              "recall": 0.7469879518072289
+            }
+          ]
+        },
+        {
+          "strategy": "default",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0054774827265234565,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 8,
+              "concentration": 0.008935343593606622,
+              "precision": 1.0,
+              "recall": 0.7951807228915663
+            },
+            {
+              "M": 16,
+              "concentration": 0.01446244291777581,
+              "precision": 0.9696969696969697,
+              "recall": 0.7710843373493976
+            },
+            {
+              "M": 32,
+              "concentration": 0.02549477344083099,
+              "precision": 0.9393939393939394,
+              "recall": 0.7469879518072289
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "N": 1009,
+      "r": 168,
+      "rho": 0.16650148662041625,
+      "num_available_bases": 48,
+      "strategies": [
+        {
+          "strategy": "random",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0033669558571268925,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 8,
+              "concentration": 0.0029525956469893914,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 16,
+              "concentration": 0.0037075727072721745,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 32,
+              "concentration": 0.004870905859558998,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            }
+          ]
+        },
+        {
+          "strategy": "max_phase_spread",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.002862966236664621,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 8,
+              "concentration": 0.0029456944686724884,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 16,
+              "concentration": 0.003950042577762466,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 32,
+              "concentration": 0.004899378302209199,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            }
+          ]
+        },
+        {
+          "strategy": "clustered_phases",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0029701351598841077,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 8,
+              "concentration": 0.002858846882351256,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 16,
+              "concentration": 0.003768409578590421,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 32,
+              "concentration": 0.004899378302209199,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            }
+          ]
+        },
+        {
+          "strategy": "default",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0029701351598841077,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 8,
+              "concentration": 0.002858846882351256,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 16,
+              "concentration": 0.003768409578590421,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            },
+            {
+              "M": 32,
+              "concentration": 0.004899378302209199,
+              "precision": 1.0,
+              "recall": 0.39285714285714285
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "N": 1009,
+      "r": 504,
+      "rho": 0.49950445986124875,
+      "num_available_bases": 100,
+      "strategies": [
+        {
+          "strategy": "random",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0008666715052148007,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 8,
+              "concentration": 0.001700736843577249,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 16,
+              "concentration": 0.002608886768695374,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 32,
+              "concentration": 0.004173168784052886,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            }
+          ]
+        },
+        {
+          "strategy": "max_phase_spread",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0009539132901749474,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 8,
+              "concentration": 0.0014388251173525623,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 16,
+              "concentration": 0.002548970019611748,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 32,
+              "concentration": 0.00414988969346271,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            }
+          ]
+        },
+        {
+          "strategy": "clustered_phases",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0008769878431140135,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 8,
+              "concentration": 0.0017517361853449616,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 16,
+              "concentration": 0.0030782662195358353,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 32,
+              "concentration": 0.004168891419328261,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            }
+          ]
+        },
+        {
+          "strategy": "default",
+          "M_tests": [
+            {
+              "M": 4,
+              "concentration": 0.0008769878431140135,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 8,
+              "concentration": 0.0017517361853449616,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 16,
+              "concentration": 0.0030782662195358353,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            },
+            {
+              "M": 32,
+              "concentration": 0.004168891419328261,
+              "precision": 1.0,
+              "recall": 0.13095238095238096
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pathological_orders": [
+    {
+      "N": 1009,
+      "r": 144,
+      "structure_type": "highly_composite",
+      "num_bases": 32,
+      "M": 16,
+      "precision": 1.0,
+      "recall": 0.4583333333333333
+    },
+    {
+      "N": 1009,
+      "r": 336,
+      "structure_type": "highly_composite",
+      "num_bases": 32,
+      "M": 16,
+      "precision": 1.0,
+      "recall": 0.19642857142857142
+    },
+    {
+      "N": 1009,
+      "r": 504,
+      "structure_type": "highly_composite",
+      "num_bases": 32,
+      "M": 16,
+      "precision": 1.0,
+      "recall": 0.13095238095238096
+    }
+  ]
+}
