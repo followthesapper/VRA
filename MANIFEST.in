@@ -1,0 +1,22 @@
+# Include additional files in the package distribution
+
+include README.md
+include LICENSE
+include requirements.txt
+include REPRODUCTION.md
+include REPLICATION_CHALLENGE.md
+
+# Include test vectors
+recursive-include Test_Vectors *.json *.py
+
+# Include documentation
+recursive-include Manuscript *.tex *.bib
+recursive-include Publication *.md
+
+# Exclude unnecessary files
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .DS_Store
+prune Data
+prune Figures
