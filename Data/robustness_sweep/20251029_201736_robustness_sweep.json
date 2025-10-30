@@ -1,0 +1,1292 @@
+{
+  "timestamp": "20251029_201736",
+  "test_configs": {
+    "length_configs": [
+      {
+        "name": "L65k",
+        "length": 8192,
+        "zp": 8,
+        "L": 65536,
+        "log2_L": 16,
+        "radius": 8
+      },
+      {
+        "name": "L131k",
+        "length": 16384,
+        "zp": 8,
+        "L": 131072,
+        "log2_L": 17,
+        "radius": 8
+      },
+      {
+        "name": "L262k",
+        "length": 32768,
+        "zp": 8,
+        "L": 262144,
+        "log2_L": 18,
+        "radius": 9
+      }
+    ],
+    "M_values": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "windows": [
+      "hann",
+      "hamming",
+      "blackman"
+    ]
+  },
+  "results": {
+    "L65k": {
+      "L_config": {
+        "name": "L65k",
+        "length": 8192,
+        "zp": 8,
+        "L": 65536,
+        "log2_L": 16,
+        "radius": 8
+      },
+      "regime_results": {
+        "HIGH_SNR_r8": {
+          "regime_config": {
+            "N": 1009,
+            "order": 8,
+            "r_over_N": 0.007928642220019821,
+            "regime": "HIGH_SNR"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.00033094995196830814,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 66,
+                "FN": 8,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.001008385805691884,
+                "precision": 0.09090909090909091,
+                "recall": 0.75,
+                "TP": 6,
+                "FP": 60,
+                "FN": 2,
+                "num_peaks": 66
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.0003668650318778489,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 66,
+                "FN": 8,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0011095962799737291,
+                "precision": 0.12121212121212122,
+                "recall": 1.0,
+                "TP": 8,
+                "FP": 58,
+                "FN": 0,
+                "num_peaks": 66
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.00028746278144267185,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 66,
+                "FN": 8,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0008763994078944737,
+                "precision": 0.09090909090909091,
+                "recall": 0.75,
+                "TP": 6,
+                "FP": 60,
+                "FN": 2,
+                "num_peaks": 66
+              }
+            ]
+          }
+        },
+        "TRANSITION_r126": {
+          "regime_config": {
+            "N": 1009,
+            "order": 126,
+            "r_over_N": 0.12487611496531219,
+            "regime": "TRANSITION"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.0038219974205768665,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.00162330069319281,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 8,
+                "concentration": 0.0015431570588043519,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 16,
+                "concentration": 0.0015431570918326583,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.004206143317712182,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0017847829306927676,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 8,
+                "concentration": 0.0016977265192229451,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 16,
+                "concentration": 0.001697629946290635,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.0033203324574257067,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0014116549202207696,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 8,
+                "concentration": 0.0013411751709054014,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              },
+              {
+                "M": 16,
+                "concentration": 0.0013411751831863702,
+                "precision": 1.0,
+                "recall": 0.5238095238095238,
+                "TP": 66,
+                "FP": 0,
+                "FN": 60,
+                "num_peaks": 66
+              }
+            ]
+          }
+        },
+        "LOW_SNR_r168": {
+          "regime_config": {
+            "N": 1009,
+            "order": 168,
+            "r_over_N": 0.16650148662041625,
+            "regime": "LOW_SNR"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.0021188095993302236,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0012492167266058808,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 8,
+                "concentration": 0.0011170196380743077,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 16,
+                "concentration": 0.0008475645937879753,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.0023331854494293646,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0013744095891589315,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 8,
+                "concentration": 0.0012295148259903362,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 16,
+                "concentration": 0.0009327487602886739,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.0018408635630763883,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 4,
+                "concentration": 0.0010862690241535268,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 8,
+                "concentration": 0.0009706860162624931,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              },
+              {
+                "M": 16,
+                "concentration": 0.0007365310036641261,
+                "precision": 1.0,
+                "recall": 0.39285714285714285,
+                "TP": 66,
+                "FP": 0,
+                "FN": 102,
+                "num_peaks": 66
+              }
+            ]
+          }
+        }
+      }
+    },
+    "L131k": {
+      "L_config": {
+        "name": "L131k",
+        "length": 16384,
+        "zp": 8,
+        "L": 131072,
+        "log2_L": 17,
+        "radius": 8
+      },
+      "regime_results": {
+        "HIGH_SNR_r8": {
+          "regime_config": {
+            "N": 1009,
+            "order": 8,
+            "r_over_N": 0.007928642220019821,
+            "regime": "HIGH_SNR"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.000330899888130707,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 132,
+                "FN": 8,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0010084470929718318,
+                "precision": 0.10606060606060606,
+                "recall": 1.75,
+                "TP": 14,
+                "FP": 118,
+                "FN": -6,
+                "num_peaks": 132
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.000365194133562861,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 132,
+                "FN": 8,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.001109325574380243,
+                "precision": 0.10606060606060606,
+                "recall": 1.75,
+                "TP": 14,
+                "FP": 118,
+                "FN": -6,
+                "num_peaks": 132
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.0002874484634664413,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 132,
+                "FN": 8,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0008764527226471217,
+                "precision": 0.10606060606060606,
+                "recall": 1.75,
+                "TP": 14,
+                "FP": 118,
+                "FN": -6,
+                "num_peaks": 132
+              }
+            ]
+          }
+        },
+        "TRANSITION_r126": {
+          "regime_config": {
+            "N": 1009,
+            "order": 126,
+            "r_over_N": 0.12487611496531219,
+            "regime": "TRANSITION"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.0038185058430851063,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0016313327526469308,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 8,
+                "concentration": 0.0015432508117908365,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 16,
+                "concentration": 0.0015432508162816561,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.004201625827072678,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0017956940282098607,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 8,
+                "concentration": 0.0016977609728465678,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 16,
+                "concentration": 0.0016977178414229633,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.003318015852080627,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0014171081110189241,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 8,
+                "concentration": 0.0013412567455835952,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              },
+              {
+                "M": 16,
+                "concentration": 0.0013412567472554104,
+                "precision": 1.0,
+                "recall": 1.0476190476190477,
+                "TP": 132,
+                "FP": 0,
+                "FN": -6,
+                "num_peaks": 132
+              }
+            ]
+          }
+        },
+        "LOW_SNR_r168": {
+          "regime_config": {
+            "N": 1009,
+            "order": 168,
+            "r_over_N": 0.16650148662041625,
+            "regime": "LOW_SNR"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.0021142904687225413,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0012549572934117815,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 8,
+                "concentration": 0.0011147913250697727,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 16,
+                "concentration": 0.0008458746023833237,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.002326208952841472,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0013818506386127946,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 8,
+                "concentration": 0.0012262230806201393,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 16,
+                "concentration": 0.0009303313283571022,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.001837832863115241,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 4,
+                "concentration": 0.0010901676168659192,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 8,
+                "concentration": 0.0009691918193784008,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              },
+              {
+                "M": 16,
+                "concentration": 0.0007353975411035682,
+                "precision": 1.0,
+                "recall": 0.7857142857142857,
+                "TP": 132,
+                "FP": 0,
+                "FN": 36,
+                "num_peaks": 132
+              }
+            ]
+          }
+        }
+      }
+    },
+    "L262k": {
+      "L_config": {
+        "name": "L262k",
+        "length": 32768,
+        "zp": 8,
+        "L": 262144,
+        "log2_L": 18,
+        "radius": 9
+      },
+      "regime_results": {
+        "HIGH_SNR_r8": {
+          "regime_config": {
+            "N": 1009,
+            "order": 8,
+            "r_over_N": 0.007928642220019821,
+            "regime": "HIGH_SNR"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.0003308235609082964,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 263,
+                "FN": 8,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0010084776274707902,
+                "precision": 0.06844106463878327,
+                "recall": 2.25,
+                "TP": 18,
+                "FP": 245,
+                "FN": -10,
+                "num_peaks": 263
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.0003642867957085535,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 263,
+                "FN": 8,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0011093828540697246,
+                "precision": 0.06844106463878327,
+                "recall": 2.25,
+                "TP": 18,
+                "FP": 245,
+                "FN": -10,
+                "num_peaks": 263
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.0002874005566417668,
+                "precision": 0.0,
+                "recall": 0.0,
+                "TP": 0,
+                "FP": 263,
+                "FN": 8,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0008764793395668684,
+                "precision": 0.08365019011406843,
+                "recall": 2.75,
+                "TP": 22,
+                "FP": 241,
+                "FN": -14,
+                "num_peaks": 263
+              }
+            ]
+          }
+        },
+        "TRANSITION_r126": {
+          "regime_config": {
+            "N": 1009,
+            "order": 126,
+            "r_over_N": 0.12487611496531219,
+            "regime": "TRANSITION"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.003804972752227813,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0016313576836827204,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 8,
+                "concentration": 0.0015432977005478575,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 16,
+                "concentration": 0.0015432977010557,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.004183748201530328,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0017956085974255044,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 8,
+                "concentration": 0.0016978234339469996,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 16,
+                "concentration": 0.0016977709985366112,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.00330888153776974,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0014171345526168182,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 8,
+                "concentration": 0.001341297537476893,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              },
+              {
+                "M": 16,
+                "concentration": 0.0013412975376659861,
+                "precision": 1.0,
+                "recall": 2.0873015873015874,
+                "TP": 263,
+                "FP": 0,
+                "FN": -137,
+                "num_peaks": 263
+              }
+            ]
+          }
+        },
+        "LOW_SNR_r168": {
+          "regime_config": {
+            "N": 1009,
+            "order": 168,
+            "r_over_N": 0.16650148662041625,
+            "regime": "LOW_SNR"
+          },
+          "window_results": {
+            "hann": [
+              {
+                "M": 1,
+                "concentration": 0.0021181268048575392,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0012548235170947405,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 8,
+                "concentration": 0.0011184998407378765,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 16,
+                "concentration": 0.0008486886244317047,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              }
+            ],
+            "hamming": [
+              {
+                "M": 1,
+                "concentration": 0.0023307216560453556,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0013811412574315782,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 8,
+                "concentration": 0.0012310282307066711,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 16,
+                "concentration": 0.0009340703983358621,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              }
+            ],
+            "blackman": [
+              {
+                "M": 1,
+                "concentration": 0.0018404406334665993,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 4,
+                "concentration": 0.0010900845258810016,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 8,
+                "concentration": 0.0009717072309764839,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              },
+              {
+                "M": 16,
+                "concentration": 0.0007373062060773984,
+                "precision": 1.0,
+                "recall": 1.5654761904761905,
+                "TP": 263,
+                "FP": 0,
+                "FN": -95,
+                "num_peaks": 263
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "total_tests": 108,
+    "precision_violations": [
+      {
+        "L": 65536,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hann",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 66
+      },
+      {
+        "L": 65536,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hann",
+        "M": 4,
+        "precision": 0.09090909090909091,
+        "FP": 60
+      },
+      {
+        "L": 65536,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hamming",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 66
+      },
+      {
+        "L": 65536,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hamming",
+        "M": 4,
+        "precision": 0.12121212121212122,
+        "FP": 58
+      },
+      {
+        "L": 65536,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "blackman",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 66
+      },
+      {
+        "L": 65536,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "blackman",
+        "M": 4,
+        "precision": 0.09090909090909091,
+        "FP": 60
+      },
+      {
+        "L": 131072,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hann",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 132
+      },
+      {
+        "L": 131072,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hann",
+        "M": 4,
+        "precision": 0.10606060606060606,
+        "FP": 118
+      },
+      {
+        "L": 131072,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hamming",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 132
+      },
+      {
+        "L": 131072,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "hamming",
+        "M": 4,
+        "precision": 0.10606060606060606,
+        "FP": 118
+      },
+      {
+        "L": 131072,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "blackman",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 132
+      },
+      {
+        "L": 131072,
+        "radius": 8,
+        "regime": "HIGH_SNR_r8",
+        "window": "blackman",
+        "M": 4,
+        "precision": 0.10606060606060606,
+        "FP": 118
+      },
+      {
+        "L": 262144,
+        "radius": 9,
+        "regime": "HIGH_SNR_r8",
+        "window": "hann",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 263
+      },
+      {
+        "L": 262144,
+        "radius": 9,
+        "regime": "HIGH_SNR_r8",
+        "window": "hann",
+        "M": 4,
+        "precision": 0.06844106463878327,
+        "FP": 245
+      },
+      {
+        "L": 262144,
+        "radius": 9,
+        "regime": "HIGH_SNR_r8",
+        "window": "hamming",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 263
+      },
+      {
+        "L": 262144,
+        "radius": 9,
+        "regime": "HIGH_SNR_r8",
+        "window": "hamming",
+        "M": 4,
+        "precision": 0.06844106463878327,
+        "FP": 245
+      },
+      {
+        "L": 262144,
+        "radius": 9,
+        "regime": "HIGH_SNR_r8",
+        "window": "blackman",
+        "M": 1,
+        "precision": 0.0,
+        "FP": 263
+      },
+      {
+        "L": 262144,
+        "radius": 9,
+        "regime": "HIGH_SNR_r8",
+        "window": "blackman",
+        "M": 4,
+        "precision": 0.08365019011406843,
+        "FP": 241
+      }
+    ],
+    "success": false
+  }
+}
