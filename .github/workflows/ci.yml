@@ -1,0 +1,125 @@
+name: VRA CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run smoke test
+      run: |
+        python3 vra.py run --N 1009 --r 168 --M 1,4,8 --output results/test/
+
+    - name: Verify core imports
+      run: |
+        python3 -c "import sys; sys.path.insert(0, 'Code/Core'); from vra_core import *; print('Core imports OK')"
+
+    - name: Check code structure
+      run: |
+        python3 -c "
+        import os
+        import sys
+
+        # Check expected directories exist
+        required_dirs = [
+            '0_Foundations',
+            '1_FP1_SqrtM_Theorem',
+            '2_FP2_Leakage_Bounds',
+            '3_FP3_Phase_Alignment',
+            '4_FP4_Regime_Map',
+            '5_Operating_Guide',
+            'Code/Core',
+            'Data',
+            'Figures'
+        ]
+
+        for dir in required_dirs:
+            if not os.path.exists(dir):
+                print(f'ERROR: Required directory {dir} not found')
+                sys.exit(1)
+
+        print('Repository structure OK')
+        "
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.python-version }}
+        path: results/test/
+        retention-days: 7
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=.git,__pycache__,build,dist
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=.git,__pycache__,build,dist
+
+  docs-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check documentation files exist
+      run: |
+        required_files=(
+          "README.md"
+          "LICENSE"
+          "CITATION.cff"
+          "CONTRIBUTING.md"
+          "requirements.txt"
+          "Makefile"
+          "0_Foundations/VRA_SPECTRAL_FRAMEWORK.md"
+          "0_Foundations/VSRA_QUANTUM_CORRESPONDENCE.md"
+          "5_Operating_Guide/OPERATING_GUIDE.md"
+        )
+
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "ERROR: Required file $file not found"
+            exit 1
+          fi
+        done
+
+        echo "All required documentation files present"
+
+    - name: Validate CITATION.cff
+      uses: citation-file-format/cffconvert-github-action@2.0.0
+      with:
+        args: "--validate"

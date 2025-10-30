@@ -1,0 +1,15 @@
+# VRA - Vaca Resonance Analysis
+# Python dependencies for reproduction
+
+# Core numerical computing
+numpy==2.3.4
+
+# Visualization (optional but recommended for figure generation)
+matplotlib>=3.7.0
+
+# Standard library packages (included with Python 3.8+)
+# - argparse
+# - json
+# - sys
+# - pathlib
+# - datetime

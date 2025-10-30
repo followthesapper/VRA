@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Vaca Resonance Analysis (VRA)"
+abstract: "Spectral framework for detecting multiplicative order in modular arithmetic sequences through coherent averaging of windowed Fourier transforms. Achieves √M concentration gains with regime-dependent guarantees."
+authors:
+  - family-names: "Vaca"
+    given-names: "Dylan"
+repository-code: "https://github.com/followthesapper/VRA"
+url: "https://github.com/followthesapper/VRA"
+license: MIT
+version: "1.0.0"
+date-released: "2025-10-29"
+keywords:
+  - spectral analysis
+  - modular arithmetic
+  - Fourier transform
+  - multiplicative order
+  - coherent averaging
+  - signal processing
+  - number theory
+references:
+  - type: article
+    title: "Vaca Resonance Analysis: A Spectral Framework for Modular Dynamics"
+    authors:
+      - family-names: "Vaca"
+        given-names: "Dylan"
+    year: 2024
+  - type: article
+    title: "Vaca-Shor Resonance Analysis: Quantum-Spectral Correspondence"
+    authors:
+      - family-names: "Vaca"
+        given-names: "Dylan"
+    year: 2024
+  - type: article
+    title: "Foundations of VRA: Coherent Averaging with Regime Guarantees"
+    authors:
+      - family-names: "Vaca"
+        given-names: "Dylan"
+    year: 2025
+    notes: "FP#1-4 complete, 100+ pages"
