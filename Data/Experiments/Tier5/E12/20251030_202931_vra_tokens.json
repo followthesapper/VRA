@@ -1,0 +1,84 @@
+{
+  "parameters": {
+    "N": 997,
+    "a": 9,
+    "L": 4096,
+    "M": 16,
+    "token_dim": 32,
+    "batch_size": 100
+  },
+  "few_shot_results": [
+    {
+      "vra": {
+        "method": "logistic",
+        "accuracy": 0.8,
+        "f1_score": 0.85,
+        "samples_used": 10,
+        "token_type": "vra",
+        "n_shot": 10
+      },
+      "mfcc": {
+        "method": "logistic",
+        "accuracy": 0.8,
+        "f1_score": 0.85,
+        "samples_used": 10,
+        "token_type": "mfcc",
+        "n_shot": 10
+      }
+    },
+    {
+      "vra": {
+        "method": "logistic",
+        "accuracy": 0.84,
+        "f1_score": 0.85,
+        "samples_used": 25,
+        "token_type": "vra",
+        "n_shot": 25
+      },
+      "mfcc": {
+        "method": "logistic",
+        "accuracy": 0.84,
+        "f1_score": 0.85,
+        "samples_used": 25,
+        "token_type": "mfcc",
+        "n_shot": 25
+      }
+    },
+    {
+      "vra": {
+        "method": "logistic",
+        "accuracy": 0.84,
+        "f1_score": 0.85,
+        "samples_used": 50,
+        "token_type": "vra",
+        "n_shot": 50
+      },
+      "mfcc": {
+        "method": "logistic",
+        "accuracy": 0.84,
+        "f1_score": 0.85,
+        "samples_used": 50,
+        "token_type": "mfcc",
+        "n_shot": 50
+      }
+    },
+    {
+      "vra": {
+        "method": "logistic",
+        "accuracy": 0.85,
+        "f1_score": 0.85,
+        "samples_used": 100,
+        "token_type": "vra",
+        "n_shot": 100
+      },
+      "mfcc": {
+        "method": "logistic",
+        "accuracy": 0.85,
+        "f1_score": 0.85,
+        "samples_used": 100,
+        "token_type": "mfcc",
+        "n_shot": 100
+      }
+    }
+  ]
+}

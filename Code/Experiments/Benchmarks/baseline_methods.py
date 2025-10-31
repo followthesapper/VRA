@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "Core"))
 
 import numpy as np
 import time
-from vra_core import (
+from core import (
     multiplicative_order,
     compute_averaged_spectrum,
     compute_concentration,

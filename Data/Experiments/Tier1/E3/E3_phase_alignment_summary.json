@@ -1,0 +1,9 @@
+{
+  "mean_diff": 0.0,
+  "ci_95": [
+    0.0,
+    0.0
+  ],
+  "pass": false,
+  "criteria": "\u0394precision >= 0.08 and CI>0"
+}

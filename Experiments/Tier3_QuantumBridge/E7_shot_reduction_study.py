@@ -63,10 +63,17 @@ import matplotlib.pyplot as plt
 # Utilities: wrapped distances
 # ----------------------------
 
-def wrap01(x: np.ndarray) -> np.ndarray:
+def wrap01(x):
     """Wrap real values to [0,1)."""
     y = np.remainder(x, 1.0)
-    y[y < 0] += 1.0
+    # Handle both scalar and array inputs
+    if np.ndim(y) == 0:
+        # Scalar case
+        if y < 0:
+            y = y + 1.0
+    else:
+        # Array case
+        y[y < 0] += 1.0
     return y
 
 

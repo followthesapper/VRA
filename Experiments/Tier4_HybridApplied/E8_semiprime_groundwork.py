@@ -41,10 +41,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
 import time
+import sys
+
+# Setup path to VRA core
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "Code" / "VRA"))
 
 # Local imports
-from vra_core import compute_averaged_spectrum, compute_precision_recall, spectral_entropy
+from core import compute_averaged_spectrum, compute_precision_recall
 
+def spectral_entropy(mag2):
+    """Compute Shannon entropy of normalized spectrum."""
+    p = mag2 / (mag2.sum() + 1e-300)
+    p = p[p > 0]
+    return -np.sum(p * np.log2(p))
 
 def multiplicative_order(a, N):
     """Compute true multiplicative order of a mod N if coprime, else None."""
@@ -59,9 +68,8 @@ def multiplicative_order(a, N):
 def analyze_base(a, N, L=4096, zp=4, window='hann'):
     """Run VRA analysis for base a mod N."""
     start = time.time()
-    # Build modular exponential sequence
-    seq = np.array([pow(a, i, N) / N for i in range(L)], dtype=np.float64)
-    mag2 = compute_averaged_spectrum([seq], zp=zp, window=window)
+    # Use VRA's proper interface with single base
+    mag2 = compute_averaged_spectrum(N, bases=[a], x0=1, length=L, zp=zp, window=window)
     Lzp = L * zp
     entropy = spectral_entropy(mag2)
     concentration = float(np.max(mag2)) / float(np.sum(mag2))
@@ -83,7 +91,7 @@ def main():
     parser.add_argument("--bases", type=int, default=50, help="Number of random bases to test")
     parser.add_argument("--L", type=int, default=4096, help="Sequence length")
     parser.add_argument("--zp", type=int, default=4, help="Zero-padding factor")
-    parser.add_argument("--out", default="../../Data/Experiments/tier4/e8", help="Output directory")
+    parser.add_argument("--out", default="../../Data/Experiments/Tier4/E8", help="Output directory")
     args = parser.parse_args()
 
     out_dir = Path(args.out)
@@ -98,11 +106,12 @@ def main():
 
     results = []
     for a in bases:
-        r = multiplicative_order(a, N)
-        vra = analyze_base(a, N, L=args.L, zp=args.zp)
-        vra["true_order"] = r
-        vra["N"] = N
-        vra["phi_N"] = phi_N
+        r = multiplicative_order(int(a), int(N))
+        vra = analyze_base(int(a), int(N), L=args.L, zp=args.zp)
+        vra["true_order"] = int(r) if r is not None else None
+        vra["N"] = int(N)
+        vra["phi_N"] = int(phi_N)
+        vra["a"] = int(vra["a"])
         results.append(vra)
 
     out_json = out_dir / f"E8_semiprime_groundwork_N{N}.json"

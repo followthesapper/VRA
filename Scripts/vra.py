@@ -28,7 +28,7 @@ CODE_DIR = Path(__file__).parent / "Code" / "Core"
 sys.path.insert(0, str(CODE_DIR))
 
 try:
-    from vra_core import (
+    from core import (
         modular_sequence,
         phase_embed,
         apply_window,

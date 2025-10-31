@@ -26,11 +26,15 @@ from numpy.random import default_rng
 from typing import List, Dict
 
 # Local imports
-from vra_core import (
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "Code" / "VRA"))
+
+from core import (
     compute_averaged_spectrum,
     compute_precision_recall,
     multiplicative_order,
-    classify_snr_regime,
+    classify_regime,
+    validated_radius,
 )
 
 def bootstrap_ci(diff: np.ndarray, n_boot: int = 10000, alpha: float = 0.05):
@@ -40,28 +44,46 @@ def bootstrap_ci(diff: np.ndarray, n_boot: int = 10000, alpha: float = 0.05):
     low, high = np.percentile(means, [100 * alpha / 2, 100 * (1 - alpha / 2)])
     return (low, high)
 
-def run_case(N: int, a_list: List[int], L: int, zp: int, window: str) -> Dict:
+def expected_bins(r: int, Lzp: int):
+    """Generate all expected harmonic bin locations for order r."""
+    return [int(round(k * Lzp / r)) for k in range(1, r)]
+
+def run_case(N: int, a_list: List[int], r: int, L: int, zp: int, window: str) -> Dict:
     """Run one ablation case: aligned vs random vs adversarial bases."""
     M = len(a_list)
-    mag2_aligned = compute_averaged_spectrum(N, a_list, length=L, zp=zp, window=window)
-    aligned_metrics = compute_precision_recall(mag2_aligned, None)
+    Lzp = L * zp
+    R = validated_radius(Lzp)
+    hb = expected_bins(r, Lzp)
 
+    # Phase-aligned bases (powers of same base)
+    mag2_aligned = compute_averaged_spectrum(N, a_list, x0=1, length=L, zp=zp, window=window)
+    aligned_metrics = compute_precision_recall(mag2_aligned, hb, R)
+
+    # Random permutation of same bases
     rng = default_rng(42)
-    random_bases = rng.choice(a_list, size=M, replace=False)
-    mag2_random = compute_averaged_spectrum(N, random_bases, length=L, zp=zp, window=window)
-    random_metrics = compute_precision_recall(mag2_random, None)
+    random_bases = list(rng.permutation(a_list))
+    mag2_random = compute_averaged_spectrum(N, random_bases, x0=1, length=L, zp=zp, window=window)
+    random_metrics = compute_precision_recall(mag2_random, hb, R)
 
+    # Adversarial (reversed order)
     adversarial = a_list[::-1]
-    mag2_adv = compute_averaged_spectrum(N, adversarial, length=L, zp=zp, window=window)
-    adv_metrics = compute_precision_recall(mag2_adv, None)
+    mag2_adv = compute_averaged_spectrum(N, adversarial, x0=1, length=L, zp=zp, window=window)
+    adv_metrics = compute_precision_recall(mag2_adv, hb, R)
 
     return {
         "N": N,
+        "r": r,
         "L": L,
         "window": window,
         "precision_aligned": aligned_metrics["precision"],
+        "recall_aligned": aligned_metrics["recall"],
+        "f1_aligned": aligned_metrics["f1"],
         "precision_random": random_metrics["precision"],
+        "recall_random": random_metrics["recall"],
+        "f1_random": random_metrics["f1"],
         "precision_adv": adv_metrics["precision"],
+        "recall_adv": adv_metrics["recall"],
+        "f1_adv": adv_metrics["f1"],
     }
 
 def run_grid(out_dir: Path):
@@ -78,9 +100,10 @@ def run_grid(out_dir: Path):
                     r = multiplicative_order(a, N)
                     rho = r / N
                     if rho < 0.146:  # HIGH-SNR regime criterion
-                        a_list = [a ** i % N for i in range(1, 9)]
-                        res = run_case(N, a_list, L, zp, window)
-                        res.update({"r": r, "rho": rho})
+                        # Generate phase-aligned bases: a, a^2, a^3, ..., a^8
+                        a_list = [pow(a, i, N) for i in range(1, 9)]
+                        res = run_case(N, a_list, r, L, zp, window)
+                        res.update({"rho": rho})
                         all_rows.append(res)
                 except Exception:
                     continue
@@ -95,7 +118,7 @@ def run_grid(out_dir: Path):
     mean_diff = np.mean(diffs)
     ci = bootstrap_ci(diffs)
 
-    passed = mean_diff >= 0.08 and ci[0] > 0
+    passed = bool(mean_diff >= 0.08 and ci[0] > 0)
 
     summary = {
         "mean_diff": float(mean_diff),
@@ -111,7 +134,7 @@ def run_grid(out_dir: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="../../Data/Experiments/tier1/e3")
+    parser.add_argument("--out", default="../../Data/Experiments/Tier1/E3")
     args = parser.parse_args()
 
     out_dir = Path(args.out)

@@ -106,7 +106,7 @@ def run_e2_phase_alignment_test(quick: bool = False):
             exists = False
             for a in range(2, min(100, N)):
                 if np.gcd(a, N) == 1:
-                    from vra_core import multiplicative_order
+                    from core import multiplicative_order
                     if multiplicative_order(a, N) == candidate_r:
                         exists = True
                         break
@@ -186,7 +186,7 @@ def run_e3_robustness_test(quick: bool = False):
     # Test under Gaussian noise
     import json
     from compare_vra_rpt import evaluate_vra_vs_rpt_single, find_bases_with_order
-    from vra_core import modular_sequence, phase_embed, compute_averaged_spectrum, \
+    from core import modular_sequence, phase_embed, compute_averaged_spectrum, \
                           compute_concentration, compute_precision_recall, validated_radius
     from ramanujan_baseline import detect_period_rpt
 

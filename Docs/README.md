@@ -40,13 +40,36 @@ Complete formal theory and proofs:
 - **Regime_Map/** - Three-regime characterization
 - **Operating_Guide/** - Practical engineering handbook
 
+### [`experiments/`](experiments/)
+Experimental findings and validation:
+- **Tier1/** - E1-E3 theoretical foundations (√M scaling, phase coherence)
+- **Tier4/** - E9-E10 robustness testing
+- **Tier5/** - E11-E16 AI/ML integration (see `../Experiments/Tier5_AI_ML/TIER5_SUMMARY.md`)
+
 ## Quick Links
 
 **Main Documentation**: See [`../README.md`](../README.md) for project overview
 
+**Experimental Results**: See [`../Experiments/`](../Experiments/) for E1-E16 complete validation
+
+**Tier 5 AI/ML Summary**: See [`../Experiments/Tier5_AI_ML/TIER5_SUMMARY.md`](../Experiments/Tier5_AI_ML/TIER5_SUMMARY.md)
+
 **Formal Proofs**: See [`theory/`](theory/) for all mathematical proofs
 
 **Code**: See [`../Code/`](../Code/) for implementation
+
+## Recent Updates (October 2025)
+
+**Tier 5 Experiments Complete (E11-E16)**:
+- ✅ **√M Scaling Confirmed**: +3.0 dB per doubling (R² = 0.987)
+- ✅ **√L Scaling Validated**: +5.87 dB per doubling (R² = 0.999)
+- ✅ **Professional SNR**: 36-58 dB across applications
+- ✅ **ML Few-Shot**: 80% accuracy with 1 sample (synthetic data)
+- ✅ **GPU Acceleration**: 80,000 FFTs/60s on NVIDIA GB10
+- ⚠️ **Phase Incoherence**: R̄ = 0.137 (fundamental, optimization-resistant)
+- ❌ **Negative Results**: Phase learning (0.5% gain), coherence optimization (-0.9 dB)
+
+**Key Finding**: L-scaling is the primary optimization lever (reliable +6 dB/doubling), M-scaling limited by fundamental phase incoherence.
 
 **Data**: See [`../Data/`](../Data/) for experimental results
 

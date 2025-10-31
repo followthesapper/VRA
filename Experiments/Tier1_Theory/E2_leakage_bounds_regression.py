@@ -14,7 +14,7 @@ Assumptions
   • compute_averaged_spectrum, compute_precision_recall, validated_radius exist.
 
 Run
-  python3 E2_leakage_bounds_regression.py --out ../../Data/Experiments/tier1/e2
+  python3 E2_leakage_bounds_regression.py --out ../../Data/Experiments/Tier1/E2
 """
 import argparse, json, csv
 from pathlib import Path
@@ -23,9 +23,9 @@ import matplotlib.pyplot as plt
 import sys
 
 # Adjust for your repo layout
-sys.path += ["../../Code/Core"]
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "Code" / "VRA"))
 
-from vra_core import (
+from core import (
     multiplicative_order,
     compute_averaged_spectrum,
     compute_precision_recall,
@@ -40,8 +40,12 @@ MODULI = [997, 1009, 1013, 2017, 3001]
 
 
 def expected_bins(r: int, Lzp: int):
-    K = min(r, 100)
-    return [int(round(k * Lzp / r)) for k in range(1, K)]
+    """Generate all expected harmonic bin locations for order r.
+
+    Returns list of FFT bin indices corresponding to harmonics k*Lzp/r
+    for k = 1, 2, ..., r-1.
+    """
+    return [int(round(k * Lzp / r)) for k in range(1, r)]
 
 
 def find_orders(N: int, cap: int = 300):
@@ -124,10 +128,10 @@ def main(out_dir: str):
                 if len(bases) < max(1, M // 2):
                     continue
                 for win in WINDOWS:
-                    mag2 = compute_averaged_spectrum(N, bases, length=L, zp=4, window=win)
+                    mag2 = compute_averaged_spectrum(N, bases, x0=1, length=L, zp=4, window=win)
                     records = sweep_radius(mag2, r, Lzp, R_grid)
                     opt = fit_opt_radius(records)
-                    regime = classify_regime(r / N)
+                    regime, _ = classify_regime(N, r)
                     json_rows.append({
                         "N": N, "r": r, "rho": float(rho), "regime": regime,
                         "L": int(L), "window": win, "validated_R": int(R0),
@@ -194,6 +198,6 @@ def main(out_dir: str):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="../../Data/Experiments/tier1/e2")
+    ap.add_argument("--out", default="../../Data/Experiments/Tier1/E2")
     args = ap.parse_args()
     main(args.out)

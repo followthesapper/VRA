@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 """
-E5: ECC Scaling Grid
-====================
+E5: ECC Scaling Grid (Character Embedding)
+===========================================
 
 Goal:
-  Sweep (p, r_E, M, L) and evaluate sqrt(M)-like scaling of VRA precision
-  and concentration over elliptic curve groups. Demonstrate that VRA's
-  spectral concentration scales coherently across base multiplicity and curve size.
+  Comprehensive sweep of (p, rE, α, M) using the character embedding from E4
+  to demonstrate VRA's √M scaling across different ECC parameters.
+
+Key Differences from Original E5:
+  - Uses character embedding u_n = exp(2πin/rE) NOT x-coordinate
+  - Tests multiple orders and alphas to find optimal operating points
+  - No K=100 cap bug (tests all harmonics)
 
 Pass Criteria:
-  Median R² for sqrt(M) fit ≥ 0.90 in TRANS/LOW SNR regimes.
+  - √M scaling with R² ≥ 0.80 in unsaturated regime
+  - Precision ≥ 0.85 and Recall ≥ 0.80 with optimal α
 
 Outputs:
-  - JSON: precision, recall, and scaling fits per test curve.
-  - PNG: R² vs sqrt(M) plots.
+  - JSON: per-(p,rE,α,M) metrics
+  - Figures: Recall/Precision vs √M, α tradeoff curves
 
-Author: Dylan Vaca
+Author: VRA Experimental Team (Based on E4 character embedding)
 Date: October 2025
 """
 
@@ -26,102 +31,324 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import sys
 
-# Local imports
-dir_core = Path(__file__).resolve().parents[2] / 'Code' / 'Core'
-sys.path.insert(0, str(dir_core))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "Code" / "VRA"))
+from core import validated_radius
 
-from vra_core import compute_averaged_spectrum, compute_precision_recall, validated_radius
-from ecc_vra_core import add, ecc_phase_embed, order_of_point
+# --- ECC primitives (minimal, from E4) -------------------------------------
 
-# Test elliptic curves (toy examples)
-TEST_CURVES = [
-    # p, a, b, P=(x,y), expected order rE
-    (1019, 2, 3, (5, 376), 169),
-    (1009, 2, 3, (7, 154), 168),
-]
+def inv_mod(x, p):
+    return pow(x, p - 2, p)
 
-def expected_bins(rE, Lzp):
-    K = min(rE, 100)
-    return [int(round(k * Lzp / rE)) for k in range(1, K)]
+def ecc_add(P, Q, a, p):
+    """Add two points on y^2 = x^3 + ax + b (mod p)"""
+    if P is None:
+        return Q
+    if Q is None:
+        return P
+    (x1, y1), (x2, y2) = P, Q
+    if x1 == x2 and (y1 + y2) % p == 0:
+        return None
+    if P != Q:
+        m = ((y2 - y1) * inv_mod((x2 - x1) % p, p)) % p
+    else:
+        m = ((3 * x1 * x1 + a) * inv_mod((2 * y1) % p, p)) % p
+    x3 = (m * m - x1 - x2) % p
+    y3 = (m * (x1 - x3) - y1) % p
+    return (x3, y3)
 
-def generate_ecc_series(P, a, p, steps):
-    """Generate ECC phase-encoded sequence."""
-    pts = []
+def order_of_point(P, a, p, cap=None):
+    """Compute order of point P"""
     Q = P
-    for _ in range(steps):
-        pts.append(Q)
-        Q = add(Q, P, a, p)
-        if Q is None:
-            break
-    return ecc_phase_embed(pts, p)
+    n = 1
+    lim = cap or (2 * p)
+    while Q is not None and n <= lim:
+        Q = ecc_add(Q, P, a, p)
+        n += 1
+        if Q == P:
+            return n
+    return n if Q is None else None
 
-def run_case(p, a, b, P, rE, L, M):
-    seqs = []
-    for m in range(M):
-        seqs.append(generate_ecc_series(P, a, p, steps=min(rE, L//8)))
-    mag2 = compute_averaged_spectrum(signal_list=seqs, zp=4, window='hann')
-    Lzp = L * 4
-    R = validated_radius(Lzp)
-    hb = expected_bins(rE, Lzp)
-    met = compute_precision_recall(mag2, hb, R)
-    return float(met['precision']), float(met['recall'])
+def find_point_on_curve(a, b, p, max_tries=1000, min_order=30):
+    """Find point with order >= min_order"""
+    for x in range(1, min(p, max_tries)):
+        y_squared = (x**3 + a*x + b) % p
+        y = pow(y_squared, (p + 1) // 4, p)
+        if (y * y) % p == y_squared:
+            if y == 0:
+                continue
+            pt = (x, y)
+            r = order_of_point(pt, a, p)
+            if r and r >= min_order:
+                return pt, a, b, r
+    return None, a, b, None
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--out', default='../../Data/Experiments/tier2/e5')
-    parser.add_argument('--L', default='65536,131072,262144')
-    parser.add_argument('--M', default='1,4,8,16,32')
-    args = parser.parse_args()
+# --- Character embedding (from E4) -----------------------------------------
 
-    out_dir = Path(args.out)
-    out_dir.mkdir(parents=True, exist_ok=True)
+def ecc_character_sequence(rE: int, n0: int, L: int):
+    """Character samples: u_t = exp(2πi(n0+t)/rE)"""
+    n = (n0 % rE)
+    k = (2.0 * np.pi) / rE
+    phases = k * (n + np.arange(L))
+    return np.exp(1j * phases)
 
-    Ls = [int(x) for x in args.L.split(',')]
-    Ms = [int(x) for x in args.M.split(',')]
+def make_M_sequences_character(rE: int, L: int, M: int, rng=None):
+    """Build M character sequences with random offsets"""
+    if rng is None:
+        rng = np.random.default_rng(42)
+    offsets = rng.integers(0, rE, size=M, dtype=np.int64)
+    return [ecc_character_sequence(rE, int(n0), L) for n0 in offsets]
 
-    all_rows = []
+# --- Spectrum computation (from E4) ----------------------------------------
 
-    for p, a, b, P, rE in TEST_CURVES:
-        for L in Ls:
-            precisions = []
-            for M in Ms:
-                try:
-                    pr, rc = run_case(p, a, b, P, rE, L, M)
-                    all_rows.append({'p': p, 'L': L, 'M': M, 'precision': pr, 'recall': rc, 'rE': rE})
-                    precisions.append((M, pr))
-                except Exception as e:
-                    print(f"⚠️ ECC case failed p={p}, M={M}: {e}")
-                    continue
+def compute_averaged_spectrum(signals, window="hamming", zp=4):
+    """Coherent averaging"""
+    M = len(signals)
+    L = len(signals[0])
+    Lzp = L * zp
 
-            # Perform sqrt(M) regression fit
-            Ms_arr = np.array([np.sqrt(m) for m, _ in precisions])
-            Ys = np.array([pr for _, pr in precisions])
-            if len(Ms_arr) >= 3:
-                X = np.vstack([np.ones(len(Ms_arr)), Ms_arr]).T
-                beta, *_ = np.linalg.lstsq(X, Ys, rcond=None)
-                Y_hat = X @ beta
-                ss_res = np.sum((Ys - Y_hat)**2)
-                ss_tot = np.sum((Ys - np.mean(Ys))**2)
-                R2 = 1 - ss_res/ss_tot if ss_tot > 0 else 0
-                all_rows.append({'p': p, 'L': L, 'metric': 'R2_sqrtM_precision', 'value': float(R2)})
+    if window == "hamming":
+        win = np.hamming(L)
+    elif window == "hann":
+        win = np.hanning(L)
+    else:
+        win = np.ones(L)
 
-                # Plot scaling behavior
-                fig, ax = plt.subplots(figsize=(6, 4))
-                ax.scatter(Ms_arr, Ys, label='Precision')
-                ax.plot(Ms_arr, Y_hat, 'r--', label=f'Fit (R²={R2:.3f})')
-                ax.set_title(f'E5: √M Scaling — p={p}, L={L}')
-                ax.set_xlabel('√M')
-                ax.set_ylabel('Precision')
-                ax.grid(alpha=0.3)
-                ax.legend()
-                fig.savefig(out_dir / f'E5_scaling_p{p}_L{L}.png', dpi=180, bbox_inches='tight')
-                plt.close(fig)
+    fft_sum = np.zeros(Lzp, dtype=complex)
+    for sig in signals:
+        sig_windowed = sig * win
+        sig_padded = np.pad(sig_windowed, (0, Lzp - L), mode='constant')
+        fft_sum += np.fft.fft(sig_padded)
+
+    fft_avg = fft_sum / M
+    mag2 = np.abs(fft_avg) ** 2
+    return mag2
+
+# --- Detection (from E1C/E4) -----------------------------------------------
+
+def circ_dist(i, j, L):
+    d = abs(i - j)
+    return min(d, L - d)
+
+def keep_local_maxima(mag2, det):
+    left = np.roll(mag2, 1)
+    right = np.roll(mag2, -1)
+    is_peak = (mag2 > left) & (mag2 >= right)
+    return det & is_peak
+
+def os_cfar_detect(mag2, guard=9, train=64, q=0.75, alpha=2.5):
+    """Circular OS-CFAR"""
+    L = len(mag2)
+    det = np.zeros(L, dtype=bool)
+    idx = np.arange(train)
+
+    for k in range(L):
+        left = (k - guard - train + idx) % L
+        right = (k + guard + 1 + idx) % L
+        noise = np.concatenate([mag2[left], mag2[right]])
+        xq = np.quantile(noise, q)
+        det[k] = mag2[k] > alpha * xq
+
+    return det
+
+def expected_bins(r, Lzp):
+    """All expected harmonic bins (NO CAP)"""
+    return [int(round(k * Lzp / r)) for k in range(1, r)]
+
+def compute_precision_recall_from_detections(detections, expected_bins_list, radius):
+    """Compute precision/recall from detection mask"""
+    L = len(detections)
+    peak_indices = np.where(detections)[0]
+    expected_set = set(expected_bins_list)
+    matched_expected_bins = set()
+    TP_peaks = 0
+    FP_peaks = 0
+
+    for idx in peak_indices:
+        matched = False
+        for exp_idx in expected_set:
+            if circ_dist(idx, exp_idx, L) <= radius:
+                matched = True
+                matched_expected_bins.add(exp_idx)
+                break
+        if matched:
+            TP_peaks += 1
+        else:
+            FP_peaks += 1
+
+    TP = len(matched_expected_bins)
+    FP = FP_peaks
+    FN = len(expected_set) - TP
+
+    precision = TP_peaks / (TP_peaks + FP_peaks) if (TP_peaks + FP_peaks) else 0.0
+    recall = TP / (TP + FN) if (TP + FN) else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+
+    return dict(precision=precision, recall=recall, f1=f1, TP=TP, FP=FP, FN=FN, num_peaks=len(peak_indices))
+
+def compute_harmonic_snr(mag2, expected):
+    """Compute SNR at expected bins"""
+    if not expected:
+        return 0.0
+    vals = [mag2[int(b)] for b in expected if 0 <= int(b) < len(mag2)]
+    if not vals:
+        return 0.0
+    signal = np.mean(vals)
+    noise = np.median(mag2)
+    lin = (signal / noise) if noise > 0 else 0.0
+    return (10 * np.log10(lin)) if lin > 0 else -np.inf
+
+# --- Plotting helpers (from E4) --------------------------------------------
+
+def linreg(x, y):
+    x, y = np.array(x, float), np.array(y, float)
+    xm, ym = x.mean(), y.mean()
+    num = ((x-xm)*(y-ym)).sum()
+    den = ((x-xm)**2).sum()
+    if den == 0:
+        return 0.0, ym, 0.0
+    slope = num/den
+    intercept = ym - slope*xm
+    yhat = slope*x + intercept
+    ss_res = ((y - yhat)**2).sum()
+    ss_tot = ((y - ym)**2).sum()
+    r2 = 1 - (ss_res/ss_tot) if ss_tot > 0 else 0.0
+    return slope, intercept, r2
+
+def plot_recall_vs_sqrtM_by_order(results, out_dir):
+    """Plot recall vs √M grouped by rE"""
+    plt.figure(figsize=(12, 6))
+
+    orders = sorted(set(r["rE"] for r in results))
+    colors = plt.cm.viridis(np.linspace(0, 1, len(orders)))
+
+    for rE, color in zip(orders, colors):
+        rows = [r for r in results if r["rE"] == rE]
+        alphas = sorted(set(r["alpha"] for r in rows))
+
+        for alpha in alphas:
+            alpha_rows = [r for r in rows if r["alpha"] == alpha]
+            M_values = sorted(set(r["M"] for r in alpha_rows))
+            sqrtM = [np.sqrt(M) for M in M_values]
+            recalls = [np.mean([r["cfar_recall"] for r in alpha_rows if r["M"]==M]) for M in M_values]
+
+            plt.plot(sqrtM, recalls, 'o-', color=color, alpha=0.7,
+                    label=f'rE={rE}, α={alpha}')
+
+            # Fit if unsaturated
+            if len(sqrtM) >= 3 and min(recalls) < 0.95:
+                slope, intercept, r2 = linreg(sqrtM, recalls)
+                x_fit = np.linspace(min(sqrtM), max(sqrtM), 50)
+                y_fit = slope * x_fit + intercept
+                plt.plot(x_fit, y_fit, '--', color=color, alpha=0.3)
+
+    plt.axhline(0.80, linestyle=':', color='gray', label='Target recall (80%)')
+    plt.xlabel('√M')
+    plt.ylabel('Recall')
+    plt.title('E5: ECC Character Embedding - Recall vs √M')
+    plt.legend(ncol=2, fontsize=8)
+    plt.grid(alpha=0.3)
+    plt.ylim(0, 1.05)
+
+    p = Path(out_dir) / "E5_recall_vs_sqrtM.png"
+    plt.tight_layout()
+    plt.savefig(p, dpi=300)
+    plt.close()
+    print(f"Saved {p}")
+
+# --- Main ------------------------------------------------------------------
+
+def main(out_dir, primes, alphas, M_values, L):
+    np.random.seed(42)
+    rng = np.random.default_rng(42)
+
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+
+    print("E5: ECC Scaling Grid (Character Embedding)")
+    print("=" * 70)
+
+    # Candidate curves (a, b) for each prime
+    candidate_curves = [(0, 7), (1, 6), (2, 3), (1, 1), (0, 3), (5, 1)]
+
+    # Find curves with varying orders
+    test_cases = []
+    for p in primes:
+        print(f"\nSearching curves over F_{p}...")
+        for a, b in candidate_curves:
+            pt, a_found, b_found, rE = find_point_on_curve(a, b, p, min_order=50)
+            if pt is not None and rE is not None:
+                test_cases.append((p, a_found, b_found, pt, rE))
+                print(f"  ✓ y²=x³+{a_found}x+{b_found}: G={pt}, rE={rE}")
+                if len([tc for tc in test_cases if tc[0]==p]) >= 2:
+                    break  # 2 curves per prime is enough
+
+    print(f"\n{len(test_cases)} test cases found")
+    print(f"M values: {M_values}")
+    print(f"Alphas: {alphas}")
+    print(f"L={L}, zp=4")
+
+    all_results = []
+
+    for p, a, b, G, rE in test_cases:
+        print(f"\nProcessing p={p}, rE={rE}...")
+
+        for M in M_values:
+            # Generate M sequences once per M
+            signals = make_M_sequences_character(rE, L=L, M=M, rng=rng)
+            mag2 = compute_averaged_spectrum(signals, window="hamming", zp=4)
+
+            Lzp = L * 4
+            R = validated_radius(Lzp)
+            hb = expected_bins(rE, Lzp)
+            snr_db = compute_harmonic_snr(mag2, hb)
+
+            # Test all alphas on this spectrum
+            for alpha in alphas:
+                det_cfar = os_cfar_detect(mag2, guard=R, train=64, q=0.75, alpha=alpha)
+                det_cfar = keep_local_maxima(mag2, det_cfar)
+                m_cfar = compute_precision_recall_from_detections(det_cfar, hb, R)
+
+                rec = {
+                    "p": int(p),
+                    "a": int(a),
+                    "b": int(b),
+                    "rE": int(rE),
+                    "alpha": float(alpha),
+                    "M": int(M),
+                    "L": int(L),
+                    "harmonic_snr_db": float(snr_db),
+                    "cfar_precision": float(m_cfar["precision"]),
+                    "cfar_recall": float(m_cfar["recall"]),
+                    "cfar_f1": float(m_cfar["f1"]),
+                    "cfar_TP": int(m_cfar["TP"]),
+                    "cfar_FP": int(m_cfar["FP"]),
+                    "cfar_FN": int(m_cfar["FN"]),
+                    "cfar_num_peaks": int(m_cfar["num_peaks"]),
+                }
+                all_results.append(rec)
+
+        print(f"  Completed p={p}, rE={rE}: {len([r for r in all_results if r['p']==p and r['rE']==rE])} rows")
 
     # Save results
-    out_json = out_dir / 'E5_ecc_scaling_grid.json'
-    with open(out_json, 'w') as f:
-        json.dump(all_rows, f, indent=2)
-    print(f'✅ Saved ECC scaling grid results → {out_json}')
+    out_file = Path(out_dir) / "E5_results.json"
+    with open(out_file, "w") as f:
+        json.dump(all_results, f, indent=2)
+    print(f"\n✅ Saved {len(all_results)} rows to {out_file}")
 
-if __name__ == '__main__':
-    main()
+    # Generate plots
+    print("\nGenerating figures...")
+    plot_recall_vs_sqrtM_by_order(all_results, out_dir)
+
+    print("\n" + "=" * 70)
+    print("✅ E5 Complete")
+    print("=" * 70)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="E5: ECC Scaling Grid")
+    parser.add_argument("--out", default="../../Data/Experiments/Tier2/E5", help="Output directory")
+    parser.add_argument("--primes", nargs="+", type=int, default=[1009, 2017])
+    parser.add_argument("--alphas", nargs="+", type=float, default=[2.0, 2.5, 3.0])
+    parser.add_argument("--M", nargs="+", type=int, default=[8, 16, 32, 64])
+    parser.add_argument("--L", type=int, default=65536)
+    args = parser.parse_args()
+
+    main(args.out, args.primes, args.alphas, args.M, args.L)

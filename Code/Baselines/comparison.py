@@ -27,7 +27,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / "Core"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "Robustness"))
 
-from vra_core import (
+from core import (
     multiplicative_order,
     modular_sequence,
     phase_embed,

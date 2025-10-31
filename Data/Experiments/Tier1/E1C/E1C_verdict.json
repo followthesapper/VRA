@@ -1,0 +1,21 @@
+{
+  "overall_pass": false,
+  "criterion1": {
+    "description": "Recall (LOW_SNR, M=64) \u2265 0.60",
+    "pass": true,
+    "value": 1.0,
+    "target": 0.6
+  },
+  "criterion2": {
+    "description": "\u221aM correlation R\u00b2 \u2265 0.8 (positive slope)",
+    "pass": false,
+    "r_squared": 0.0,
+    "slope": 0.0,
+    "target_r2": 0.8
+  },
+  "criterion3": {
+    "description": "Harmonic SNR increases with \u221aM",
+    "pass": false,
+    "snr_slope": -0.4788585286337899
+  }
+}

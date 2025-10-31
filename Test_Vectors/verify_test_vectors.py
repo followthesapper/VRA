@@ -25,7 +25,7 @@ import argparse
 from datetime import datetime
 
 try:
-    from vra_core import (
+    from core import (
         compute_averaged_spectrum,
         compute_concentration,
         compute_precision_recall,

@@ -2,9 +2,9 @@
 import json, argparse, numpy as np
 from pathlib import Path
 import sys
-sys.path += ["../../Code/Core"]  # adjust if needed
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "Code" / "VRA"))  # adjust if needed
 
-from vra_core import (compute_averaged_spectrum, compute_precision_recall,
+from core import (compute_averaged_spectrum, compute_precision_recall,
                       validated_radius, multiplicative_order, classify_regime)
 
 def generate_cases():
@@ -23,8 +23,12 @@ def generate_cases():
                 except: pass
 
 def expected_bins(r,Lzp):
-    K = min(r,100)
-    return [ (k*Lzp)//r for k in range(1,K) ]
+    """Generate all expected harmonic bin locations for order r.
+
+    Returns list of FFT bin indices corresponding to harmonics k*Lzp/r
+    for k = 1, 2, ..., r-1.
+    """
+    return [ (k*Lzp)//r for k in range(1, r) ]
 
 def run_case(N,r,L,M):
     # pick M bases with order r (simple scan; use your robust selector if available)
@@ -39,7 +43,7 @@ def run_case(N,r,L,M):
     if len(bases)<max(1,M//2):  # tolerate scarcity
         return None
 
-    mag2 = compute_averaged_spectrum(N,bases,length=L, zp=4, window="hann")
+    mag2 = compute_averaged_spectrum(N,bases,x0=1,length=L, zp=4, window="hann")
     Lzp = L*4
     R = validated_radius(Lzp)
     hb = expected_bins(r,Lzp)
@@ -59,6 +63,6 @@ def main(out):
 
 if __name__=="__main__":
     ap=argparse.ArgumentParser()
-    ap.add_argument("--out",default="../../Data/Experiments/tier1/e1")
+    ap.add_argument("--out",default="../../Data/Experiments/Tier1/E1")
     args=ap.parse_args()
     main(args.out)

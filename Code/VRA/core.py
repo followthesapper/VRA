@@ -215,6 +215,9 @@ def compute_concentration(mag2):
 def compute_precision_recall(mag2, expected_bins, radius):
     """Compute precision and recall metrics.
 
+    Precision = (# detected peaks matching expected bins) / (# total detected peaks)
+    Recall = (# expected bins with matching peaks) / (# total expected bins)
+
     Parameters:
         mag2 (numpy.ndarray): Power spectrum
         expected_bins (list): Expected harmonic bin locations
@@ -234,25 +237,35 @@ def compute_precision_recall(mag2, expected_bins, radius):
     # Expected peak set
     expected_set = set(expected_bins)
 
-    # Check true positives
-    TP = 0
-    FP = 0
+    # Track which expected bins were matched and which peaks are TP
+    matched_expected_bins = set()
+    TP_peaks = 0
+    FP_peaks = 0
+
     for idx in peak_indices:
         # Check if within radius of any expected peak
-        is_TP = any(
-            abs(idx - exp_idx) <= radius or
-            abs(idx - (L - exp_idx)) <= radius or
-            abs((L - idx) - exp_idx) <= radius
-            for exp_idx in expected_set
-        )
-        if is_TP:
-            TP += 1
-        else:
-            FP += 1
+        matched_bins = [
+            exp_idx for exp_idx in expected_set
+            if (abs(idx - exp_idx) <= radius or
+                abs(idx - (L - exp_idx)) <= radius or
+                abs((L - idx) - exp_idx) <= radius)
+        ]
 
+        if matched_bins:
+            TP_peaks += 1
+            # Add all matched bins to the set of matched expected bins
+            matched_expected_bins.update(matched_bins)
+        else:
+            FP_peaks += 1
+
+    # TP = number of expected bins that were successfully detected
+    TP = len(matched_expected_bins)
+    # FP = number of detected peaks that don't match expected bins
+    FP = FP_peaks
+    # FN = number of expected bins that were not detected
     FN = len(expected_set) - TP
 
-    precision = TP / (TP + FP) if (TP + FP) > 0 else 0.0
+    precision = TP_peaks / (TP_peaks + FP_peaks) if (TP_peaks + FP_peaks) > 0 else 0.0
     recall = TP / (TP + FN) if (TP + FN) > 0 else 0.0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
 

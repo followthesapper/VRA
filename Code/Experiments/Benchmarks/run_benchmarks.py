@@ -31,7 +31,7 @@ from baseline_methods import (
     BabyStepGiantStep,
     VRACoherentAveraging
 )
-from vra_core import multiplicative_order
+from core import multiplicative_order
 
 
 def find_bases_with_order(N, r, max_bases=32):
