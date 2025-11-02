@@ -7,9 +7,26 @@ numpy==2.3.4
 # Visualization (optional but recommended for figure generation)
 matplotlib>=3.7.0
 
+# Graph analysis and network visualization
+networkx>=3.0
+plotly>=5.18.0
+
+# PDF text extraction (for novelty analysis)
+# Note: Also requires system package 'poppler-utils' for pdftotext command
+# Install on Ubuntu/Debian with: sudo apt-get install poppler-utils
+
+# Web requests for literature search APIs
+requests>=2.31.0
+
+# Optional: Interactive 2D graph visualization
+# pyvis>=0.3.2
+
 # Standard library packages (included with Python 3.8+)
 # - argparse
 # - json
 # - sys
 # - pathlib
 # - datetime
+# - subprocess
+# - re
+# - collections

@@ -1,0 +1,161 @@
+# VRA Mathematical Core - Focused Search Queries
+# Based on vra_complete_paper.pdf and VRA_SPECTRAL_FRAMEWORK.md
+# Generated: 2025-10-31
+
+## Core Mathematical Concepts to Search
+
+### 1. Phase Embedding of Modular Sequences
+"complex phase embedding modular arithmetic sequences"
+"unit circle representation modular exponentiation"
+"exponential map finite group elements"
+"phase angle modular residues multiplicative group"
+"complex embedding cyclic group elements"
+"angular representation modular sequences"
+
+### 2. Coherent Averaging in Spectral Domain
+"coherent averaging complex spectra before magnitude"
+"phase-aligned spectral averaging Fourier"
+"constructive interference classical Fourier transform"
+"coherent sum discrete Fourier transform"
+"amplitude averaging versus power averaging FFT"
+"phase-preserving spectral superposition"
+
+### 3. Multiplicative Order Detection via Spectral Peaks
+"multiplicative order spectral peaks harmonic structure"
+"subgroup order Fourier spectrum finite field"
+"period detection multiplicative group Fourier"
+"spectral method order finding cyclic group"
+"harmonic peaks multiplicative order modulo"
+"Fourier transform multiplicative group structure"
+
+### 4. Harmonic Bin Structure (k·L/r)
+"harmonic bin spacing periodic sequences"
+"submultiple frequencies periodic structure"
+"harmonic analysis multiplicative periodicity"
+"frequency bins multiples fundamental period"
+"spectral harmonics subgroup order"
+
+### 5. Phase Coherence Across Multiple Bases
+"phase alignment multiple bases same order"
+"coherence multiple sequences cyclic group"
+"phase correlation same-order elements"
+"constructive interference same subgroup order"
+"phase synchronization modular sequences"
+
+### 6. √M Scaling vs M² Scaling
+"square root M averaging signal processing"
+"coherent versus incoherent averaging SNR"
+"phase randomness limits averaging gain"
+"constructive interference scaling law"
+"√N scaling coherent detection"
+
+### 7. Regime-Dependent Spectral Behavior (ρ = r/N)
+"order-to-modulus ratio spectral properties"
+"period length modulus ratio detection"
+"regime transitions multiplicative order"
+"small order large modulus spectral"
+
+### 8. Classical-Quantum Spectral Correspondence
+"classical Fourier quantum Fourier correspondence"
+"classical analogue quantum interference"
+"discrete Fourier transform quantum Fourier transform comparison"
+"classical period finding spectral method"
+"Shor algorithm classical variant"
+"classical simulation quantum period finding"
+
+### 9. Group Character Embeddings
+"character embedding finite abelian group"
+"group characters Fourier analysis"
+"character sums multiplicative group"
+"Pontryagin duality finite group"
+"harmonic analysis finite cyclic group"
+
+### 10. Spectral Order Equivalence
+"spectral peaks subgroup order correspondence"
+"Fourier spectrum group structure"
+"periodicity detection finite group spectral"
+"order detection Fourier domain"
+
+### 11. Ramanujan Sums and Alternative Bases
+"Ramanujan sums multiplicative order"
+"Ramanujan periodicity transform spectral"
+"number-theoretic transform period detection"
+"arithmetic function Fourier analysis"
+
+### 12. Phase Coherence Metrics
+"resultant length circular statistics"
+"phase locking value mean resultant vector"
+"phase coherence measure circular data"
+"von Mises circular dispersion"
+"coherence coefficient complex sequences"
+
+### 13. Windowing and Spectral Leakage
+"Hann window modular sequences"
+"spectral leakage periodic signals"
+"window function Fourier harmonics"
+"zero-padding frequency resolution"
+
+### 14. CFAR Applied to Harmonic Detection
+"constant false alarm rate harmonic peaks"
+"adaptive threshold harmonic detection"
+"guard cells harmonic bin detection"
+"statistical detection spectral harmonics"
+
+### 15. Validated Radius Rule (R = 0.5·log₂(N_zp))
+"harmonic bin width validation"
+"frequency resolution zero-padding"
+"main lobe width discrete Fourier"
+"spectral peak tolerance window"
+
+### 16. Concentration Metrics
+"spectral energy concentration ratio"
+"top-k peaks spectral power"
+"spectral entropy periodic signals"
+"energy localization frequency domain"
+
+### 17. Precision-Recall for Spectral Detection
+"true positive harmonic detection"
+"precision recall spectral peaks"
+"harmonic detection accuracy metrics"
+
+### 18. Bootstrap and Permutation Statistical Validation
+"bootstrap confidence intervals spectral method comparison"
+"permutation test spectral detection"
+"non-parametric statistical validation signal processing"
+
+### 19. Additive vs Multiplicative Spectral Structure
+"additive periodicity versus multiplicative order"
+"integer period multiplicative group period"
+"cyclic structure additive multiplicative"
+
+### 20. Classical Spectral Complexity
+"computational complexity spectral order finding"
+"FFT-based period detection complexity"
+"classical spectral versus quantum complexity"
+
+## Rephrased/Contextual Queries
+
+### Phase Embedding Context
+"complex exponential representation residue classes"
+"phase trajectory modular iteration"
+"Argand diagram modular arithmetic"
+
+### Coherent Averaging Context
+"signal-to-noise improvement coherent integration"
+"phase-locked averaging versus averaging magnitude"
+"coherent gain partially correlated signals"
+
+### Multiplicative Order Context
+"smallest exponent congruence one spectral"
+"order element finite field Fourier"
+"period multiplicative map spectral analysis"
+
+### Quantum-Classical Bridge Context
+"classical interference pattern Fourier domain"
+"quantum-inspired classical algorithm"
+"dequantization period finding"
+
+### Spectral-Algebraic Correspondence
+"Fourier analysis group algebra"
+"spectral representation group homomorphism"
+"frequency domain group structure"

@@ -1,0 +1,25 @@
+Paper_ID,Title,Source,Has_Multiplicative_Order,Has_Spectral_Method,Has_Phase_Embedding,Has_Multi_Base_Averaging,Has_Harmonic_Detection,Has_Same_Order_Bases,Has_Sqrt_M_Scaling,Has_Regime_Mapping,Overlap_Score_0_to_5,VRA_Features_Present,Notes,Review_Status
+# Instructions:
+# 1. Open each PDF and scan for VRA's mathematical features
+# 2. Mark Y/N for each feature column
+# 3. Overlap_Score: 0=no overlap, 1-2=superficial, 3-4=partial, 5=FULL (would invalidate novelty)
+# 4. VRA_Features_Present: Count how many features are present
+# 5. Notes: Brief comparison to VRA
+# 6. Review_Status: Not_Started/In_Progress/Complete
+#
+# VRA's Core Features to Check:
+# - Multiplicative Order: Is the paper detecting ord_N(a) = r?
+# - Spectral Method: Using FFT/Fourier for detection?
+# - Phase Embedding: Mapping to complex exponentials u = exp(2πi·x/N)?
+# - Multi-Base Averaging: Averaging across multiple bases?
+# - Harmonic Detection: Looking at bins k·L/r?
+# - Same-Order Bases: Selecting bases where all ord(a_i) = r?
+# - √M Scaling: Validating √M SNR improvement?
+# - Regime Mapping: Performance vs ρ = r/N?
+#
+# CRITICAL: If any paper has 5+ features (Overlap_Score ≥ 5), FLAG FOR IMMEDIATE REVIEW
+#
+# Example entries:
+001,On Multiplicative Order Detection,arXiv,Y,N,N,N,N,N,N,N,1,1,Uses algebraic method not spectral,Complete
+002,Fourier Methods for Periodic Signals,IEEE,N,Y,N,N,Y,N,N,N,2,2,Generic FFT for additive periods,Complete
+003,Ramanujan Periodicity Transform,IEEE,N,Y,N,N,Y,N,N,N,2,2,RPT - already compared,Complete

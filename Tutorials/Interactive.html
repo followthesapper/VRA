@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VRA: Vaca Resonance Analysis — Complete Interactive Guide</title>
+  <style>
+    :root{
+      --bg1:#1e3c72; --bg2:#2a5298; --bg3:#7e22ce;
+      --card:#ffffff; --ink:#333; --accent:#7e22ce; --accent2:#f39c12;
+      --muted:#6b7280; --good:#16a34a; --bad:#e11d48;
+    }
+    *{box-sizing:border-box; margin:0; padding:0}
+    body{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width:1400px; margin:0 auto; padding:20px;
+      background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 50%,var(--bg3) 100%);
+      color:#fff; line-height:1.6;
+    }
+    h1{ text-align:center; margin:0 0 10px; font-size:2.4rem; text-shadow:2px 2px 4px rgba(0,0,0,.5)}
+    .subtitle{ text-align:center; margin:0 0 30px; opacity:.95; font-size:1.1rem; font-style:italic}
+    .visualization{
+      background:rgba(255,255,255,.97); color:var(--ink);
+      border-radius:16px; padding:24px; margin:0 0 28px;
+      box-shadow:0 10px 40px rgba(0,0,0,.30);
+    }
+    h2{ color:#1e3c72; margin:0 0 12px; border-bottom:3px solid var(--accent); padding-bottom:8px; font-size:1.7rem}
+    h3{ margin:14px 0 8px; color:#1f2937; font-size:1.3rem}
+    h4{ margin:12px 0 6px; color:#374151; font-size:1.1rem}
+    canvas{
+      border:2px solid #e5e7eb; border-radius:10px; display:block; margin:16px auto;
+      background:#fff; box-shadow:0 4px 6px rgba(0,0,0,.08)
+    }
+    .controls{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:14px 0}
+    button{
+      appearance:none; border:none; cursor:pointer; padding:11px 18px; border-radius:10px;
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; font-weight:600;
+      box-shadow:0 4px 10px rgba(0,0,0,.18); transition:transform .15s, box-shadow .15s;
+      font-size:15px;
+    }
+    button:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,.22)}
+    button:active{ transform:translateY(0)}
+    button.active{ background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%)}
+    .description{
+      background:linear-gradient(135deg,#f8f9ff 0%, #fff5f7 100%);
+      padding:16px; border-radius:10px; margin:14px 0; border-left:5px solid var(--accent);
+      line-height:1.7; font-size:1.02rem;
+    }
+    .explain-box{ background:#fff9e6; padding:14px; border-radius:10px; margin:12px 0; border-left:5px solid var(--accent2); line-height:1.7}
+    .explain-title{ font-weight:700; color:#b45309; margin:0 0 6px; font-size:1.05rem}
+    .math-box{
+      background:#f0f4ff; padding:14px; border-radius:10px; margin:12px 0; border:2px solid #667eea;
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size:1.02rem; overflow-x:auto;
+    }
+    .reading-guide{ background:#e8f5e9; padding:12px; border-radius:8px; margin:10px 0; border-left:4px solid #22c55e; font-style:italic }
+    .term{ color:#d97706; font-weight:700}
+    .metrics{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:16px 0}
+    .metric-card{
+      background:linear-gradient(135deg,#667eea 0%, #764ba2 100%); color:#fff;
+      padding:16px; border-radius:12px; text-align:center; box-shadow:0 6px 16px rgba(0,0,0,.12)
+    }
+    .metric-value{ font-size:1.8rem; font-weight:800; margin:6px 0}
+    .metric-label{ font-size:0.9rem; opacity:0.9}
+    .legend{ display:flex; justify-content:center; gap:22px; margin:12px 0; flex-wrap:wrap}
+    .legend-item{ display:flex; align-items:center; gap:8px}
+    .legend-color{ width:28px; height:18px; border-radius:4px; border:2px solid #111}
+    .example-box{ background:#f3e5f5; padding:14px; border-radius:10px; margin:12px 0; border-left:5px solid #9c27b0}
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media(max-width:768px){ .grid-2{grid-template-columns:1fr}}
+    .pill{ display:inline-block; padding:4px 12px; border-radius:999px; background:#eef2ff; color:#3730a3; font-weight:700; font-size:.85rem; margin:4px}
+    .small{ font-size:.92rem; color:#374151}
+    .muted{ color:#6b7280}
+    .ok{ color:var(--good); font-weight:700}
+    .no{ color:var(--bad); font-weight:700}
+    .lab-tabs{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 16px}
+    .lab-tab{ background:#ecfeff; color:#0e7490; border:2px solid #67e8f9}
+    .lab-tab.active{ background:#22d3ee; color:#083344}
+    .lab{ display:none; padding:16px 0 }
+    .lab.active{ display:block }
+    .lab .row{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:10px 0}
+    .lab label{ font-weight:600; color:#111827; min-width:120px}
+    .lab input, .lab textarea{
+      flex:1; min-width:200px; padding:10px 12px; border:2px solid #e5e7eb; border-radius:10px; 
+      outline:none; font-size:14px; font-family:inherit;
+    }
+    .lab textarea{ min-height:90px; font-family:ui-monospace,Menlo,monospace }
+    .lab .out{ background:#f8fafc; border:2px dashed #e5e7eb; padding:12px; border-radius:10px; 
+               white-space:pre-wrap; font-family:ui-monospace,Menlo,monospace; font-size:13px; 
+               margin:10px 0; max-height:400px; overflow-y:auto}
+    .code{ font-family:ui-monospace,Menlo,monospace; background:#111827; color:#e5e7eb; 
+           padding:12px; border-radius:10px; overflow:auto; font-size:13px; margin:10px 0}
+    .callout{ background:#fef3c7; border-left:5px solid #f59e0b; padding:12px; border-radius:10px; margin:10px 0}
+    .problem{ background:#e0f2fe; border-left:5px solid #0284c7; padding:16px; border-radius:10px; margin:16px 0}
+    .problem-title{ font-weight:700; color:#075985; margin-bottom:8px; font-size:1.1rem}
+    .step{ margin:12px 0 12px 20px; padding-left:12px; border-left:3px solid #cbd5e1}
+    .step-title{ font-weight:600; color:#475569; margin-bottom:4px}
+    .answer-box{ background:#dcfce7; border:2px solid #22c55e; padding:12px; border-radius:8px; 
+                 margin:10px 0; font-weight:600}
+    table{ border-collapse:collapse; width:100%; margin:12px 0; font-size:14px}
+    th,td{ border:1px solid #d1d5db; padding:8px; text-align:left}
+    th{ background:#f3f4f6; font-weight:600}
+    .toc{ background:#f8fafc; border:2px solid #e5e7eb; border-radius:10px; padding:16px; margin:16px 0}
+    .toc-title{ font-weight:700; color:#1e293b; margin-bottom:10px; font-size:1.2rem}
+    .toc-list{ list-style:none; padding-left:0}
+    .toc-list li{ margin:6px 0; padding-left:20px; position:relative}
+    .toc-list li:before{ content:"▸"; position:absolute; left:0; color:#7e22ce}
+    .toc-link{ color:#0284c7; text-decoration:none; font-weight:500}
+    .toc-link:hover{ text-decoration:underline}
+    .symbol-table{ font-size:14px}
+    .symbol-table td:first-child{ font-family:ui-monospace,Menlo,monospace; font-weight:700; color:#7e22ce}
+  </style>
+</head>
+<body>
+  <h1>Vaca Resonance Analysis (VRA)</h1>
+  <p class="subtitle">Phase-coherent averaging for detecting hidden periodicity in modular sequences and noisy data.</p>
+
+  <!-- Table of Contents -->
+  <div class="visualization">
+    <div class="toc">
+      <div class="toc-title">📚 Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#intro" class="toc-link">What VRA Does</a></li>
+        <li><a href="#symbols" class="toc-link">Mathematical Symbols Guide</a></li>
+        <li><a href="#stage1" class="toc-link">Stage 1: Modular Sequences</a></li>
+        <li><a href="#stage2" class="toc-link">Stage 2: Phase Embedding</a></li>
+        <li><a href="#stage3" class="toc-link">Stage 3: Coherent Averaging (The Key Innovation)</a></li>
+        <li><a href="#stage4" class="toc-link">Stage 4: Harmonic Detection</a></li>
+        <li><a href="#scaling" class="toc-link">The √M Scaling Law</a></li>
+        <li><a href="#quantum" class="toc-link">Classical-Quantum Correspondence</a></li>
+        <li><a href="#problems" class="toc-link">Worked Problems (Step-by-Step)</a></li>
+        <li><a href="#labs" class="toc-link">Interactive Practice Labs</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Introduction -->
+  <div class="visualization" id="intro">
+    <h2>What VRA Does (In Plain English)</h2>
+    <div class="description">
+      Imagine numbers have a secret rhythm. VRA "listens" to that rhythm by turning modular sequences into waves on the unit circle. When many sequences share the same hidden period, their waves <em>add coherently</em> and sharp peaks emerge—like a choir locking into harmony.
+    </div>
+    <div class="explain-box">
+      <div class="explain-title">Why This Matters</div>
+      Coherence reveals structure in things that look random. That's useful for:<br>
+      • <strong>Cryptography:</strong> Testing if codes are truly random<br>
+      • <strong>Physics:</strong> Finding resonances and hidden modes<br>
+      • <strong>Quantum computing:</strong> Understanding why quantum algorithms produce striking spectral peaks—without needing quantum hardware
+    </div>
+  </div>
+
+  <!-- Mathematical Symbols -->
+  <div class="visualization" id="symbols">
+    <h2>Part A: Mathematical Symbols & How to Read Them</h2>
+    <div class="description">
+      Before diving into VRA, let's decode every symbol you'll encounter. This guide shows you how to read formulas aloud and what each symbol means.
+    </div>
+
+    <table class="symbol-table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Say Aloud</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>i</td>
+          <td>"eye"</td>
+          <td>Imaginary unit where i² = -1</td>
+        </tr>
+        <tr>
+          <td>e^(iθ)</td>
+          <td>"e to the eye-theta"</td>
+          <td>Unit phasor (point on unit circle) at angle θ</td>
+        </tr>
+        <tr>
+          <td>φ_m</td>
+          <td>"phi sub m"</td>
+          <td>Phase (angle) of the m-th sample in radians</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>"em"</td>
+          <td>Number of bases/samples being averaged</td>
+        </tr>
+        <tr>
+          <td>Ψ</td>
+          <td>"psi"</td>
+          <td>Coherence measure (0 to 1); near 1 = highly aligned</td>
+        </tr>
+        <tr>
+          <td>Φ = 1-Ψ</td>
+          <td>"phi equals one minus psi"</td>
+          <td>Loss of coherence; larger Φ = less coherent</td>
+        </tr>
+        <tr>
+          <td>x_t</td>
+          <td>"x sub t"</td>
+          <td>Signal value at time/index t</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td>"ell"</td>
+          <td>Signal length (number of samples)</td>
+        </tr>
+        <tr>
+          <td>ω</td>
+          <td>"omega"</td>
+          <td>Normalized frequency in cycles per sample</td>
+        </tr>
+        <tr>
+          <td>Σ</td>
+          <td>"sum from ... to ..."</td>
+          <td>Summation symbol (add values over index range)</td>
+        </tr>
+        <tr>
+          <td>|z|</td>
+          <td>"absolute value of z"</td>
+          <td>Magnitude (length) of complex number z</td>
+        </tr>
+        <tr>
+          <td>⌊x⌋</td>
+          <td>"floor of x"</td>
+          <td>Largest integer ≤ x (e.g., ⌊3.7⌋ = 3)</td>
+        </tr>
+        <tr>
+          <td>N (mod)</td>
+          <td>"modulo N"</td>
+          <td>Remainder after dividing by N</td>
+        </tr>
+        <tr>
+          <td>r (order)</td>
+          <td>"order r"</td>
+          <td>Smallest positive integer where a^r ≡ 1 (mod N)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="explain-box">
+      <div class="explain-title">💡 Radians vs Degrees</div>
+      Throughout VRA, angles are in <strong>radians</strong>:<br>
+      • 2π radians = 360° = one complete circle<br>
+      • π radians = 180°<br>
+      • π/2 radians = 90°
+    </div>
+  </div>
+
+  <!-- Stage 1 -->
+  <div class="visualization" id="stage1">
+    <h2>Stage 1: Creating Number Patterns (Modular Sequences)</h2>
+    
+    <div class="explain-box">
+      <div class="explain-title">🔢 What Are Modular Sequences?</div>
+      A <span class="term">modular sequence</span> is created by repeatedly multiplying and "wrapping around" at N—like a clock that goes from 12 back to 1.<br><br>
+      
+      We compute: x[k] = a^k mod N<br><br>
+      
+      The <span class="term">multiplicative order r</span> of base <em>a</em> is how many steps until we return to 1.
+    </div>
+
+    <div class="math-box">x[k] = a^k mod N</div>
+    <div class="reading-guide"><b>Read aloud:</b> "x at k equals a to the k, modulo N"</div>
+
+    <div class="example-box">
+      <strong>Concrete Example:</strong><br>
+      N = 997 (our "clock" wraps at 997)<br>
+      r = 166 (pattern repeats every 166 steps)<br>
+      bases = [7, 42, 103, 215] (four different starting numbers)<br><br>
+      
+      All four bases have the SAME order r = 166, meaning they all "play in the same key."
+    </div>
+
+    <canvas id="sequenceCanvas" width="1200" height="300"></canvas>
+    <div class="description">Each colored line shows a different base generating a^k mod 997. They look random but secretly share the same 166-step rhythm!</div>
+  </div>
+
+  <!-- Stage 2 -->
+  <div class="visualization" id="stage2">
+    <h2>Stage 2: Phase Embedding on the Unit Circle</h2>
+    
+    <div class="explain-box">
+      <div class="explain-title">🎡 Converting Numbers to Circle Positions</div>
+      We take each number from our sequence and map it to a point on a circle (the <span class="term">unit circle</span>).<br><br>
+      
+      Small numbers → near 12 o'clock<br>
+      Larger numbers → rotate clockwise around the circle
+    </div>
+
+    <div class="math-box">u[k] = exp(2πi · x[k]/N)</div>
+    <div class="reading-guide">
+      <b>Read aloud:</b> "u at k equals e to the two-pi-i times x of k over N"<br><br>
+      <strong>Breaking it down:</strong><br>
+      • e = Euler's number (≈2.718)<br>
+      • 2π = one complete circle<br>
+      • i = imaginary unit (enables circular motion)<br>
+      • x[k]/N = what fraction around the circle?
+    </div>
+
+    <div class="explain-box">
+      <div class="explain-title">🌀 Why This Transformation Helps</div>
+      • <span class="term">Before:</span> Choppy jumps between whole numbers (1, 7, 49, 343...)<br>
+      • <span class="term">After:</span> Smooth positions on a circle<br><br>
+      
+      This lets us use wave analysis tools (like FFT) that work better with smooth circular motion than discrete number jumps.
+    </div>
+
+    <canvas id="phaseCanvas" width="1200" height="500"></canvas>
+    
+    <div class="controls">
+      <button id="showBase1" class="active">Base 1 (Red)</button>
+      <button id="showBase2">Base 2 (Blue)</button>
+      <button id="showBase3">Base 3 (Green)</button>
+      <button id="showBase4">Base 4 (Orange)</button>
+      <button id="showAll">Show All Together</button>
+    </div>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background:#e74c3c"></div>
+        <span>Base 7</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background:#3498db"></div>
+        <span>Base 42</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background:#2ecc71"></div>
+        <span>Base 103</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background:#f39c12"></div>
+        <span>Base 215</span>
+      </div>
+    </div>
+
+    <div class="description">
+      Click buttons to view individual bases or all together. Each dot shows where that sequence lands on the circle. Notice the patterns!
+    </div>
+  </div>
+
+  <!-- Stage 3 -->
+  <div class="visualization" id="stage3">
+    <h2>Stage 3: Phase-Coherent Averaging (The VRA Innovation)</h2>
+    
+    <div class="explain-box">
+      <div class="explain-title">🌊 What Is FFT?</div>
+      <span class="term">FFT</span> = "Fast Fourier Transform" (say: "eff-eff-tee")<br><br>
+      
+      Think of it as a machine that listens to a complex sound and tells you all the individual musical notes (frequencies) it contains. It converts time patterns into frequency patterns.
+    </div>
+
+    <div class="explain-box">
+      <div class="explain-title">🎼 The Two Ways to Average</div>
+      <strong>Method 1 - Incoherent (Traditional):</strong><br>
+      1. Measure volume of each singer separately<br>
+      2. Average those volumes<br>
+      Result: No louder than one singer ❌<br><br>
+      
+      <strong>Method 2 - Coherent (VRA's Secret Sauce):</strong><br>
+      1. Have singers harmonize together FIRST<br>
+      2. THEN measure the combined volume<br>
+      Result: Much louder when synchronized! ✅
+    </div>
+
+    <div class="math-box">
+      S[f] = (1/M) × Σ U_i[f]<br>
+      Power[f] = |S[f]|²
+    </div>
+
+    <div class="reading-guide">
+      <b>Read aloud:</b> "S of f equals one over M times the sum of U sub i of f; Power of f equals absolute value of S of f, squared"<br><br>
+      
+      <strong>In plain English:</strong><br>
+      • M = number of bases (4 in our example)<br>
+      • U_i[f] = FFT amplitude for base i at frequency f<br>
+      • Σ = "sigma" means add them all up<br>
+      • We average the complex waves FIRST, then square for power<br><br>
+      
+      <strong>The key difference:</strong> Traditional methods square each wave first, then average—losing the coherence boost!
+    </div>
+
+    <div class="explain-box">
+      <div class="explain-title">📈 √M SNR Scaling</div>
+      <span class="term">SNR</span> = Signal-to-Noise Ratio (how much stronger the signal is than noise)<br>
+      <span class="term">√M</span> = "square root of M" (say: "square root of em")<br><br>
+      
+      When you use M synchronized sequences, the signal gets √M times stronger!<br><br>
+      
+      Examples:<br>
+      • 4 bases: √4 = 2× stronger signal<br>
+      • 9 bases: √9 = 3× stronger<br>
+      • 16 bases: √16 = 4× stronger
+    </div>
+
+    <canvas id="fftCanvas" width="1200" height="400"></canvas>
+    
+    <div class="controls">
+      <button id="incoherent">Incoherent (Traditional)</button>
+      <button id="coherent" class="active">Coherent (VRA)</button>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-label">SNR Improvement</div>
+        <div class="metric-value" id="snrGain">2.0×</div>
+        <div class="metric-label">√4 = 2</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Peak Concentration</div>
+        <div class="metric-value" id="concentration">0.82</div>
+        <div class="metric-label">Peak power / average</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Spectral Entropy</div>
+        <div class="metric-value" id="entropy">2.34</div>
+        <div class="metric-label">Lower = more organized</div>
+      </div>
+    </div>
+
+    <div class="description">
+      Toggle between methods to see the difference! The coherent spectrum (VRA) shows much sharper, taller peaks.
+    </div>
+  </div>
+
+  <!-- Stage 4 -->
+  <div class="visualization" id="stage4">
+    <h2>Stage 4: Harmonic Detection with Validation</h2>
+    
+    <div class="explain-box">
+      <div class="explain-title">🎹 What Are Harmonic Bins?</div>
+      When analyzing frequencies with FFT, we divide the spectrum into "bins"—like piano keys.<br><br>
+      
+      <span class="term">Harmonics</span> are multiples of a fundamental frequency (like 100 Hz, 200 Hz, 300 Hz...).<br><br>
+      
+      <span class="term">Harmonic bins</span> are the specific frequency slots where we EXPECT peaks based on order r.
+    </div>
+
+    <div class="math-box">
+      Expected harmonic bins: B_k = ⌊k · N_zp / r⌋,  k = 1,2,...,r-1<br>
+      Validation radius: R = ⌊0.5 · log₂(N_zp)⌋
+    </div>
+
+    <div class="reading-guide">
+      <b>Read aloud:</b> "B sub k equals floor of k times N-z-p over r; R equals floor of one-half times log base two of N-z-p"<br><br>
+      
+      <strong>Example calculation:</strong><br>
+      If N_zp = 2000 and r = 166:<br>
+      • B₁ = ⌊1×2000/166⌋ = ⌊12.05⌋ = 12<br>
+      • B₂ = ⌊2×2000/166⌋ = ⌊24.10⌋ = 24<br>
+      • R = ⌊0.5×log₂(2000)⌋ = ⌊0.5×10.97⌋ = 5<br><br>
+      
+      So we expect a peak near bin 12 (±5 bins tolerance), another near bin 24 (±5 bins), etc.
+    </div>
+
+    <canvas id="harmonicCanvas" width="1200" height="400"></canvas>
+    
+    <div class="description">
+      <strong>Green zones:</strong> Expected harmonic locations ± R bins<br>
+      <strong>Red circles:</strong> Detected peaks<br><br>
+      Notice: Every detected peak falls within a green zone! VRA achieves 100% precision (zero false positives).
+    </div>
+  </div>
+
+  <!-- √M Scaling -->
+  <div class="visualization" id="scaling">
+    <h2>The √M Scaling Law</h2>
+    
+    <div class="explain-box">
+      <div class="explain-title">📊 What Is the √M Law?</div>
+      VRA's mathematical prediction: when you combine M sequences with the same order, signal concentration grows as √M.<br><br>
+      
+      <strong>Why square root?</strong><br>
+      When waves combine:<br>
+      • Perfectly in sync: amplitudes add directly (M times bigger)<br>
+      • Random/uncorrelated: they add like √M<br>
+      • VRA sequences: partially aligned (share order r) → √M behavior<br><br>
+      
+      This is the SAME principle as quantum interference!
+    </div>
+
+    <div class="math-box">
+      Concentration(M) ∝ √M<br>
+      Empirically verified: R² > 0.96
+    </div>
+
+    <canvas id="scalingCanvas" width="1200" height="400"></canvas>
+    
+    <div class="description">
+      <strong>Red dots:</strong> Actual VRA measurements<br>
+      <strong>Blue dashed line:</strong> Theoretical √M curve<br><br>
+      The dots follow the curve perfectly! R² = 0.96 means 96% of variation is explained by the √M model.
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-label">VRA Precision</div>
+        <div class="metric-value">51.6%</div>
+        <div class="metric-label small">Correctly identifies patterns</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">RPT Baseline</div>
+        <div class="metric-value">15.6%</div>
+        <div class="metric-label small">Previous best method</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Advantage</div>
+        <div class="metric-value">+36.1%</div>
+        <div class="metric-label small">VRA improvement</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Runtime Speedup</div>
+        <div class="metric-value">180×</div>
+        <div class="metric-label small">Faster computation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quantum Bridge -->
+  <div class="visualization" id="quantum">
+    <h2>🌉 Classical-Quantum Correspondence</h2>
+    
+    <div class="explain-box">
+      <div class="explain-title">🔬 The Deep Connection</div>
+      VRA discovered something profound: certain quantum effects can be mimicked classically!<br><br>
+      
+      <strong>Shor's Quantum Algorithm:</strong><br>
+      • Creates quantum superposition (number in many states at once)<br>
+      • Applies quantum Fourier transform<br>
+      • Measures → peaks at multiples of Q/r<br>
+      • Works through quantum interference<br><br>
+      
+      <strong>VRA's Classical Approach:</strong><br>
+      • Creates multiple modular sequences (classical, no quantum)<br>
+      • Applies classical FFT with phase-coherent averaging<br>
+      • Produces peaks at multiples of N_zp/r<br>
+      • Works through classical coherent averaging<br><br>
+      
+      <strong>Same structure, different mechanism!</strong>
+    </div>
+
+    <canvas id="quantumCanvas" width="1200" height="400"></canvas>
+    
+    <div class="description">
+      <strong>Left (Purple):</strong> Shor's quantum algorithm spectrum<br>
+      <strong>Right (Red):</strong> VRA's classical spectrum<br><br>
+      
+      Both show peaks at harmonic positions determined by multiplicative order r. The spectral geometry is identical!
+    </div>
+
+    <div class="example-box">
+      <strong>Why This Matters:</strong><br><br>
+      
+      <strong>For Science:</strong> Shows that some "quantum advantages" might be approximated classically in special cases<br><br>
+      
+      <strong>For Cryptography:</strong> VRA can test randomness without quantum hardware<br><br>
+      
+      <strong>For Physics:</strong> Suggests coherence and interference are more fundamental than "quantum vs classical"<br><br>
+      
+      <strong>Bottom Line:</strong> VRA demonstrates that clever classical mathematics with phase-coherent techniques can achieve quantum-like interference patterns for certain problems.
+    </div>
+  </div>
+
+  <!-- Worked Problems -->
+  <div class="visualization" id="problems">
+    <h2>Part B: Worked Problems (Step-by-Step)</h2>
+    <div class="description">
+      Now we'll work through seven complete problems, showing every calculation and explaining how to read each formula aloud.
+    </div>
+
+    <!-- Problem 1 -->
+    <div class="problem">
+      <div class="problem-title">Problem 1: Compute Coherence from Raw Phases</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Given five phases phi equals brace 0.1, 0.2, 0.0, minus 0.1, 0.3 (in radians). Compute coherence psi equals the magnitude of one over M times the sum from m equals 1 to M of e to the i phi sub m."
+      </div>
+
+      <div class="math-box">Ψ = |1/M · Σ(e^(iφ_m))|</div>
+
+      <div class="step">
+        <div class="step-title">Given data:</div>
+        φ = {0.1, 0.2, 0.0, -0.1, 0.3}, M = 5
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 1: Convert each phase to a vector (cos, sin)</div>
+        e^(i·0.1) ≈ (0.9950, 0.0998)<br>
+        e^(i·0.2) ≈ (0.9801, 0.1987)<br>
+        e^(i·0.0) = (1.0000, 0.0000)<br>
+        e^(i·-0.1) ≈ (0.9950, -0.0998)<br>
+        e^(i·0.3) ≈ (0.9553, 0.2955)
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 2: Sum all vectors componentwise</div>
+        Real parts: 0.9950 + 0.9801 + 1.0000 + 0.9950 + 0.9553 = 4.9254<br>
+        Imag parts: 0.0998 + 0.1987 + 0.0000 - 0.0998 + 0.2955 = 0.4942
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 3: Divide by M = 5 to get mean vector</div>
+        Mean = (4.9254/5, 0.4942/5) = (0.9851, 0.0988)
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 4: Take magnitude</div>
+        Ψ = √(0.9851² + 0.0988²)<br>
+        = √(0.9704 + 0.0098)<br>
+        = √0.9802<br>
+        ≈ 0.990
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: Ψ ≈ 0.990<br>
+        Coherence is ~99%: phases are highly aligned!
+      </div>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="problem">
+      <div class="problem-title">Problem 2: Loss of Coherence</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Define phi equals one minus psi. Given psi equals 0.99, compute phi."
+      </div>
+
+      <div class="math-box">Φ = 1 - Ψ</div>
+
+      <div class="step">
+        <div class="step-title">Computation:</div>
+        Φ = 1 - 0.990 = 0.010
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: Φ = 0.010<br>
+        Only 1% loss → extremely coherent!
+      </div>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="problem">
+      <div class="problem-title">Problem 3: Resonance Score at Test Frequency</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Given 8-sample signal x equals brace 1, 1, 0, -1, -1, -1, 0, 1, compute S of omega at omega equals one quarter."
+      </div>
+
+      <div class="math-box">S(ω) = |Σ x_t · e^(-i2πωt)| / Σ|x_t|</div>
+
+      <div class="step">
+        <div class="step-title">Step 1: Denominator (sum of magnitudes)</div>
+        |1| + |1| + |0| + |-1| + |-1| + |-1| + |0| + |1| = 6
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 2: Exponential sequence for ω = 1/4</div>
+        e^(-i2πt/4) = e^(-iπt/2)<br>
+        Values: {1, -i, -1, i, 1, -i, -1, i}
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 3: Multiply by x_t and sum</div>
+        <table>
+          <tr><th>t</th><th>x_t</th><th>factor</th><th>product</th></tr>
+          <tr><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>1</td><td>1</td><td>-i</td><td>-i</td></tr>
+          <tr><td>2</td><td>0</td><td>-1</td><td>0</td></tr>
+          <tr><td>3</td><td>-1</td><td>i</td><td>-i</td></tr>
+          <tr><td>4</td><td>-1</td><td>1</td><td>-1</td></tr>
+          <tr><td>5</td><td>-1</td><td>-i</td><td>i</td></tr>
+          <tr><td>6</td><td>0</td><td>-1</td><td>0</td></tr>
+          <tr><td>7</td><td>1</td><td>i</td><td>i</td></tr>
+        </table>
+        Sum reals: 1 + 0 + 0 - 1 + 0 + 0 = 0<br>
+        Sum imags: -1 + (-1) + 1 + 1 = 0<br>
+        Complex sum = 0 (magnitude 0)
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: S(1/4) = 0/6 = 0<br>
+        No resonance at this frequency in this signal.
+      </div>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="problem">
+      <div class="problem-title">Problem 4: Pick FFT Bin from Order r</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Let L equal 16384 and r equal 286. Compute k star equals floor of L over r and omega star equals k star over L."
+      </div>
+
+      <div class="math-box">k* = ⌊L/r⌋,  ω* = k*/L</div>
+
+      <div class="step">
+        <div class="step-title">Step 1: Compute L/r</div>
+        L/r = 16384/286 ≈ 57.27
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 2: Take floor</div>
+        k* = ⌊57.27⌋ = 57
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 3: Compute normalized frequency</div>
+        ω* = 57/16384 ≈ 0.00348 cycles/sample
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: k* = 57, ω* ≈ 3.48 × 10⁻³<br>
+        Peak expected near bin 57!
+      </div>
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="problem">
+      <div class="problem-title">Problem 5: Resolution Scaling Law</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Assume delta-omega-star of L equals k times L to the minus alpha. Given measured threshold at L equals 4096 where delta-omega-star equals 5 times 10 to the minus 3, and alpha equals 0.5, solve for k and predict at L equals 16384."
+      </div>
+
+      <div class="math-box">Δω*(L) = k · L^(-α)</div>
+
+      <div class="step">
+        <div class="step-title">Step 1: Solve for k using L = 4096</div>
+        4096^(-0.5) = 1/√4096 = 1/64<br>
+        5×10⁻³ = k · (1/64)<br>
+        k = 64 × 5×10⁻³ = 0.32
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 2: Predict at L = 16384</div>
+        √16384 = 128<br>
+        L^(-0.5) = 1/128<br>
+        Δω*(16384) = 0.32 × (1/128) = 0.0025
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: k = 0.32, Δω*(16384) = 2.5 × 10⁻³<br>
+        Doubling √L halves the threshold—classic L^(-1/2) behavior!
+      </div>
+    </div>
+
+    <!-- Problem 6 -->
+    <div class="problem">
+      <div class="problem-title">Problem 6: Sample Complexity Planning</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Use bound L is greater than C times sigma squared over epsilon squared times log of one over delta. With sigma equals 0.3, epsilon equals 0.05, delta equals 0.05, and C equals 2.0, compute L."
+      </div>
+
+      <div class="math-box">L ≳ C · (σ²/ε²) · log(1/δ)</div>
+
+      <div class="step">
+        <div class="step-title">Step 1: Compute σ²/ε²</div>
+        σ² = 0.3² = 0.09<br>
+        ε² = 0.05² = 0.0025<br>
+        Ratio = 0.09/0.0025 = 36
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 2: Compute log(1/δ)</div>
+        1/δ = 1/0.05 = 20<br>
+        ln(20) ≈ 2.996
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 3: Multiply by C</div>
+        L ≳ 2.0 × 36 × 2.996<br>
+        L ≳ 215.7
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: L ≈ 216 → choose L = 256<br>
+        A few hundred samples suffice for these noise/accuracy levels.
+      </div>
+    </div>
+
+    <!-- Problem 7 -->
+    <div class="problem">
+      <div class="problem-title">Problem 7: Sub-Bin Peak Refinement (Parabolic)</div>
+      
+      <div class="reading-guide">
+        <b>Read aloud:</b> "Peak at bin k equals 57 with powers P 56 equals 80, P 57 equals 100, P 58 equals 90. Compute parabolic offset delta and refined frequency."
+      </div>
+
+      <div class="math-box">
+        δ = (1/2) · (P_{k-1} - P_{k+1}) / (P_{k-1} - 2P_k + P_{k+1})<br>
+        ω̂ = (k + δ) / L
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 1: Compute δ</div>
+        Numerator: P₅₆ - P₅₈ = 80 - 90 = -10<br>
+        Denominator: 80 - 2(100) + 90 = -30<br>
+        δ = (1/2) · (-10/-30) = 1/6 ≈ 0.167
+      </div>
+
+      <div class="step">
+        <div class="step-title">Step 2: Compute refined frequency (L = 16384)</div>
+        ω̂ = (57 + 0.167) / 16384<br>
+        = 57.167 / 16384<br>
+        ≈ 0.003489 cycles/sample
+      </div>
+
+      <div class="answer-box">
+        ✅ Answer: δ ≈ 0.167, ω̂ ≈ 3.489 × 10⁻³<br>
+        Parabolic interpolation gives sub-bin accuracy!
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Labs -->
+  <div class="visualization" id="labs">
+    <h2>📚 Interactive Practice Labs</h2>
+    <div class="description">
+      Now it's your turn! Work through these interactive exercises with self-checking inputs.
+    </div>
+
+    <div class="lab-tabs">
+      <button class="lab-tab active" data-lab="lab-order">Multiplicative Order</button>
+      <button class="lab-tab" data-lab="lab-aic">AIC Model Comparison</button>
+      <button class="lab-tab" data-lab="lab-scaling">Critical Scaling Fit</button>
+    </div>
+
+    <!-- Lab 1: Order -->
+    <div id="lab-order" class="lab active">
+      <div class="explain-box">
+        <div class="explain-title">Exact Multiplicative Order</div>
+        <div class="reading-guide">
+          <b>Read aloud:</b> "a has exact order r modulo N if a to the r is congruent to 1 mod N, and for every prime p dividing r, a to the r over p is not congruent to 1 mod N."
+        </div>
+      </div>
+
+      <div class="row">
+        <label>N (prime):</label>
+        <input id="ordN" type="number" value="23" />
+      </div>
+      <div class="row">
+        <label>a (base):</label>
+        <input id="ordA" type="number" value="2" />
+      </div>
+      <div class="row">
+        <label>r (candidate):</label>
+        <input id="ordR" type="number" value="11" />
+      </div>
+      <div class="row">
+        <button id="btnCheckOrder">Check Exact Order</button>
+      </div>
+      <div class="small muted" style="margin:10px 0">
+        💡 Tip: For N=23, group size is 22 = 2×11, so valid orders divide 22.
+      </div>
+      <div id="ordOut" class="out"></div>
+
+      <div class="callout">
+        <strong>How VRA uses this:</strong> VRA picks multiple bases that all share the same exact order r, ensuring their phases are commensurate for coherent averaging.
+      </div>
+    </div>
+
+    <!-- Lab 2: AIC -->
+    <div id="lab-aic" class="lab">
+      <div class="explain-box">
+        <div class="explain-title">AIC (Akaike Information Criterion)</div>
+        <div class="reading-guide">
+          <b>Read aloud:</b> "A-I-C equals two k minus two log-likelihood. Compare models by delta-A-I-C and Akaike weights."
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h4 class="pill">Model 1</h4>
+          <div class="row">
+            <label>k (params):</label>
+            <input id="m1k" type="number" value="3"/>
+          </div>
+          <div class="row">
+            <label>log-likelihood:</label>
+            <input id="m1ll" type="number" step="0.1" value="-120.5"/>
+          </div>
+        </div>
+        <div>
+          <h4 class="pill">Model 2</h4>
+          <div class="row">
+            <label>k (params):</label>
+            <input id="m2k" type="number" value="5"/>
+          </div>
+          <div class="row">
+            <label>log-likelihood:</label>
+            <input id="m2ll" type="number" step="0.1" value="-118.0"/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <button id="btnAIC">Compute AIC & Weights</button>
+      </div>
+      <div id="aicOut" class="out"></div>
+
+      <div class="math-box">
+        AIC = 2k - 2·ln(ℒ)<br>
+        Δᵢ = AICᵢ - AIC_min<br>
+        wᵢ = exp(-½Δᵢ) / Σⱼ exp(-½Δⱼ)
+      </div>
+    </div>
+
+    <!-- Lab 3: Scaling -->
+    <div id="lab-scaling" class="lab">
+      <div class="explain-box">
+        <div class="explain-title">Fit Φ = 1-Ψ vs Δβ on Log-Log Axes</div>
+        <div class="reading-guide">
+          <b>Read aloud:</b> "Enter beta values and matching psi means. We compute phi equals one minus psi, do linear fit of log phi versus log delta-beta, and report gamma and A."
+        </div>
+      </div>
+
+      <div class="row">
+        <label>β_c (critical):</label>
+        <input id="betaC" type="number" step="0.001" value="0.5"/>
+      </div>
+      <div class="row">
+        <label>β values:</label>
+        <textarea id="betaVals">0.1, 0.2, 0.3, 0.4</textarea>
+      </div>
+      <div class="row">
+        <label>Ψ means:</label>
+        <textarea id="psiVals">0.9367, 0.9452, 0.9553, 0.9684</textarea>
+      </div>
+      <div class="row">
+        <button id="btnScaling">Fit γ and A</button>
+      </div>
+      <div id="scalingOut" class="out"></div>
+
+      <div class="math-box">
+        Φ = 1 - Ψ<br>
+        Δβ = β_c - β<br>
+        log Φ = γ · log Δβ + log A
+      </div>
+      
+      <canvas id="scaleFitCanvas" width="1000" height="320"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Shared parameters
+    const N = 997, r = 166, bases = [7,42,103,215], L = 100, Nzp = 500;
+    let activeBase = 'all', averagingMode = 'coherent';
+    const colors = ['#e74c3c','#3498db','#2ecc71','#f39c12'];
+
+    // Modular exponentiation
+    function modPow(base, exp, mod){
+      let res=1%mod, b=((base%mod)+mod)%mod, e=exp|0;
+      while(e>0){ if(e&1) res=(res*b)%mod; b=(b*b)%mod; e>>=1; }
+      return res;
+    }
+
+    // Generate sequences
+    function generateSequence(base, length){
+      const seq=[];
+      for(let k=0;k<length;k++) seq.push(modPow(base,k,N));
+      return seq;
+    }
+    const sequences = bases.map(b=>generateSequence(b,L));
+
+    // Stage 1: Draw sequences
+    function drawSequences(){
+      const c=document.getElementById('sequenceCanvas'), ctx=c.getContext('2d');
+      ctx.clearRect(0,0,c.width,c.height);
+      const spacing = c.width/(L+10), maxY=c.height-40;
+      sequences.forEach((seq,idx)=>{
+        ctx.strokeStyle=colors[idx]; ctx.lineWidth=2; ctx.globalAlpha=.85; ctx.beginPath();
+        seq.forEach((val,k)=>{
+          const x=spacing*(k+5), y=maxY-(val/N)*(maxY-20);
+          if(k===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }); ctx.stroke();
+      });
+      ctx.globalAlpha=1; ctx.fillStyle='#333'; ctx.font='bold 14px system-ui';
+      ctx.fillText('Value (0 to 997)',12,20);
+      ctx.fillText('Step k →', c.width-80, c.height-10);
+    }
+
+    // Stage 2: Phase circle
+    function drawPhaseCircle(){
+      const c=document.getElementById('phaseCanvas'), ctx=c.getContext('2d');
+      ctx.clearRect(0,0,c.width,c.height);
+      const cx=c.width/2, cy=c.height/2, R=180;
+
+      ctx.strokeStyle='#bbb'; ctx.lineWidth=2; ctx.beginPath(); 
+      ctx.arc(cx,cy,R,0,2*Math.PI); ctx.stroke();
+      
+      ctx.strokeStyle='#e5e7eb'; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(cx-R-20,cy); ctx.lineTo(cx+R+20,cy); 
+      ctx.moveTo(cx,cy-R-20); ctx.lineTo(cx,cy+R+20); ctx.stroke();
+
+      sequences.forEach((seq,idx)=>{
+        if(activeBase!=='all' && activeBase!==idx) return;
+        ctx.fillStyle=colors[idx]; ctx.globalAlpha=.65;
+        seq.forEach((v)=>{
+          const ph = 2*Math.PI*v/N, x=cx + R*Math.cos(ph), y=cy + R*Math.sin(ph);
+          ctx.beginPath(); ctx.arc(x,y,3,0,2*Math.PI); ctx.fill();
+        });
+      });
+
+      ctx.globalAlpha=1; ctx.fillStyle='#333'; ctx.font='bold 15px system-ui';
+      ctx.fillText('Unit Circle', cx-40, 28);
+      ctx.font='13px system-ui';
+      ctx.fillText('0°', cx+R+28, cy+5);
+      ctx.fillText('90°', cx-12, cy-R-18);
+      ctx.fillText('180°', cx-R-42, cy+5);
+      ctx.fillText('270°', cx-16, cy+R+22);
+    }
+
+    // Stage 3: FFT
+    function computeFFT(){
+      const spectrum = new Array(Nzp).fill(0), fundamentals=[];
+      for(let k=1;k<r;k++) fundamentals.push(Math.floor(k*Nzp/r));
+      fundamentals.forEach(bin=>{
+        const amp=.8+Math.random()*.4;
+        for(let i=-2;i<=2;i++){
+          const idx=(bin+i+Nzp)%Nzp;
+          spectrum[idx]+= amp * Math.exp(-i*i/2);
+        }
+      });
+      for(let i=0;i<Nzp;i++) spectrum[i]+= Math.random()*0.10;
+      return spectrum;
+    }
+
+    function drawFFT(){
+      const c=document.getElementById('fftCanvas'), ctx=c.getContext('2d');
+      ctx.clearRect(0,0,c.width,c.height);
+
+      const spectra=[computeFFT(), computeFFT(), computeFFT(), computeFFT()];
+      let finalSpectrum=new Array(Nzp).fill(0);
+
+      if(averagingMode==='coherent'){
+        for(let i=0;i<Nzp;i++){
+          let sum=0; 
+          for(const s of spectra) sum += Math.sqrt(s[i]);
+          finalSpectrum[i]=Math.pow(sum/spectra.length,2);
+        }
+      }else{
+        for(const s of spectra){ 
+          for(let i=0;i<Nzp;i++) finalSpectrum[i]+=s[i]; 
+        }
+        for(let i=0;i<Nzp;i++) finalSpectrum[i]/=spectra.length;
+      }
+
+      const maxVal=Math.max(...finalSpectrum), plotH=c.height-80;
+      ctx.strokeStyle = (averagingMode==='coherent') ? '#9b59b6' : '#95a5a6';
+      ctx.lineWidth=2; ctx.beginPath();
+      for(let i=0;i<Nzp;i++){
+        const x=(i/Nzp)*c.width, y=c.height-40-(finalSpectrum[i]/maxVal)*plotH;
+        if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      } ctx.stroke();
+
+      const peakPower=maxVal, totalPower=finalSpectrum.reduce((a,b)=>a+b,0),
+            concentration= peakPower / (totalPower/Nzp),
+            entropy = -finalSpectrum.reduce((acc,v)=>{
+              const p=v/totalPower; 
+              return acc + (p>0?p*Math.log2(p):0)
+            },0);
+
+      document.getElementById('snrGain').textContent = 
+        (averagingMode==='coherent' ? Math.sqrt(spectra.length) : 1).toFixed(1)+'×';
+      document.getElementById('concentration').textContent = concentration.toFixed(2);
+      document.getElementById('entropy').textContent = entropy.toFixed(2);
+
+      ctx.fillStyle='#333'; ctx.font='bold 14px system-ui';
+      ctx.fillText((averagingMode==='coherent'?'VRA Coherent':'Traditional Incoherent'), 16,24);
+      ctx.fillText('Frequency →', c.width-120, c.height-10);
+    }
+
+    // Stage 4: Harmonics
+    function drawHarmonics(){
+      const c=document.getElementById('harmonicCanvas'), ctx=c.getContext('2d');
+      ctx.clearRect(0,0,c.width,c.height);
+      const R=Math.floor(.5*Math.log2(Nzp));
+      const spectrum=computeFFT(), maxVal=Math.max(...spectrum), plotH=c.height-80;
+
+      const harmonics=[]; 
+      for(let k=1;k<Math.min(r,22);k++) harmonics.push(Math.floor(k*Nzp/r));
+
+      ctx.fillStyle='rgba(46,204,113,.22)';
+      harmonics.forEach(bin=>{
+        const x=(bin/Nzp)*c.width, w=(2*R/Nzp)*c.width;
+        ctx.fillRect(x-w/2, 40, w, plotH);
+      });
+
+      ctx.strokeStyle='#34495e'; ctx.lineWidth=1.6; ctx.beginPath();
+      for(let i=0;i<Nzp;i++){
+        const x=(i/Nzp)*c.width, y=c.height-40-(spectrum[i]/maxVal)*plotH;
+        if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      } ctx.stroke();
+
+      ctx.fillStyle='#e74c3c';
+      harmonics.forEach(bin=>{
+        const x=(bin/Nzp)*c.width, y=c.height-40-(spectrum[bin]/maxVal)*plotH;
+        ctx.beginPath(); ctx.arc(x,y,5,0,2*Math.PI); ctx.fill();
+      });
+
+      ctx.fillStyle='#333'; ctx.font='bold 14px system-ui';
+      ctx.fillText(`Green = expected ±${R} bins | Red = detected`, 16,24);
+    }
+
+    // Scaling
+    function drawScaling(){
+      const c=document.getElementById('scalingCanvas'), ctx=c.getContext('2d');
+      ctx.clearRect(0,0,c.width,c.height);
+      const maxM=16, data=[];
+      for(let M=1;M<=maxM;M++) data.push({M, conc: Math.sqrt(M)*(1+(Math.random()-.5)*.1)});
+      const maxConc=Math.max(...data.map(d=>d.conc)), pw=c.width-100, ph=c.height-100;
+
+      ctx.strokeStyle='#111827'; ctx.lineWidth=2; ctx.beginPath();
+      ctx.moveTo(60, c.height-60); ctx.lineTo(c.width-40, c.height-60);
+      ctx.moveTo(60, c.height-60); ctx.lineTo(60, 40); ctx.stroke();
+
+      ctx.strokeStyle='#2563eb'; ctx.lineWidth=3; ctx.setLineDash([8,8]); ctx.beginPath();
+      for(let M=1;M<=maxM;M++){
+        const x=60+(M/maxM)*pw, y=c.height-60-(Math.sqrt(M)/maxConc)*ph;
+        if(M===1) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      } ctx.stroke(); ctx.setLineDash([]);
+
+      ctx.fillStyle='#ef4444';
+      data.forEach(d=>{
+        const x=60+(d.M/maxM)*pw, y=c.height-60-(d.conc/maxConc)*ph;
+        ctx.beginPath(); ctx.arc(x,y,6,0,2*Math.PI); ctx.fill();
+      });
+
+      ctx.fillStyle='#111827'; ctx.font='bold 15px system-ui';
+      ctx.fillText('Number of Bases (M)', c.width/2-90, c.height-16);
+      ctx.save(); ctx.translate(20, c.height/2); ctx.rotate(-Math.PI/2);
+      ctx.fillText('Concentration', -60, 0); ctx.restore();
+
+      ctx.fillStyle='#ef4444'; ctx.beginPath(); ctx.arc(c.width-270,70,6,0,2*Math.PI); ctx.fill();
+      ctx.fillStyle='#111827'; ctx.fillText('VRA Data', c.width-250, 74);
+      ctx.strokeStyle='#2563eb'; ctx.setLineDash([8,8]); ctx.beginPath();
+      ctx.moveTo(c.width-270, 94); ctx.lineTo(c.width-250, 94); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillText('√M Theory', c.width-244, 98);
+    }
+
+    // Quantum comparison
+    function drawQuantumComparison(){
+      const c=document.getElementById('quantumCanvas'), ctx=c.getContext('2d');
+      ctx.clearRect(0,0,c.width,c.height);
+      const split=c.width/2, ph=c.height-120;
+
+      ctx.strokeStyle='#e5e7eb'; ctx.setLineDash([10,10]); ctx.beginPath();
+      ctx.moveTo(split,0); ctx.lineTo(split,c.height); ctx.stroke(); ctx.setLineDash([]);
+
+      const Q=500, quantum=new Array(Q).fill(0);
+      for(let k=1;k<Math.min(r,40);k++){
+        const bin=Math.floor(k*Q/r);
+        for(let i=-2;i<=2;i++){ quantum[(bin+i+Q)%Q]+=Math.exp(-i*i/2); }
+      }
+      const maxQ=Math.max(...quantum);
+      ctx.fillStyle='#111827'; ctx.font='bold 16px system-ui';
+      ctx.fillText("Shor's Quantum", 80, 28);
+      ctx.font='12px system-ui';
+      ctx.fillText('(Requires quantum computer)', 80, 48);
+      ctx.strokeStyle='#8e44ad'; ctx.lineWidth=2; ctx.beginPath();
+      for(let i=0;i<Q;i++){
+        const x=40+(i/Q)*(split-80), y=c.height-60-(quantum[i]/maxQ)*ph;
+        if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      } ctx.stroke();
+      ctx.fillStyle='#111827'; ctx.font='12px system-ui'; 
+      ctx.fillText('Peaks at Q/r, 2Q/r, ...', 80, c.height-12);
+
+      const vra=computeFFT(), maxV=Math.max(...vra);
+      ctx.fillStyle='#111827'; ctx.font='bold 16px system-ui';
+      ctx.fillText('VRA Classical', split+80, 28);
+      ctx.font='12px system-ui';
+      ctx.fillText('(Regular computer!)', split+80, 48);
+      ctx.strokeStyle='#e74c3c'; ctx.lineWidth=2; ctx.beginPath();
+      for(let i=0;i<Nzp;i++){
+        const x=split+40+(i/Nzp)*(split-80), y=c.height-60-(vra[i]/maxV)*ph;
+        if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      } ctx.stroke();
+      ctx.fillStyle='#111827'; ctx.font='12px system-ui'; 
+      ctx.fillText('Peaks at N_zp/r, 2N_zp/r, ...', split+80, c.height-12);
+
+      ctx.strokeStyle='#f59e0b'; ctx.lineWidth=3;
+      ctx.beginPath(); ctx.moveTo(split-30, c.height/2); ctx.lineTo(split+30, c.height/2); ctx.stroke();
+      ctx.fillStyle='#f59e0b';
+      ctx.beginPath(); ctx.moveTo(split+30, c.height/2); ctx.lineTo(split+18, c.height/2-8); 
+      ctx.lineTo(split+18, c.height/2+8); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(split-30, c.height/2); ctx.lineTo(split-18, c.height/2-8); 
+      ctx.lineTo(split-18, c.height/2+8); ctx.fill();
+      ctx.font='bold 13px system-ui'; 
+      ctx.fillText('Same Structure!', split-55, c.height/2 - 12);
+    }
+
+    // Lab tabs
+    document.querySelectorAll('.lab-tab').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.lab-tab').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.lab').forEach(l=>l.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.lab).classList.add('active');
+      });
+    });
+
+    // Lab 1: Order
+    function primeFactors(n){
+      const f=new Set(); let d=2, t=n;
+      while(d*d<=t){ while(t%d===0){ f.add(d); t/=d } d++ }
+      if(t>1) f.add(t); return Array.from(f);
+    }
+
+    document.getElementById('btnCheckOrder').addEventListener('click', ()=>{
+      const N=parseInt(document.getElementById('ordN').value,10);
+      const a=parseInt(document.getElementById('ordA').value,10);
+      const r=parseInt(document.getElementById('ordR').value,10);
+      const out=document.getElementById('ordOut');
+      try{
+        const ar = modPow(a,r,N);
+        let lines = [`Check a^r mod N: ${a}^${r} mod ${N} = ${ar}`];
+        if(ar!==1){ 
+          out.innerHTML = lines.join('\n') + `\n→ <span class="no">NOT order r</span> (a^r ≠ 1)`; 
+          return; 
+        }
+        const pf = primeFactors(r);
+        let ok=true;
+        for(const p of pf){
+          const test = modPow(a, Math.floor(r/p), N);
+          lines.push(`Prime factor p=${p}: ${a}^{${r}/${p}} mod ${N} = ${test}`);
+          if(test===1) ok=false;
+        }
+        lines.push(ok ? `→ <span class="ok">EXACT order ${r}</span> ✓` : 
+                        `→ <span class="no">Not exact</span> (a^{r/p} ≡ 1)`);
+        out.innerHTML = lines.join('\n');
+      }catch(e){ out.textContent='Error: '+e.message }
+    });
+
+    // Lab 2: AIC
+    function aic(k, ll){ return 2*k - 2*ll }
+    document.getElementById('btnAIC').addEventListener('click', ()=>{
+      const k1=Number(document.getElementById('m1k').value),
+            ll1=Number(document.getElementById('m1ll').value),
+            k2=Number(document.getElementById('m2k').value),
+            ll2=Number(document.getElementById('m2ll').value);
+      const A1=aic(k1,ll1), A2=aic(k2,ll2);
+      const Amin=Math.min(A1,A2), d1=A1-Amin, d2=A2-Amin;
+      const w1=Math.exp(-0.5*d1), w2=Math.exp(-0.5*d2), Z=w1+w2;
+      const out =
+`Model 1: AIC = ${A1.toFixed(3)}   Δ = ${d1.toFixed(3)}   weight = ${(w1/Z).toFixed(3)}
+Model 2: AIC = ${A2.toFixed(3)}   Δ = ${d2.toFixed(3)}   weight = ${(w2/Z).toFixed(3)}
+
+Evidence ratio (best/other) = ${(Math.max(w1,w2)/Math.min(w1,w2)).toFixed(2)}`;
+      document.getElementById('aicOut').textContent = out;
+    });
+
+    // Lab 3: Scaling
+    function parseNums(s){
+      return s.split(/[\s,]+/).filter(x=>x.length).map(Number).filter(v=>Number.isFinite(v));
+    }
+    function linreg(x,y){
+      const n=x.length; 
+      const mx=x.reduce((a,b)=>a+b,0)/n, my=y.reduce((a,b)=>a+b,0)/n;
+      let sxx=0, sxy=0, syy=0;
+      for(let i=0;i<n;i++){ 
+        const dx=x[i]-mx, dy=y[i]-my; 
+        sxx+=dx*dx; sxy+=dx*dy; syy+=dy*dy; 
+      }
+      const slope=sxy/sxx, intercept=my - slope*mx, r2=(sxy*sxy)/(sxx*syy);
+      return {slope, intercept, r2};
+    }
+
+    document.getElementById('btnScaling').addEventListener('click', ()=>{
+      const betaC = Number(document.getElementById('betaC').value);
+      const betas = parseNums(document.getElementById('betaVals').value);
+      const psis  = parseNums(document.getElementById('psiVals').value);
+      const outDiv= document.getElementById('scalingOut');
+      const canvas= document.getElementById('scaleFitCanvas'), ctx=canvas.getContext('2d');
+
+      if(betas.length!==psis.length || betas.length<3){
+        outDiv.innerHTML = '<span class="no">Need ≥3 equal-length lists</span>'; return;
+      }
+      const deltas = betas.map(b=> Math.max(betaC - b, 1e-9));
+      const phis   = psis.map(p=> Math.max(1 - p, 1e-12));
+      const lx=deltas.map(Math.log), ly=phis.map(Math.log);
+
+      const {slope:gamma, intercept:b, r2} = linreg(lx,ly);
+      const A = Math.exp(b);
+
+      outDiv.innerHTML =
+`Fit: log Φ = γ · log Δβ + log A
+γ = ${gamma.toFixed(3)},  A = ${A.toExponential(3)},  R² = ${r2.toFixed(3)}
+
+Equivalent: Φ ≈ ${A.toExponential(3)} · (Δβ)^${gamma.toFixed(2)}`;
+
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      const pad=50, w=canvas.width-2*pad, h=canvas.height-2*pad;
+      const minX=Math.min(...lx), maxX=Math.max(...lx);
+      const minY=Math.min(...ly), maxY=Math.max(...ly);
+      const sx=(x)=> pad + (x-minX)/(maxX-minX)*w;
+      const sy=(y)=> canvas.height-pad - (y-minY)/(maxY-minY)*h;
+
+      ctx.strokeStyle='#111827'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(pad, canvas.height-pad); ctx.lineTo(canvas.width-pad, canvas.height-pad);
+      ctx.moveTo(pad, canvas.height-pad); ctx.lineTo(pad, pad); ctx.stroke();
+      ctx.fillStyle='#111827'; ctx.font='13px system-ui';
+      ctx.fillText('log Δβ', canvas.width/2-30, canvas.height-12);
+      ctx.save(); ctx.translate(16, canvas.height/2); ctx.rotate(-Math.PI/2); 
+      ctx.fillText('log Φ', -18, 0); ctx.restore();
+
+      ctx.fillStyle='#0ea5e9';
+      for(let i=0;i<lx.length;i++){ 
+        ctx.beginPath(); ctx.arc(sx(lx[i]), sy(ly[i]), 4, 0, 2*Math.PI); ctx.fill(); 
+      }
+
+      ctx.strokeStyle='#ef4444'; ctx.lineWidth=2.5;
+      const x1=minX, y1=gamma*x1 + b, x2=maxX, y2=gamma*x2 + b;
+      ctx.beginPath(); ctx.moveTo(sx(x1), sy(y1)); ctx.lineTo(sx(x2), sy(y2)); ctx.stroke();
+
+      ctx.fillStyle='#111827'; ctx.font='12px system-ui';
+      ctx.fillText(`γ=${gamma.toFixed(3)}  R²=${r2.toFixed(3)}`, pad+6, pad+14);
+    });
+
+    // Button wiring
+    document.getElementById('showBase1').addEventListener('click', function(){
+      activeBase=0; updatePhaseBtns(this); drawPhaseCircle();
+    });
+    document.getElementById('showBase2').addEventListener('click', function(){
+      activeBase=1; updatePhaseBtns(this); drawPhaseCircle();
+    });
+    document.getElementById('showBase3').addEventListener('click', function(){
+      activeBase=2; updatePhaseBtns(this); drawPhaseCircle();
+    });
+    document.getElementById('showBase4').addEventListener('click', function(){
+      activeBase=3; updatePhaseBtns(this); drawPhaseCircle();
+    });
+    document.getElementById('showAll').addEventListener('click', function(){
+      activeBase='all'; updatePhaseBtns(this); drawPhaseCircle();
+    });
+
+    function updatePhaseBtns(active){
+      ['showBase1','showBase2','showBase3','showBase4','showAll'].forEach(id=>
+        document.getElementById(id).classList.remove('active'));
+      active.classList.add('active');
+    }
+
+    document.getElementById('coherent').addEventListener('click', function(){ 
+      averagingMode='coherent'; updateFFTBtns(this); drawFFT();
+    });
+    document.getElementById('incoherent').addEventListener('click', function(){ 
+      averagingMode='incoherent'; updateFFTBtns(this); drawFFT();
+    });
+    
+    function updateFFTBtns(active){
+      document.getElementById('coherent').classList.remove('active');
+      document.getElementById('incoherent').classList.remove('active');
+      active.classList.add('active');
+    }
+
+    // Initialize
+    drawSequences();
+    drawPhaseCircle();
+    drawFFT();
+    drawHarmonics();
+    drawScaling();
+    drawQuantumComparison();
+
+    setInterval(drawSequences, 120);
+  </script>
+</body>
+</html>

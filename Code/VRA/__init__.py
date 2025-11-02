@@ -13,9 +13,28 @@ Date: October 2025
 """
 
 from .core import (
-    # Core functions will be imported here
-    # This will be populated based on vra_core.py exports
+    modular_sequence,
+    multiplicative_order,
+    phase_embed,
+    apply_window,
+    compute_spectrum,
+    compute_averaged_spectrum,
+    compute_concentration,
+    compute_precision_recall,
+    validated_radius,
+    classify_regime
 )
 
 __version__ = "1.0.0"
-__all__ = []
+__all__ = [
+    'modular_sequence',
+    'multiplicative_order',
+    'phase_embed',
+    'apply_window',
+    'compute_spectrum',
+    'compute_averaged_spectrum',
+    'compute_concentration',
+    'compute_precision_recall',
+    'validated_radius',
+    'classify_regime'
+]

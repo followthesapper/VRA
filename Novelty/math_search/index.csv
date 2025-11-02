@@ -1,0 +1,1459 @@
+source,title,doi,url,pdf_url,local_pdf,year,venue,query,abstract
+arxiv,Geometry and arithmetic of semi-arithmetic Fuchsian groups,,http://arxiv.org/abs/2310.13151v3,http://arxiv.org/pdf/2310.13151v3,/home/admin/dev/VRA/Novelty/math_search/papers/Geometry_and_arithmetic_of_semi-arithmetic_Fuchsian_groups.pdf,,,complex phase embedding modular arithmetic sequences,"Semi-arithmetic Fuchsian groups is a wide class of discrete groups of
+isometries of the hyperbolic plane which includes arithmetic Fuchsian groups,
+hyperbolic triangle groups, groups admitting a modular embedding, and others.
+We introduce a new geometric invariant of a semi-arithmetic group called
+stretch. Its definition is based on the notion of the Riemannian center of mass
+developed by Karcher and collaborators. We show that there exist only finitely
+many conjugacy classes of semi-arithmetic groups with bounded arithmetic
+dimension, stretch and coarea. The proof of this result uses the arithmetic
+Margulis lemma. We also show that when stretch is not bounded there exist
+infinite sequences of such groups."
+arxiv,"Natural Wave Numbers, Natural Wave Co-numbers, and the Computation of
+  the Primes",,http://arxiv.org/abs/2209.09313v1,http://arxiv.org/pdf/2209.09313v1,/home/admin/dev/VRA/Novelty/math_search/papers/Natural_Wave_Numbers_Natural_Wave_Co-numbers_and_the_Computation_of_the_Primes.pdf,,,complex phase embedding modular arithmetic sequences,"The paper exploits an isomorphism between the natural numbers N and a space U
+of periodic sequences of the roots of unity in constructing a recursive
+procedure for representing and computing the prime numbers. The nth wave number
+${\bf u}_n$ is the countable sequence of the nth roots of unity having
+frequencies k/n for all integer phases k. The space U is closed under a
+commutative and associative binary operation ${\bf u}_m \odot{\bf u}_n={\bf
+u}_{mn}$, termed the circular product, and is isomorphic with N under their
+respective product operators. Functions are defined on U that partition wave
+numbers into two complementary sequences, of which the co-number $ {\overset
+{\bf \ast }{ \bf u}}_n$ is a function of a wave number in which zeros replace
+its positive roots of unity. The recursive procedure $ {\overset {\bf \ast }{
+\bf U}}_{N+1}= {\overset {\bf \ast }{ \bf U}}_{N}\odot{\overset {\bf \ast }{\bf
+u}}_{{N+1}}$ represents prime numbers explicitly in terms of preceding prime
+numbers, starting with $p_1=2$, and is shown never to terminate. If ${p}_1, ...
+, { p}_{N+1}$ are the first $N+1$ prime phases, then the phases in the range
+$p_{N+1} \leq k &lt; p^2_{N+1}$ that are associated with the non-zero terms of $
+{\overset {\bf \ast }{\bf U}}_{N}$ are, together with $ p_1, ...,p_N$, all of
+the prime phases less than $p^2_{N+1}$. When applied with all of the primes
+identified at the previous step, the recursive procedure identifies
+approximately $7^{2(N-1)}/(2(N-1)ln7)$ primes at each iteration for $ N&gt;1$.
+When the phases of wave numbers are represented in modular arithmetic, the
+prime phases are representable in terms of sums of reciprocals of the initial
+set of prime phases and have a relation with the zeta-function."
+arxiv,"Strong Limit Multiplicity for arithmetic hyperbolic surfaces and
+  $3$-manifolds",,http://arxiv.org/abs/1612.05354v3,http://arxiv.org/pdf/1612.05354v3,/home/admin/dev/VRA/Novelty/math_search/papers/Strong_Limit_Multiplicity_for_arithmetic_hyperbolic_surfaces_and_3_-manifolds.pdf,,,complex phase embedding modular arithmetic sequences,"We show that every sequence of torsion-free arithmetic congruence lattices in
+$\mathrm{PGL}(2,\mathbb R)$ or $\mathrm{PGL}(2,\mathbb C)$ satisfies a strong
+quantitative version of the Limit Multiplicity property. We deduce that for
+$R&gt;0$ in certain range, growing linearly in the degree of the invariant trace
+field, the volume of the $R$-thin part of any congruence arithmetic hyperbolic
+surface or congruence arithmetic hyperbolic $3$-manifold $M$ is of order at
+most $\mathrm{Vol}(M)^{11/12}$. As an application we prove Gelander's
+conjecture on homotopy type of arithmetic hyperbolic $3$-manifolds: We show
+that there are constants $A,B$ such that every such manifold $M$ is homotopy
+equivalent to a simplicial complex with at most $A\mathrm{Vol}(M)$ vertices,
+all of degrees bounded by $B$."
+arxiv,Sidon sequences and nonpositive curvarture,,http://arxiv.org/abs/2309.14524v1,http://arxiv.org/pdf/2309.14524v1,/home/admin/dev/VRA/Novelty/math_search/papers/Sidon_sequences_and_nonpositive_curvarture.pdf,,,complex phase embedding modular arithmetic sequences,"A sequence $a_0&lt;a_1&lt;\ldots&lt;a_n$ of nonnegative integers is called a Sidon
+sequence if the sums of pairs $a_i+a_j$ are all different. In this paper we
+construct CAT(0) groups and spaces from Sidon sequences. The arithmetic
+condition of Sidon is shown to be equivalent to nonpositive curvature, and the
+number of ways to represent an integer as an alternating sum of triples
+$a_i-a_j+a_k$ of integers from the Sidon sequence, is shown to determine the
+structure of the space of embedded flat planes in the associated CAT(0)
+complex."
+arxiv,"Characterizing infinite torsion subgroups of the circle through
+  arithmetic-type sequences",,http://arxiv.org/abs/2506.15257v1,http://arxiv.org/pdf/2506.15257v1,/home/admin/dev/VRA/Novelty/math_search/papers/Characterizing_infinite_torsion_subgroups_of_the_circle_through_arithmetic-type_sequences.pdf,,,complex phase embedding modular arithmetic sequences,"In a recent work [Das et al., Bull. Sci. Math. 199 (2025), 103580], the
+structure of characterized subgroups corresponding to arithmetic-type sequences
+was investigated. Building upon this work, we further show that a characterized
+subgroup associated with an arithmetic-type sequence is countable if and only
+if it is torsion. Further we prove that any infinite torsion subgroup of the
+circle can be characterized by an arithmetic-type sequence with bounded ratio.
+Moreover, our findings demonstrate that the dichotomy observed in Eggleston's
+theorem [Theorem 16, Eggleston, Proc. Lond. Math. Soc. 54(2) (1952), 42--93]
+for arithmetic sequences does not extend, in general, to the broader class of
+arithmetic-type sequences."
+crossref,On Other Two Representations of the C-Recursive Integer Sequences by Terms in Modular Arithmetic,10.2139/ssrn.4915234,https://doi.org/10.2139/ssrn.4915234,,,2024,,complex phase embedding modular arithmetic sequences,
+crossref,"Notes on Prime Numbers, Their Numerical Statistics &amp; Patterns II: Modular Arithmetic and the Symmetric Triangular Embedding Model",10.2139/ssrn.2716918,https://doi.org/10.2139/ssrn.2716918,,,2016,SSRN Electronic Journal,complex phase embedding modular arithmetic sequences,
+crossref,TransModE: Translational Knowledge Graph Embedding Using Modular Arithmetic,10.1016/j.procs.2022.09.171,https://doi.org/10.1016/j.procs.2022.09.171,,,2022,Procedia Computer Science,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.1007/springerreference_362,https://doi.org/10.1007/springerreference_362,,,,SpringerReference,complex phase embedding modular arithmetic sequences,
+crossref,Modular arithmetic and the FFT,10.1017/cbo9780511921698.003,https://doi.org/10.1017/cbo9780511921698.003,,,2010,Modern Computer Arithmetic,complex phase embedding modular arithmetic sequences,
+crossref,The Modular Arithmetic of Arbitrarily Long Sequences of Digits,10.1109/t-c.1974.223850,https://doi.org/10.1109/t-c.1974.223850,,,1974,IEEE Transactions on Computers,complex phase embedding modular arithmetic sequences,
+crossref,Arithmetic Hilbert Modular Functions Ill,10.1007/978-3-663-06816-7_1,https://doi.org/10.1007/978-3-663-06816-7_1,,,1986,Contributions to Several Complex Variables,complex phase embedding modular arithmetic sequences,
+crossref,On other two representations of the C-recursive integer sequences by terms in modular arithmetic,10.1016/j.jsc.2025.102433,https://doi.org/10.1016/j.jsc.2025.102433,,,2025,Journal of Symbolic Computation,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.3840/07002153,https://doi.org/10.3840/07002153,,,2007,Wolfram Demonstrations Project,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.3840/002153,https://doi.org/10.3840/002153,,,2007,Wolfram Demonstrations Project,complex phase embedding modular arithmetic sequences,
+crossref,The Limit and the Arithmetic Operations of Sequences in Split Complex Plane,10.25236/ajms.2024.050316,https://doi.org/10.25236/ajms.2024.050316,,,2024,Academic Journal of Mathematical Sciences,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic Tables,10.3840/07001807,https://doi.org/10.3840/07001807,,,2007,Wolfram Demonstrations Project,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic Tables,10.3840/001807,https://doi.org/10.3840/001807,,,2007,Wolfram Demonstrations Project,complex phase embedding modular arithmetic sequences,
+crossref,On Orthogonal Polynomials Related to Arithmetic and Harmonic Sequences,10.1007/s11785-024-01589-z,https://doi.org/10.1007/s11785-024-01589-z,https://link.springer.com/content/pdf/10.1007/s11785-024-01589-z.pdf,/home/admin/dev/VRA/Novelty/math_search/papers/On_Orthogonal_Polynomials_Related_to_Arithmetic_and_Harmonic_Sequences.pdf,2024,Complex Analysis and Operator Theory,complex phase embedding modular arithmetic sequences,
+crossref,Modular arithmetic and residue number systems,10.1017/cbo9780511778568.009,https://doi.org/10.1017/cbo9780511778568.009,,,2010,Finite Precision Number Systems and Arithmetic,complex phase embedding modular arithmetic sequences,
+crossref,Modular arithmetic,10.5951/at.9.3.0127,https://doi.org/10.5951/at.9.3.0127,,,1962,The Arithmetic Teacher,complex phase embedding modular arithmetic sequences,<jats:p>A new type a rithmetic obtained from a “clocklike” number system is called modular arithmetic. It may also be called finite number systems because these have only a specific number of numbers in the system. It is used for all machines with dials or with a finite number of numbers. “Scientists find it useful in t he study of atoms which have shells of electrons.” 1 The limited number of numbers in the entire system makes it relatively simple.</jats:p>
+crossref,On the cohomology of siegel modular threefolds,10.1007/bfb0095975,https://doi.org/10.1007/bfb0095975,,,1989,Lecture Notes in Mathematics Arithmetic of Complex Manifolds,complex phase embedding modular arithmetic sequences,
+crossref,Arithmetic Sequences without Arithmetic Operations,10.20944/preprints202406.0985.v1,https://doi.org/10.20944/preprints202406.0985.v1,,,2024,,complex phase embedding modular arithmetic sequences,"<jats:p>The generation of arithmetic sequences involves arithmetic operations. However, is it possible to generate such sequences without being subject to any arithmetic or related operations, all by just hand? The answer may be negative, as the very rule defining these sequences itself relies on arithmetic operations. Nonetheless, this paper presents a few results demonstrating that the exact sequences of $an$, where, $a \in \{ 2,3,\cdots,9,10\}$ and $n \in \mathbb N \cup \{0\}$, can indeed be generated up to any desired number of terms without relying on any arithmetic operations and others derived from such. This is done by the formation of a specialized table that leverages numerical patterns and the notion of concatenation.</jats:p>"
+crossref,Identification of Pyridine Synthase Recognition Sequences Allows a Modular Solid-Phase Route to Thiopeptide Variants,10.1021/jacs.6b05389.s001,https://doi.org/10.1021/jacs.6b05389.s001,,,,,complex phase embedding modular arithmetic sequences,
+crossref,Mash Hash Functions (Modular Arithmetic Secure Hash),10.1007/springerreference_346,https://doi.org/10.1007/springerreference_346,,,,SpringerReference,complex phase embedding modular arithmetic sequences,
+crossref,Arithmetic Sequences,10.3840/003689,https://doi.org/10.3840/003689,,,2008,Wolfram Demonstrations Project,complex phase embedding modular arithmetic sequences,
+crossref,Green currents for modular cycles in arithmetic quotients of complex hyperballs,10.2140/pjm.2006.227.311,https://doi.org/10.2140/pjm.2006.227.311,,,2006,Pacific Journal of Mathematics,complex phase embedding modular arithmetic sequences,
+crossref,Arithmetic Sequences,10.3840/08003689,https://doi.org/10.3840/08003689,,,2008,Wolfram Demonstrations Project,complex phase embedding modular arithmetic sequences,
+crossref,Modular arithmetic,10.1142/9789819822270_0007,https://doi.org/10.1142/9789819822270_0007,,,2025,Axiomatic Arithmetic,complex phase embedding modular arithmetic sequences,
+crossref,Modular Groups and Modular Functions,10.1017/9781009602129.006,https://doi.org/10.1017/9781009602129.006,,,2025,Elliptic Curves,complex phase embedding modular arithmetic sequences,
+crossref,KEMA: Knowledge-Graph Embedding Using Modular Arithmetic,10.18293/seke2022-036,https://doi.org/10.18293/seke2022-036,,,2022,International Conferences on Software Engineering and Knowledge Engineering Proceedings of the 34th International Conference on Software Engineering and Knowledge Engineering,complex phase embedding modular arithmetic sequences,
+crossref,Volumes of fundamental domains of Picard modular groups,10.1007/bfb0095969,https://doi.org/10.1007/bfb0095969,,,1989,Lecture Notes in Mathematics Arithmetic of Complex Manifolds,complex phase embedding modular arithmetic sequences,
+crossref,Modular properties and decompositions of arithmetic matroids,10.14711/thesis-b1627131,https://doi.org/10.14711/thesis-b1627131,,,,,complex phase embedding modular arithmetic sequences,
+crossref,Modular Groups and Modular Functions,10.1017/cbo9781139174879.005,https://doi.org/10.1017/cbo9781139174879.005,,,1997,Elliptic Curves,complex phase embedding modular arithmetic sequences,
+crossref,Efficient Word Size Modular Arithmetic,10.1109/arith51176.2021.00036,https://doi.org/10.1109/arith51176.2021.00036,,,2021,2021 IEEE 28th Symposium on Computer Arithmetic (ARITH),complex phase embedding modular arithmetic sequences,
+crossref,Arithmetic circuit fault detection by modular encoding,10.1109/arith.1978.6155757,https://doi.org/10.1109/arith.1978.6155757,,,1978,1978 IEEE 4th Symposium onomputer Arithmetic (ARITH),complex phase embedding modular arithmetic sequences,
+crossref,Arithmetic and analytical aspects of Siegel modular forms,10.53846/goediss-8208,https://doi.org/10.53846/goediss-8208,,,,,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.1017/9781108768863.006,https://doi.org/10.1017/9781108768863.006,,,2019,Where Do Numbers Come From?,complex phase embedding modular arithmetic sequences,
+crossref,Primes in Arithmetic Progressions and other Sequences,10.1007/springerreference_29078,https://doi.org/10.1007/springerreference_29078,,,,SpringerReference,complex phase embedding modular arithmetic sequences,
+crossref,Quantization and Modular Forms,10.1007/978-3-7643-8791-4_4,https://doi.org/10.1007/978-3-7643-8791-4_4,,,,Quantization and Arithmetic,complex phase embedding modular arithmetic sequences,
+crossref,Vector-covering systems of arithmetic sequences,10.21136/cmj.1974.101260,https://doi.org/10.21136/cmj.1974.101260,,,1974,Czechoslovak Mathematical Journal,complex phase embedding modular arithmetic sequences,
+crossref,The arithmetic of modular forms,10.1142/9781848162143_0005,https://doi.org/10.1142/9781848162143_0005,,,2008,Modular Forms,complex phase embedding modular arithmetic sequences,
+crossref,Information technology. Security techniques. Hash-functions,10.3403/01640663u,https://doi.org/10.3403/01640663u,,,,,complex phase embedding modular arithmetic sequences,
+crossref,Data Embedding in Color Images: A Secure Data Communication Framework Based on Modular Arithmetic,10.1007/978-981-15-8711-5_8,https://doi.org/10.1007/978-981-15-8711-5_8,,,2021,Algorithms for Intelligent Systems Multimedia Security,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.1201/b15895-5,https://doi.org/10.1201/b15895-5,,,2008,Fundamental Number Theory with Applications,complex phase embedding modular arithmetic sequences,
+crossref,Information technology. Security techniques. Hash-functions,10.3403/01640663,https://doi.org/10.3403/01640663,,,,,complex phase embedding modular arithmetic sequences,
+crossref,The Arithmetic of Modular Forms,10.1142/9781783265466_0004,https://doi.org/10.1142/9781783265466_0004,,,2015,Modular Forms,complex phase embedding modular arithmetic sequences,
+crossref,Some arithmetic,10.1017/9781009457521.021,https://doi.org/10.1017/9781009457521.021,,,2024,Modular Forms and String Theory,complex phase embedding modular arithmetic sequences,
+crossref,Modular arithmetic*,10.1201/9781482285819-11,https://doi.org/10.1201/9781482285819-11,,,2018,Experimental Mathematics with Maple,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.1201/b17011-24,https://doi.org/10.1201/b17011-24,,,2014,Computing,complex phase embedding modular arithmetic sequences,
+crossref,Modular Arithmetic,10.1017/9781108955911.004,https://doi.org/10.1017/9781108955911.004,,,2021,Algebra,complex phase embedding modular arithmetic sequences,
+crossref,Modular arithmetic application to calculate the azimuth for phase direction finder,10.20535/radap.2016.64.23-32,https://doi.org/10.20535/radap.2016.64.23-32,,,2016,Visnyk NTUU KPI Seriia - Radiotekhnika Radioaparatobuduvannia,complex phase embedding modular arithmetic sequences,
+crossref,Modular and quasi-modular arithmetic,10.1007/bf02575700,https://doi.org/10.1007/bf02575700,http://link.springer.com/content/pdf/10.1007/BF02575700.pdf,/home/admin/dev/VRA/Novelty/math_search/papers/Modular_and_quasi-modular_arithmetic.pdf,1969,Calcolo,complex phase embedding modular arithmetic sequences,
+crossref,Casting out of nines with modular or clock arithmetic,10.5951/at.12.6.0460,https://doi.org/10.5951/at.12.6.0460,,,1965,The Arithmetic Teacher,complex phase embedding modular arithmetic sequences,"<jats:p>Teachers have been teaching children to check their arithmetic problems by the casting out of nines for many years. In most instances this operation was learned as a trick or gimmick that worked, but that seemed to have no explanation.</jats:p>"
+crossref,Modular Arithmetic,10.1201/9781003402633-27,https://doi.org/10.1201/9781003402633-27,,,2024,Electronic String Art,complex phase embedding modular arithmetic sequences,
+arxiv,The $q$-unit circle,,http://arxiv.org/abs/1801.09147v1,http://arxiv.org/pdf/1801.09147v1,/home/admin/dev/VRA/Novelty/math_search/papers/The_q_-unit_circle.pdf,,,unit circle representation modular exponentiation,"We define the unit circle for global function fields. We demonstrate that
+this unit circle (endearingly termed the \emph{$q$-unit circle}, after the
+finite field $\mathbb{F}_q$ of $q$ elements) enjoys all of the properties akin
+to the classical unit circle: center, curvature, roots of unity in completions,
+integrality conditions, embedding into a finite-dimensional vector space over
+the real line, a partition of the ambient space into concentric circles,
+M\""{o}bius transformations, a Dirichlet approximation theorem, a reciprocity
+law, and much more. We extend the exponential action of Carlitz by polynomials
+to an action by the real line. We show that mutually tangent horoballs solve a
+Descartes-type relation arising from reciprocity. We define the hyperbolic
+plane, which we prove is uniquely determined by the $q$-unit circle. We give
+the associated modular forms and Eisenstein series."
+arxiv,"A Borg-Type Theorem Associated with Orthogonal Polynomials on the Unit
+  Circle",,http://arxiv.org/abs/math/0501212v1,http://arxiv.org/pdf/math/0501212v1,/home/admin/dev/VRA/Novelty/math_search/papers/A_Borg-Type_Theorem_Associated_with_Orthogonal_Polynomials_on_the_Unit_Circle.pdf,,,unit circle representation modular exponentiation,"We prove a general Borg-type result for reflectionless unitary
+Cantero-Moral-Velazquez (CMV) operators U associated with orthogonal
+polynomials on the unit circle. The spectrum of U is assumed to be a connected
+arc on the unit circle. This extends a recent result of Simon in connection
+with a periodic CMV operator with spectrum the whole unit circle.
+  In the course of deriving the Borg-type result we also use exponential
+Herglotz representations of Caratheodory functions to prove an infinite
+sequence of trace formulas connected with the CMV operator U."
+arxiv,On Length Sets of Subarithmetic Hyperbolic Manifolds,,http://arxiv.org/abs/2201.10955v1,http://arxiv.org/pdf/2201.10955v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_Length_Sets_of_Subarithmetic_Hyperbolic_Manifolds.pdf,,,unit circle representation modular exponentiation,"We formulate the Asymptotic Length-Saturation Conjecture on the length sets
+of closed geodesics on hyperbolic manifolds whose fundamental groups are
+subarithmetic, that is, contained in an arithmetic group. We prove the first
+instance of the conjecture for punctured, Zariski dense covers of the modular
+surface. The tools involved include the Orbital Circle Method, expansion and
+counting in congruence towers of thin groups, estimates for exponential sums,
+bilinear forms, and quadratic L-series."
+arxiv,"Meromorphic Szego functions and asymptotic series for Verblunsky
+  coefficients",,http://arxiv.org/abs/math/0502489v1,http://arxiv.org/pdf/math/0502489v1,/home/admin/dev/VRA/Novelty/math_search/papers/Meromorphic_Szego_functions_and_asymptotic_series_for_Verblunsky_coefficients.pdf,,,unit circle representation modular exponentiation,"We prove that the Szeg\H{o} function, $D(z)$, of a measure on the unit circle
+is entire meromorphic if and only if the Verblunsky coefficients have an
+asymptotic expansion in exponentials. We relate the positions of the poles of
+$D(z)^{-1}$ to the exponential rates in the asymptotic expansion. Basically,
+either set is contained in the sets generated from the other by considering
+products of the form, $z_1 ... z_\ell \bar z_{\ell-1}... \bar z_{2\ell-1}$ with
+$z_j$ in the set. The proofs use nothing more than iterated Szeg\H{o} recursion
+at $z$ and $1/\bar z$."
+arxiv,"Trace Formulas and a Borg-type Theorem for CMV Operators with
+  Matrix-valued Coefficients",,http://arxiv.org/abs/0808.0382v1,http://arxiv.org/pdf/0808.0382v1,/home/admin/dev/VRA/Novelty/math_search/papers/Trace_Formulas_and_a_Borg-type_Theorem_for_CMV_Operators_with_Matrix-valued_Coefficients.pdf,,,unit circle representation modular exponentiation,"We prove a general Borg-type inverse spectral result for a reflectionless
+unitary CMV operator (CMV for Cantero, Moral, and Vel\'azquez) associated with
+matrix-valued Verblunsky coefficients. More precisely, we find an explicit
+formula for the Verblunsky coefficients of a reflectionless CMV matrix whose
+spectrum consists of a connected arc on the unit circle. This extends a recent
+result on CMV operators with scalar-valued coefficients. In the course of
+deriving the Borg-type result we also use exponential Herglotz representations
+of Caratheodory matrix-valued functions to prove an infinite sequence of trace
+formulas connected with CMV operators."
+arxiv,Apollonian Packings and Kac-Moody Root Systems,,http://arxiv.org/abs/2102.02172v1,http://arxiv.org/pdf/2102.02172v1,/home/admin/dev/VRA/Novelty/math_search/papers/Apollonian_Packings_and_Kac-Moody_Root_Systems.pdf,,,unit circle representation modular exponentiation,"We study Apollonian circle packings in relation to a certain rank 4
+indefinite Kac-Moody root system $\Phi$. We introduce the generating function
+$Z(\mathbf{s})$ of a packing, an exponential series in four variables with an
+Apollonian symmetry group, which relates to Weyl-Kac characters of $\Phi$. By
+exploiting the presence of affine and Lorentzian hyperbolic root subsystems of
+$\Phi$, with automorphic Weyl denominators, we express $Z(\mathbf{s})$ in terms
+of Jacobi theta functions and the Siegel modular form $\Delta_5$. We also show
+that the domain of convergence of $Z(\mathbf{s})$ is the Tits cone of $\Phi$,
+and discover that this domain inherits the intricate geometric structure of
+Apollonian packings."
+arxiv,Remarks on a special value of the Selberg zeta function,,http://arxiv.org/abs/0902.4225v2,http://arxiv.org/pdf/0902.4225v2,/home/admin/dev/VRA/Novelty/math_search/papers/Remarks_on_a_special_value_of_the_Selberg_zeta_function.pdf,,,unit circle representation modular exponentiation,"Let $\CmZ_{Y_0(N)}$ be the constant term of the logarithmic derivative at
+$s=1$ of the Selberg zeta function of the modular curve $Y_0(N)$. Jorgenson and
+Kramer established the bound $\CmZ_{Y_0(N)}=O_\epsilon(N^\epsilon)$,
+$\epsilon&gt;0$ by relating it to geometric invariants. In this article we give,
+for $N$ prime, another proof via $L$-functions and exponential sums improving
+on a previous approach by Abbes-Ullmo and Michel-Ullmo. We further derive a
+power of $\log N$ bound along the same line."
+arxiv,Efficient Unitary T-designs from Random Sums,,http://arxiv.org/abs/2402.09335v1,http://arxiv.org/pdf/2402.09335v1,/home/admin/dev/VRA/Novelty/math_search/papers/Efficient_Unitary_T-designs_from_Random_Sums.pdf,,,unit circle representation modular exponentiation,"Unitary $T$-designs play an important role in quantum information, with
+diverse applications in quantum algorithms, benchmarking, tomography, and
+communication. Until now, the most efficient construction of unitary
+$T$-designs for $n$-qudit systems has been via random local quantum circuits,
+which have been shown to converge to approximate $T$-designs in the diamond
+norm using $O(T^{5+o(1)} n^2)$ quantum gates. In this work, we provide a new
+construction of $T$-designs via random matrix theory using $\tilde{O}(T^2 n^2)$
+quantum gates. Our construction leverages two key ideas. First, in the spirit
+of central limit theorems, we approximate the Gaussian Unitary Ensemble (GUE)
+by an i.i.d. sum of random Hermitian matrices. Second, we show that the product
+of just two exponentiated GUE matrices is already approximately Haar random.
+Thus, multiplying two exponentiated sums over rather simple random matrices
+yields a unitary $T$-design, via Hamiltonian simulation. A central feature of
+our proof is a new connection between the polynomial method in quantum query
+complexity and the large-dimension ($N$) expansion in random matrix theory. In
+particular, we show that the polynomial method provides exponentially improved
+bounds on the high moments of certain random matrix ensembles, without
+requiring intricate Weingarten calculations. In doing so, we define and solve a
+new type of moment problem on the unit circle, asking whether a finite number
+of equally weighted points, corresponding to eigenvalues of unitary matrices,
+can reproduce a given set of moments."
+arxiv,"LIMDD: A Decision Diagram for Simulation of Quantum Computing Including
+  Stabilizer States",,http://arxiv.org/abs/2108.00931v5,http://arxiv.org/pdf/2108.00931v5,/home/admin/dev/VRA/Novelty/math_search/papers/LIMDD_A_Decision_Diagram_for_Simulation_of_Quantum_Computing_Including_Stabilizer_States.pdf,,,unit circle representation modular exponentiation,"Efficient methods for the representation and simulation of quantum states and
+quantum operations are crucial for the optimization of quantum circuits.
+Decision diagrams (DDs), a well-studied data structure originally used to
+represent Boolean functions, have proven capable of capturing relevant aspects
+of quantum systems, but their limits are not well understood. In this work, we
+investigate and bridge the gap between existing DD-based structures and the
+stabilizer formalism, an important tool for simulating quantum circuits in the
+tractable regime. We first show that although DDs were suggested to succinctly
+represent important quantum states, they actually require exponential space for
+certain stabilizer states. To remedy this, we introduce a more powerful
+decision diagram variant, called Local Invertible Map-DD (LIMDD). We prove that
+the set of quantum states represented by poly-sized LIMDDs strictly contains
+the union of stabilizer states and other decision diagram variants. Finally,
+there exist circuits which LIMDDs can efficiently simulate, while their output
+states cannot be succinctly represented by two state-of-the-art simulation
+paradigms: the stabilizer decomposition techniques for Clifford + $T$ circuits
+and Matrix-Product States. By uniting two successful approaches, LIMDDs thus
+pave the way for fundamentally more powerful solutions for simulation and
+analysis of quantum computing."
+arxiv,"Limit laws of maximal Birkhoff sums for circle rotations via quantum
+  modular forms",,http://arxiv.org/abs/2303.07796v1,http://arxiv.org/pdf/2303.07796v1,/home/admin/dev/VRA/Novelty/math_search/papers/Limit_laws_of_maximal_Birkhoff_sums_for_circle_rotations_via_quantum_modular_forms.pdf,,,unit circle representation modular exponentiation,"In this paper, we show how quantum modular forms naturally arise in the
+ergodic theory of circle rotations. Working with the classical Birkhoff sum
+$S_N(\alpha)=\sum_{n=1}^N (\{ n \alpha \}-1/2)$, we prove that the maximum and
+the minimum as well as certain exponential moments of $S_N(r)$ as functions of
+$r \in \mathbb{Q}$ satisfy a direct analogue of Zagier's continuity conjecture,
+originally stated for a quantum invariant of the figure-eight knot. As a
+corollary, we find the limit distribution of $\max_{0 \le N&lt;M} S_N(\alpha)$ and
+$\min_{0 \le N&lt;M} S_N(\alpha)$ with a random $\alpha \in [0,1]$."
+arxiv,Le système d'Euler de Kato,,http://arxiv.org/abs/1211.3767v1,http://arxiv.org/pdf/1211.3767v1,/home/admin/dev/VRA/Novelty/math_search/papers/Le_système_d_Euler_de_Kato.pdf,,,unit circle representation modular exponentiation,"This article is devoted to Kato's Euler system, which is constructed from
+modular unites, and to its image by the dual exponential map (so called Kato's
+reciprocity law). The presentation in this article is different form Kato's
+original one, and dual exponential map in this article is a modification of
+Colmez's construction in his Bourbaki talk."
+arxiv,"Spectral gap and exponential mixing on geometrically finite hyperbolic
+  manifolds",,http://arxiv.org/abs/2001.03377v2,http://arxiv.org/pdf/2001.03377v2,/home/admin/dev/VRA/Novelty/math_search/papers/Spectral_gap_and_exponential_mixing_on_geometrically_finite_hyperbolic_manifolds.pdf,,,unit circle representation modular exponentiation,"Let $\mathcal{M}=\Gamma\backslash\mathbb{H}^{d+1}$ be a geometrically finite
+hyperbolic manifold with critical exponent exceeding $d/2$. We obtain a precise
+asymptotic expansion of the matrix coefficients for the geodesic flow in
+$L^2(\mathrm{T}^1(\mathcal{M}))$, with exponential error term essentially as
+good as the one given by the spectral gap for the Laplace operator on
+$L^2(\mathcal{M})$ due to Lax and Phillips. Combined with the work of Bourgain,
+Gamburd, and Sarnak and its generalization by Golsefidy and Varju on expanders,
+this implies uniform exponential mixing for congruence covers of $\mathcal{M}$
+when $\Gamma$ is a Zariski dense subgroup contained in an arithmetic subgroup
+of $\mathrm{SO}^{\circ}(d+1,1)$."
+arxiv,Representation of Squares by Nonsingular Cubic Forms,,http://arxiv.org/abs/2204.09396v1,http://arxiv.org/pdf/2204.09396v1,/home/admin/dev/VRA/Novelty/math_search/papers/Representation_of_Squares_by_Nonsingular_Cubic_Forms.pdf,,,unit circle representation modular exponentiation,"We prove an asymptotic formula for the number of representations of squares
+by nonsingular cubic forms in six or more variables. The main ingredients of
+the proof are Heath-Brown's form of the Circle Method and various exponential
+sum results. The depth of the exponential sum results is comparable to Hooley's
+work on cubic forms in nine variables, in particular we prove an analogue of
+Katz' bound."
+arxiv,"On the nonexistence of automorphic eigenfunctions of exponential growth
+  on SL(3,Z)\SL(3,R)/SO(3,R)",,http://arxiv.org/abs/1811.02027v1,http://arxiv.org/pdf/1811.02027v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_the_nonexistence_of_automorphic_eigenfunctions_of_exponential_growth_on_SL_3_Z_SL_3_R_SO_3_R_.pdf,,,unit circle representation modular exponentiation,"It is well-known that there are automorphic eigenfunctions on
+SL(2,Z)\SL(2,R)/SO(2,R) -- such as the classical $j$-function -- that have
+exponential growth and have exponentially growing Fourier coefficients (e.g.,
+negative powers of $q=e^{2\pi i z}$, or an I-Bessel function). We show that
+this phenomenon does not occur on the quotient SL(3,Z)\SL(3,R)/SO(3,R) and
+eigenvalues in general position (a removable technical assumption).
+  More precisely, if such an automorphic eigenfunction has at most exponential
+growth, it cannot have non-decaying Whittaker functions in its Fourier
+expansion. This confirms part of a conjecture of Miatello and Wallach, who
+assert all automorphic eigenfunctions on this quotient (among other rank $\ge$
+2 examples) always have moderate growth. We additionally confirm their
+conjecture under certain natural hypotheses, such as the absolute convergence
+of the eigenfunction's Fourier expansion."
+arxiv,"Quantum Drinfeld Modules I: Quantum Modular Invariant and Hilbert Class
+  Fields",,http://arxiv.org/abs/1607.03027v3,http://arxiv.org/pdf/1607.03027v3,/home/admin/dev/VRA/Novelty/math_search/papers/Quantum_Drinfeld_Modules_I_Quantum_Modular_Invariant_and_Hilbert_Class_Fields.pdf,,,unit circle representation modular exponentiation,"This is the first of a series of two papers in which we present a solution to
+Manin's Real Multiplication program -- an approach to Hilbert's 12th problem
+for real quadratic extensions of $\mathbb{Q}$ -- in positive characteristic,
+using quantum analogs of the exponential function and the modular invariant. In
+this first paper, we treat the problem of Hilbert class field generation. If
+$k=\mathbb{F}_{q}(T)$ and $k_{\infty}$ is the analytic completion of $k$, we
+introduce the quantum modular invariant \[ j^{\rm qt}: k_{\infty}\multimap
+k_{\infty}\] as a multivalued, modular invariant function. Then if
+$K=k(f)\subset k_{\infty}$ is a real quadratic extension of $k$ where $f$ is a
+quadratic unit, we show that the Hilbert class field $H_{\mathcal{O}_{K}}$
+(associated to $\mathcal{O}_{K}=$ integral closure of $\mathbb{F}_{q}[T]$ in
+$K$) is generated over $K$ by the product of the multivalues of $j^{\rm
+qt}(f)$."
+arxiv,On modular representations of C-recursive integer sequences,,http://arxiv.org/abs/2502.16928v1,http://arxiv.org/pdf/2502.16928v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_modular_representations_of_C-recursive_integer_sequences.pdf,,,unit circle representation modular exponentiation,"Prunescu and Sauras-Altuzarra showed that all C-recursive sequences of
+natural numbers have an arithmetic div-mod representation that can be derived
+from their generating function. This representation consists of computing the
+quotient of two exponential polynomials and taking the remainder of the result
+modulo a third exponential polynomial, and works for all integers $n \geq 1$.
+Using a different approach, Prunescu proved the existence of two other
+representations, one of which is the mod-mod representation, consisting of two
+successive remainder computations. This result has two weaknesses: (i) the
+representation works only ultimately, and (ii) a correction term must be added
+to the first exponential polynomial. We show that a mod-mod representation
+without inner correction term holds for all integers $n \geq 1$. This follows
+directly from the div-mod representation by an arithmetic short-cut from
+outside."
+arxiv,Characterization of expansive polynomials by special determinants,,http://arxiv.org/abs/1910.13702v3,http://arxiv.org/pdf/1910.13702v3,/home/admin/dev/VRA/Novelty/math_search/papers/Characterization_of_expansive_polynomials_by_special_determinants.pdf,,,unit circle representation modular exponentiation,"A polynomial is expansive if all of its roots lie outside the unit circle. We
+define some special determinants involving the coefficients of a real
+polynomial and formulate necessary and sufficient conditions for expansivity
+using these determinants. We show how these conditions can be turned into an
+algorithm, which, for integer polynomials, avoids exponential coefficient
+growth. We also examine the question how close the roots of an expansive
+polynomial can be to the unit circle if the coefficients are integers. We give
+several lower bounds on this distance in terms of different measures of the
+polynomial (e.g. its height). The simplest one is derived by Liouville's
+inequality, but then we improve this result and give different bounds using our
+special determinants."
+arxiv,Stable mixing for cat maps and quasi-morphisms of the modular group,,http://arxiv.org/abs/math/0009143v2,http://arxiv.org/pdf/math/0009143v2,/home/admin/dev/VRA/Novelty/math_search/papers/Stable_mixing_for_cat_maps_and_quasi-morphisms_of_the_modular_group.pdf,,,unit circle representation modular exponentiation,"It is well-known that the action of a hyperbolic element (``cat map'') of the
+modular group on the 2-torus has strong chaotic dynamical properties such as
+mixing and exponential decay of correlations. In this note we study stability
+of this behaviour with respect to kicks. Our approach is based on geometric
+group theory, and in particular on a new result on quasimorphisms of the
+modular group."
+arxiv,Polarization of an inequality,,http://arxiv.org/abs/0905.1426v2,http://arxiv.org/pdf/0905.1426v2,/home/admin/dev/VRA/Novelty/math_search/papers/Polarization_of_an_inequality.pdf,,,unit circle representation modular exponentiation,"We generalize a previous inequality related to a sharp version of the
+Littlewood conjecture on the minimal $L_1$-norm of $N$-term exponential sums
+$f$ on the unit circle. The new result concerns replacing the expression
+$\log(1+t|f|^2)$ with $\log (\sum_{k=1}^K t_k|f_{k}|^2)$. The proof occurs on
+the level of finite Toeplitz matrices, where it reduces to an inequality
+between their polarized determinants (or ""mixed discriminants"")."
+arxiv,Exponential Sums and Distinct Points on Arcs,,http://arxiv.org/abs/0812.4653v1,http://arxiv.org/pdf/0812.4653v1,/home/admin/dev/VRA/Novelty/math_search/papers/Exponential_Sums_and_Distinct_Points_on_Arcs.pdf,,,unit circle representation modular exponentiation,"Suppose that some harmonic analysis arguments have been invoked to show that
+the indicator function of a set of residue classes modulo some integer has a
+large Fourier coefficient. To get information about the structure of the set of
+residue classes, we then need a certain type of complementary result. A
+solution to this problem was given by Gregory Freiman in 1961, when he proved a
+lemma which relates the value of an exponential sum with the distribution of
+summands in semi-circles of the unit circle in the complex plane. Since then,
+Freiman's Lemma has been extended by several authors. Rather than residue
+classes, one has considered the situation for finitely many arbitrary points on
+the unit circle. So far, Lev is the only author who has taken into
+consideration that the summands may be bounded away from each other, as is the
+case with residue classes. In this paper we extend Lev's result by lifting a
+recent result of ours to the case of the points being bounded away from each
+other."
+arxiv,"On multiplicities in length spectra of semi-arithmetic hyperbolic
+  surfaces",,http://arxiv.org/abs/2507.00211v1,http://arxiv.org/pdf/2507.00211v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_multiplicities_in_length_spectra_of_semi-arithmetic_hyperbolic_surfaces.pdf,,,unit circle representation modular exponentiation,"We show that semi-arithmetic surfaces of arithmetic dimension two which admit
+a modular embedding have exponential growth of mean multiplicities in their
+length spectrum. Prior to this work large mean multiplicities were rigorously
+confirmed only for the length spectra of arithmetic surfaces. We also discuss
+the relation of the degeneracies in the length spectrum and quantization of the
+Hamiltonian mechanical system on the surface."
+arxiv,"On other two representations of the C-recursive integer sequences by
+  terms in modular arithmetic",,http://arxiv.org/abs/2406.06436v1,http://arxiv.org/pdf/2406.06436v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_other_two_representations_of_the_C-recursive_integer_sequences_by_terms_in_modular_arithmetic.pdf,,,unit circle representation modular exponentiation,"An integer sequence that is defined by initial values and a linear recurrence
+with constant integer coefficients, can be represented by the difference of two
+arithmetic terms containing exponentiation. All constants occuring in the term
+are integers. While in the paper ""On the representation of C-recursive integer
+sequences by arithmetic terms"" by Prunescu and Sauras-Altuzarra, the terms
+consist of the remainder operation, applied on a division; the representations
+shown here are a division applied to a remainder operation, respectively the
+composition of two remainder operations."
+arxiv,"An Efficient Quantum Algorithm for some Instances of the Group
+  Isomorphism Problem",,http://arxiv.org/abs/1001.0608v1,http://arxiv.org/pdf/1001.0608v1,/home/admin/dev/VRA/Novelty/math_search/papers/An_Efficient_Quantum_Algorithm_for_some_Instances_of_the_Group_Isomorphism_Problem.pdf,,,unit circle representation modular exponentiation,"In this paper we consider the problem of testing whether two finite groups
+are isomorphic. Whereas the case where both groups are abelian is well
+understood and can be solved efficiently, very little is known about the
+complexity of isomorphism testing for nonabelian groups. Le Gall has
+constructed an efficient classical algorithm for a class of groups
+corresponding to one of the most natural ways of constructing nonabelian groups
+from abelian groups: the groups that are extensions of an abelian group $A$ by
+a cyclic group $Z_m$ with the order of $A$ coprime with $m$. More precisely,
+the running time of that algorithm is almost linear in the order of the input
+groups. In this paper we present a quantum algorithm solving the same problem
+in time polynomial in the logarithm of the order of the input groups. This
+algorithm works in the black-box setting and is the first quantum algorithm
+solving instances of the nonabelian group isomorphism problem exponentially
+faster than the best known classical algorithms."
+arxiv,Generalized Dedekind sums and equidistribution mod 1,,http://arxiv.org/abs/1509.04429v2,http://arxiv.org/pdf/1509.04429v2,/home/admin/dev/VRA/Novelty/math_search/papers/Generalized_Dedekind_sums_and_equidistribution_mod_1.pdf,,,unit circle representation modular exponentiation,"Dedekind sums are well-studied arithmetic sums, with values uniformly
+distributed on the unit interval. Based on their relation to certain modular
+forms, Dedekind sums may be defined as functions on the cusp set of
+$SL(2,\mathbb{Z})$. We present a compatible notion of Dedekind sums, which we
+name Dedekind symbols, for any non-cocompact lattice $\Gamma&lt;SL(2,\mathbb{R})$,
+and prove the corresponding equidistribution mod 1 result. The latter part
+builds up on a paper of Vardi, who first connected exponential sums of Dedekind
+sums to Kloosterman sums."
+arxiv,"Fast Quantum Modular Exponentiation Architecture for Shor's
+  Factorization Algorithm",,http://arxiv.org/abs/1207.0511v5,http://arxiv.org/pdf/1207.0511v5,/home/admin/dev/VRA/Novelty/math_search/papers/Fast_Quantum_Modular_Exponentiation_Architecture_for_Shor_s_Factorization_Algorithm.pdf,,,unit circle representation modular exponentiation,"We present a novel and efficient in terms of circuit depth design for Shor's
+quantum factorization algorithm. The circuit effectively utilizes a diverse set
+of adders based on the quantum Fourier transform (QFT) Draper's adders to build
+more complex arithmetic blocks: quantum multiplier/accumulators by constants
+and quantum dividers by constants. These arithmetic blocks are effectively
+architected into a generic modular quantum multiplier which is the fundamental
+block for modular exponentiation circuit, the most computational intensive part
+of Shor's algorithm. The proposed modular exponentiation circuit has a depth of
+about $2000n^{2}$ and requires $9n+2$ qubits, where $n$ is the number of bits
+of the classical number to be factored. The total quantum cost of the proposed
+design is $1600n^{3}$. The circuit depth can be further decreased by more than
+three times if the approximate QFT implementation of each adder unit is
+exploited."
+arxiv,Analytic properties of spherical cusp forms on GL(n),,http://arxiv.org/abs/1712.05065v5,http://arxiv.org/pdf/1712.05065v5,/home/admin/dev/VRA/Novelty/math_search/papers/Analytic_properties_of_spherical_cusp_forms_on_GL_n_.pdf,,,unit circle representation modular exponentiation,"Let $\phi$ be an $L^2$-normalized spherical vector in an everywhere
+unramified cuspidal automorphic representation of $\mathrm{PGL}_n$ over
+$\mathbb{Q}$ with Laplace eigenvalue $\lambda_{\phi}$. We establish explicit
+estimates for various quantities related to $\phi$ that are uniform in
+$\lambda_{\phi}$. This includes uniforms bounds for spherical Whittaker
+functions on $\mathrm{GL}_n(\mathbb{R})$, uniform bounds for the global
+sup-norm of $\phi$, and uniform bounds for the ""essential support"" of $\phi$,
+i.e. the region outside which it decays exponentially. The proofs combine
+analytic and arithmetic tools."
+arxiv,Kloosterman sums and Hecke polynomials in characteristics 2 and 3,,http://arxiv.org/abs/2012.00570v1,http://arxiv.org/pdf/2012.00570v1,/home/admin/dev/VRA/Novelty/math_search/papers/Kloosterman_sums_and_Hecke_polynomials_in_characteristics_2_and_3.pdf,,,unit circle representation modular exponentiation,"In this paper we give a modular interpretation of the $k$-th symmetric power
+$L$-function of the Kloosterman family of exponential sums in characteristics 2
+and 3, and in the case of $p=2$ and $k$ odd give the precise 2-adic Newton
+polygon. We also give a $p$-adic modular interpretation of Dwork's unit root
+$L$-function of the Kloosterman family, and give the precise 2-adic Newton
+polygon when $k$ is odd.
+  In a previous paper, we gave an estimate for the $q$-adic Newton polygon of
+the symmetric power $L$-function of the Kloosterman family when $p \geq 5$. We
+discuss how this restriction on primes was not needed, and so the results of
+that paper hold for all $p \geq 2$."
+arxiv,Moments of an exponential sum related to the divisor function,,http://arxiv.org/abs/1807.07341v1,http://arxiv.org/pdf/1807.07341v1,/home/admin/dev/VRA/Novelty/math_search/papers/Moments_of_an_exponential_sum_related_to_the_divisor_function.pdf,,,unit circle representation modular exponentiation,"We use the circle method to obtain tight bounds on the $L^p$ norm of an
+exponential sum involving the divisor function for $p &gt; 2$."
+arxiv,Faster Quantum Number Factoring via Circuit Synthesis,,http://arxiv.org/abs/1301.3210v1,http://arxiv.org/pdf/1301.3210v1,/home/admin/dev/VRA/Novelty/math_search/papers/Faster_Quantum_Number_Factoring_via_Circuit_Synthesis.pdf,,,unit circle representation modular exponentiation,"A major obstacle to implementing Shor's quantum number-factoring algorithm is
+the large size of modular-exponentiation circuits. We reduce this bottleneck by
+customizing reversible circuits for modular multiplication to individual runs
+of Shor's algorithm. Our circuit-synthesis procedure exploits spectral
+properties of multiplication operators and constructs optimized circuits from
+the traces of the execution of an appropriate GCD algorithm. Empirically, gate
+counts are reduced by 4-5 times, and circuit latency is reduced by larger
+factors."
+arxiv,Computing modular Galois representations,,http://arxiv.org/abs/1211.1635v5,http://arxiv.org/pdf/1211.1635v5,/home/admin/dev/VRA/Novelty/math_search/papers/Computing_modular_Galois_representations.pdf,,,unit circle representation modular exponentiation,"We compute modular Galois representations associated with a newform $f$, and
+study the related problem of computing the coefficients of $f$ modulo a small
+prime $\ell$. To this end, we design a practical variant of the complex
+approximations method presented in the book edited by B. Edixhoven and J.-M.
+Couveignes. Its efficiency stems from several new ingredients. For instance, we
+use fast exponentiation in the modular jacobian instead of analytic
+continuation, which greatly reduces the need to compute abelian integrals,
+since most of the computation handles divisors. Also, we introduce an efficient
+way to compute arithmetically well-behaved functions on jacobians, a method to
+expand cuspforms in quasi-linear time, and a trick making the computation of
+the image of a Frobenius element by a modular Galois representation more
+effective. We illustrate our method on the newforms $\Delta$ and $E_4 \Delta$,
+and manage to compute for the first time the associated faithful
+representations modulo $\ell$ and the values modulo $\ell$ of Ramanujan's
+$\tau$ function at huge primes for $\ell \in {11,13,17,19,29}$. In particular,
+we get rid of the sign ambiguity stemming from the use of a non-faithful
+representation as in J. Bosman's work. As a consequence, we can compute the
+values of $\tau(p) \bmod 2^11.3^6.5^3.7.11.13.17.19.23.29.691 \approx
+2.8.10^19$ for huge primes $p$. These representations lie in the jacobian of
+modular curves of genus up to 22."
+arxiv,"Truncated versions of Dwork's lemma for exponentials of power series and
+  $p$-divisibility of arithmetic functiens",,http://arxiv.org/abs/1412.7014v2,http://arxiv.org/pdf/1412.7014v2,/home/admin/dev/VRA/Novelty/math_search/papers/Truncated_versions_of_Dwork_s_lemma_for_exponentials_of_power_series_and_p_-divisibility_of_arithmetic_functiens.pdf,,,unit circle representation modular exponentiation,"(Dieudonn\'e and) Dwork's lemma gives a necessary and sufficient condition
+for an exponential of a formal power series $S(z)$ with coefficients in $Q_p$
+to have coefficients in $Z_p$. We establish theorems on the $p$-adic valuation
+of the coefficients of the exponential of $S(z)$, assuming weaker conditions on
+the coefficients of $S(z)$ than in Dwork's lemma. As applications, we provide
+several results concerning lower bounds on the $p$-adic valuation of the number
+of permutation representations of finitely generated groups. In particular, we
+give fairly tight lower bounds in the case of an arbitrary finite Abelian
+$p$-group, thus generalising numerous results in special cases that had
+appeared earlier in the literature. Further applications include sufficient
+conditions for ultimate periodicity of subgroup numbers modulo $p$ for free
+products of finite Abelian $p$-groups, results on $p$-divisibility of
+permutation numbers with restrictions on their cycle structure, and a curious
+""supercongruence"" for a certain binomial sum."
+arxiv,Quadratic forms in 8 prime variables,,http://arxiv.org/abs/2108.10401v1,http://arxiv.org/pdf/2108.10401v1,/home/admin/dev/VRA/Novelty/math_search/papers/Quadratic_forms_in_8_prime_variables.pdf,,,unit circle representation modular exponentiation,"We give an asymptotic for the number of prime solutions to $Q(x_1,\dots, x_8)
+= N$, subject to a mild non-degeneracy condition on the homogeneous quadratic
+form $Q$.
+  The argument initially proceeds via the circle method, but this does not
+suffice by itself. To obtain a nontrivial bound on certain averages of
+exponential sums, we interpret these sums as matrix coefficients for the Weil
+representation of the symplectic group
+$\operatorname{Sp}_8(\mathbf{Z}/q\mathbf{Z})$. Averages of such matrix
+coefficients are then bounded using an amplification argument and a convergence
+result for convolutions of measures, which reduces matters to understanding the
+action of certain 12-dimensional subgroups in the Weil representation.
+Sufficient understanding can be gained by using the basic represention theory
+of $\operatorname{SL}_2(k)$, $k$ a finite field."
+arxiv,"Faster construction of asymptotically good unit-cost error correcting
+  codes in the RAM model",,http://arxiv.org/abs/1408.5518v2,http://arxiv.org/pdf/1408.5518v2,/home/admin/dev/VRA/Novelty/math_search/papers/Faster_construction_of_asymptotically_good_unit-cost_error_correcting_codes_in_the_RAM_model.pdf,,,unit circle representation modular exponentiation,"Assuming we are in a Word-RAM model with word size $w$, we show that we can
+construct in $o(w)$ time an error correcting code with a constant relative
+positive distance that maps numbers of $w$ bits into $\Theta(w)$-bit numbers,
+and such that the application of the error-correcting code on any given number
+$x\in[0,2^w-1]$ takes constant time. Our result improves on a previously
+proposed error-correcting code with the same properties whose construction time
+was exponential in $w$."
+arxiv,Efficient Approximation of Quantum Channel Fidelity Exploiting Symmetry,,http://arxiv.org/abs/2308.15884v3,http://arxiv.org/pdf/2308.15884v3,/home/admin/dev/VRA/Novelty/math_search/papers/Efficient_Approximation_of_Quantum_Channel_Fidelity_Exploiting_Symmetry.pdf,,,unit circle representation modular exponentiation,"Determining the optimal fidelity for the transmission of quantum information
+over noisy quantum channels is one of the central problems in quantum
+information theory. Recently, [Berta-Borderi-Fawzi-Scholz, Mathematical
+Programming, 2021] introduced an asymptotically converging semidefinite
+programming hierarchy of outer bounds for this quantity. However, the size of
+the semidefinite programs (SDPs) grows exponentially with respect to the level
+of the hierarchy, thus making their computation unscalable. In this work, by
+exploiting the symmetries in the SDP, we show that, for a fixed output
+dimension of the quantum channel, we can compute the SDP in time polynomial
+with respect to the level of the hierarchy and input dimension. As a direct
+consequence of our result, the optimal fidelity can be approximated with an
+accuracy of $\epsilon$ in $\mathrm{poly}(1/\epsilon, \text{input dimension})$
+time."
+arxiv,From continued fractions and quadratic functions to modular forms,,http://arxiv.org/abs/1301.7024v1,http://arxiv.org/pdf/1301.7024v1,/home/admin/dev/VRA/Novelty/math_search/papers/From_continued_fractions_and_quadratic_functions_to_modular_forms.pdf,,,unit circle representation modular exponentiation,"In this paper we study certain real functions defined in a very simple way by
+Zagier as sums of infinite powers of quadratic polynomials with integer
+coefficients. These functions give the even parts of the period polynomials of
+the modular forms which are the coefficients in Fourier expansion of the kernel
+function for Shimura-Shintani correspondence. We prove two conjectures of
+Zagier showing that the sums converge exponentially. We also prove unexpected
+results on the representation of these functions as sums over simple or reduced
+quadratic forms and the positive or negative continued fraction of the
+variable. These arise from more general results on polynomials of even degree.
+Especially we give the even part of the Eichler integral on a real number x of
+any cusp form for PSL(2,Z) in terms of the even part of its period polynomial
+and the continued fraction of x."
+arxiv,Quasi-Random profinite groups,,http://arxiv.org/abs/1202.4194v5,http://arxiv.org/pdf/1202.4194v5,/home/admin/dev/VRA/Novelty/math_search/papers/Quasi-Random_profinite_groups.pdf,,,unit circle representation modular exponentiation,"We will investigate quasi-randomness for profinite groups. We will obtain
+bounds for the mininal degree of non-trivial representations of
+$\mathrm{SL}_k(\mathbb{Z}/(p^n\mathbb{Z}))$ and
+$\mathrm{Sp}_{2k}(\mathbb{Z}/(p^n\mathbb{Z}))$. Our method also delivers a
+lower bound for the minimal degree of a faithful representation for these
+groups. Using the suitable machinery from functional analysis, we establish
+exponential lower and upper bounds for the supremal measure of a product-free
+measurable subset of the profinite groups $\mathrm{SL}_{k}({\mathbb{Z}_p})$ and
+$\mathrm{Sp}_{2k}(\mathbb{Z}_p)$. We also obtain analogous bounds for a special
+subgroup of the automorphism group of a regular tree."
+arxiv,Infinite Product Exponents for Modular Forms,,http://arxiv.org/abs/1606.06122v1,http://arxiv.org/pdf/1606.06122v1,/home/admin/dev/VRA/Novelty/math_search/papers/Infinite_Product_Exponents_for_Modular_Forms.pdf,,,unit circle representation modular exponentiation,"Recently, D. Choi obtained a description of the coefficients of the infinite
+product expansions of meromorphic modular forms over $\Gamma_0(N)$. Using this
+result, we provide some bounds on these infinite product coefficients for
+holomorphic modular forms. We give an exponential upper bound for the growth of
+these coefficients. We show that this bound is also a lower bound in the case
+that the genus of the associated modular curve $X_0(N)$ is $0$ or $1$."
+arxiv,From the Carlitz exponential to Drinfeld modular forms,,http://arxiv.org/abs/1910.00322v2,http://arxiv.org/pdf/1910.00322v2,/home/admin/dev/VRA/Novelty/math_search/papers/From_the_Carlitz_exponential_to_Drinfeld_modular_forms.pdf,,,unit circle representation modular exponentiation,"This paper contains the written notes of a course the author gave at the
+VIASM of Hanoi in the Summer 2018. It provides an elementary introduction to
+the analytic naive theory of Drinfeld modular forms for the simplest 'Drinfeld
+modular group' GL 2 (Fq[$\theta$]) also providing some perspectives of
+development, notably in the direction of the theory of vector modular forms
+with values in certain ultrametric Banach algebras."
+arxiv,The graphic nature of the symmetric group,,http://arxiv.org/abs/1305.4913v2,http://arxiv.org/pdf/1305.4913v2,/home/admin/dev/VRA/Novelty/math_search/papers/The_graphic_nature_of_the_symmetric_group.pdf,,,unit circle representation modular exponentiation,"We investigate a remarkable class of exponential sums which are derived from
+the symmetric groups and which display a diverse array of visually appealing
+features. Our interest in these expressions stems not only from their
+astounding visual properties, but also from the fact that they represent a
+novel and intriguing class of supercharacters."
+arxiv,Measuring Quantum Entropy,,http://arxiv.org/abs/1711.00814v2,http://arxiv.org/pdf/1711.00814v2,/home/admin/dev/VRA/Novelty/math_search/papers/Measuring_Quantum_Entropy.pdf,,,unit circle representation modular exponentiation,"The entropy of a quantum system is a measure of its randomness, and has
+applications in measuring quantum entanglement. We study the problem of
+measuring the von Neumann entropy, $S(\rho)$, and R\'enyi entropy,
+$S_\alpha(\rho)$ of an unknown mixed quantum state $\rho$ in $d$ dimensions,
+given access to independent copies of $\rho$.
+  We provide an algorithm with copy complexity $O(d^{2/\alpha})$ for estimating
+$S_\alpha(\rho)$ for $\alpha&lt;1$, and copy complexity $O(d^{2})$ for estimating
+$S(\rho)$, and $S_\alpha(\rho)$ for non-integral $\alpha&gt;1$. These bounds are
+at least quadratic in $d$, which is the order dependence on the number of
+copies required for learning the entire state $\rho$. For integral $\alpha&gt;1$,
+on the other hand, we provide an algorithm for estimating $S_\alpha(\rho)$ with
+a sub-quadratic copy complexity of $O(d^{2-2/\alpha})$. We characterize the
+copy complexity for integral $\alpha&gt;1$ up to constant factors by providing
+matching lower bounds. For other values of $\alpha$, and the von Neumann
+entropy, we show lower bounds on the algorithm that achieves the upper bound.
+This shows that we either need new algorithms for better upper bounds, or
+better lower bounds to tighten the results.
+  For non-integral $\alpha$, and the von Neumann entropy, we consider the well
+known Empirical Young Diagram (EYD) algorithm, which is the analogue of
+empirical plug-in estimator in classical distribution estimation. As a
+corollary, we strengthen a lower bound on the copy complexity of the EYD
+algorithm for learning the maximally mixed state by showing that the lower
+bound holds with exponential probability (which was previously known to hold
+with a constant probability). For integral $\alpha&gt;1$, we provide new
+concentration results of certain polynomials that arise in Kerov algebra of
+Young diagrams."
+arxiv,Exponential sums in prime fields for modular forms,,http://arxiv.org/abs/2007.15482v2,http://arxiv.org/pdf/2007.15482v2,/home/admin/dev/VRA/Novelty/math_search/papers/Exponential_sums_in_prime_fields_for_modular_forms.pdf,,,unit circle representation modular exponentiation,"The main objective of this article is to study the exponential sums
+associated to Fourier coefficients of modular forms supported at numbers having
+a fixed set of prime factors. This is achieved by establishing an improvement
+on Shparlinski's bound for exponential sums attached to certain recurrence
+sequences over finite fields."
+arxiv,Sampling Almost Periodic and related Functions,,http://arxiv.org/abs/1801.02564v2,http://arxiv.org/pdf/1801.02564v2,/home/admin/dev/VRA/Novelty/math_search/papers/Sampling_Almost_Periodic_and_related_Functions.pdf,,,unit circle representation modular exponentiation,"We consider certain finite sets of circle-valued functions defined on
+intervals of real numbers and estimate how large the intervals must be for the
+values of these functions to be uniformly distributed in an approximate way.
+  This is used to establish some general conditions under which a random
+construction introduced by Katznelson for the integers yields sets that are
+dense in the Bohr group. We obtain in this way very sparse sets of real numbers
+(and of integers) on which two different almost periodic functions cannot
+agree, what makes them amenable to be used in sampling theorems for these
+functions. These sets can be made as sparse as to have zero asymptotic density
+or as to be t-sets, i.e., to be sets that intersect any of their translates in
+a bounded set. Many of these results are proved not only for almost periodic
+functions but also for classes of functions generated by more general complex
+exponential functions, including chirps."
+arxiv,"Unitary-Scaling Decomposition and Dissipative Behaviour in
+  Finite-Dimensional Linblad Dynamics",,http://arxiv.org/abs/1512.09307v4,http://arxiv.org/pdf/1512.09307v4,/home/admin/dev/VRA/Novelty/math_search/papers/Unitary-Scaling_Decomposition_and_Dissipative_Behaviour_in_Finite-Dimensional_Linblad_Dynamics.pdf,,,unit circle representation modular exponentiation,"We investigate a decomposition of a unital Lindblad dynamical map of an open
+quantum system into two distinct types of mapping on the Hilbert-Schmidt space
+of quantum states. One component of the decomposed map corresponds to
+reversible behaviours, while the other to irreversible characteristics. For a
+finite dimensional system, we employ real vectors or Bloch representations and
+express a dynamical map on the state space as a real matrix acting on the
+representation. It is found that rotation and scaling transformations on the
+real vector space, obtained from the real-polar decomposition, form building
+blocks for the dynamical map. Consequently, the change of the linear entropy or
+purity, which indicates dissipative behaviours, depends only on the scaling
+part of the dynamical matrix. The rate of change of the entropy depends on the
+structure of the scaling part of the dynamical matrix, such as eigensubspace
+partitioning, and its relationship with the initial state. In particular, the
+linear entropy is expressed as a weighted sum of the exponential-decay
+functions in each scaling component, where the weight is equal to
+$\vert\vec{x}_k(\rho)\vert^2$ of the initial state $\rho$ in the subspace. The
+dissipative behaviours and the partition of eigensubspaces in the decomposition
+are discussed and illustrated for qubit systems."
+arxiv,"Retraction: Improved Approximation Schemes for Dominating Set Problems
+  in Unit Disk Graphs",,http://arxiv.org/abs/2109.01283v3,http://arxiv.org/pdf/2109.01283v3,,,,unit circle representation modular exponentiation,"Retraction note: After posting the manuscript on arXiv, we were informed by
+Erik Jan van Leeuwen that both results were known and they appeared in his
+thesis[vL09]. A PTAS for MDS is at Theorem 6.3.21 on page 79 and A PTAS for
+MCDS is at Theorem 6.3.31 on page 82. The techniques used are very similar. He
+noted that the idea for dealing with the connected version using a constant
+number of extra layers in the shifting technique not only appeared Zhang et
+al.[ZGWD09] but also in his 2005 paper [vL05]. Finally, van Leeuwen also
+informed us that the open problem that we posted has been resolved by
+Marx~[Mar06, Mar07] who showed that an efficient PTAS for MDS does not exist
+[Mar06] and under ETH, the running time of $n^{O(1/\epsilon)}$ is best possible
+[Mar07]. We thank Erik Jan van Leeuwen for the information and we regret that
+we made this mistake. Abstract before retraction: We present two
+(exponentially) faster PTAS's for dominating set problems in unit disk graphs.
+Given a geometric representation of a unit disk graph, our PTAS's that find
+$(1+\epsilon)$-approximate solutions to the Minimum Dominating Set (MDS) and
+the Minimum Connected Dominating Set (MCDS) of the input graph run in time
+$n^{O(1/\epsilon)}$. This can be compared to the best known $n^{O(1/\epsilon
+  \log {1/\epsilon})}$-time PTAS by Nieberg and Hurink~[WAOA'05] for MDS that
+only uses graph structures and an $n^{O(1/\epsilon^2)}$-time PTAS for MCDS by
+Zhang, Gao, Wu, and Du~[J Glob Optim'09]. Our key ingredients are improved
+dynamic programming algorithms that depend exponentially on more essential
+1-dimensional ""widths"" of the problems."
+arxiv,Exponential sum estimate for systems including linear polynomials,,http://arxiv.org/abs/1607.08283v1,http://arxiv.org/pdf/1607.08283v1,/home/admin/dev/VRA/Novelty/math_search/papers/Exponential_sum_estimate_for_systems_including_linear_polynomials.pdf,,,unit circle representation modular exponentiation,"In his paper, W. M. Schmidt obtained an exponential sum estimate for systems
+of polynomials not including linear polynomials, which was then used to apply
+the Hardy-Littlewood circle method. We prove an analogous estimate for systems
+including linear polynomials."
+arxiv,Exponential sums with multiplicative coefficients and applications,,http://arxiv.org/abs/2103.16648v1,http://arxiv.org/pdf/2103.16648v1,/home/admin/dev/VRA/Novelty/math_search/papers/Exponential_sums_with_multiplicative_coefficients_and_applications.pdf,,,unit circle representation modular exponentiation,"We show that if an exponential sum with multiplicative coefficients is large
+then the associated multiplicative function is ""pretentious"". This leads to
+applications in the circle method, and a natural interpretation of the
+local-global principle."
+arxiv,Quantum machine learning with subspace states,,http://arxiv.org/abs/2202.00054v2,http://arxiv.org/pdf/2202.00054v2,/home/admin/dev/VRA/Novelty/math_search/papers/Quantum_machine_learning_with_subspace_states.pdf,,,unit circle representation modular exponentiation,"We introduce a new approach for quantum linear algebra based on quantum
+subspace states and present three new quantum machine learning algorithms. The
+first is a quantum determinant sampling algorithm that samples from the
+distribution $\Pr[S]= det(X_{S}X_{S}^{T})$ for $|S|=d$ using $O(nd)$ gates and
+with circuit depth $O(d\log n)$. The state of art classical algorithm for the
+task requires $O(d^{3})$ operations \cite{derezinski2019minimax}. The second is
+a quantum singular value estimation algorithm for compound matrices
+$\mathcal{A}^{k}$, the speedup for this algorithm is potentially exponential.
+It decomposes a $\binom{n}{k}$ dimensional vector of order-$k$ correlations
+into a linear combination of subspace states corresponding to $k$-tuples of
+singular vectors of $A$. The third algorithm reduces exponentially the depth of
+circuits used in quantum topological data analysis from $O(n)$ to $O(\log n)$.
+  Our basic tool are quantum subspace states, defined as $|Col(X)\rangle =
+\sum_{S\subset [n], |S|=d} det(X_{S}) |S\rangle$ for matrices $X \in
+\mathbb{R}^{n \times d}$ such that $X^{T} X = I_{d}$, that encode
+$d$-dimensional subspaces of $\mathbb{R}^{n}$. We develop two efficient state
+preparation techniques, the first using Givens circuits uses the representation
+of a subspace as a sequence of Givens rotations, while the second uses
+efficient implementations of unitaries $\Gamma(x) = \sum_{i} x_{i} Z^{\otimes
+(i-1)} \otimes X \otimes I^{n-i}$ with $O(\log n)$ depth circuits that we term
+Clifford loaders."
+arxiv,"Serre weights and wild ramification in two-dimensional Galois
+  representations",,http://arxiv.org/abs/1603.07708v2,http://arxiv.org/pdf/1603.07708v2,/home/admin/dev/VRA/Novelty/math_search/papers/Serre_weights_and_wild_ramification_in_two-dimensional_Galois_representations.pdf,,,unit circle representation modular exponentiation,"A generalization of Serre's Conjecture asserts that if $F$ is a totally real
+field, then certain characteristic $p$ representations of Galois groups over
+$F$ arise from Hilbert modular forms. Moreover it predicts the set of weights
+of such forms in terms of the local behavior of the Galois representation at
+primes over $p$. This characterization of the weights, which is formulated
+using $p$-adic Hodge theory, is known under mild technical hypotheses if $p &gt;
+2$. In this paper we give, under the assumption that $p$ is unramified in $F$,
+a conjectural alternative description for the set of weights. Our approach is
+to use the Artin-Hasse exponential and local class field theory to construct
+bases for local Galois cohomology spaces in terms of which we identify
+subspaces that should correspond to ones defined using $p$-adic Hodge theory.
+The resulting conjecture amounts to an explicit description of wild
+ramification in reductions of certain crystalline Galois representations. It
+enables the direct computation of the set of Serre weights of a Galois
+representation, which we illustrate with numerical examples. A proof of this
+conjecture has been announced by Calegari, Emerton, Gee and Mavrides."
+arxiv,"Counting orbits of integral points in families of affine homogeneous
+  varieties and diagonal flows",,http://arxiv.org/abs/1110.5773v2,http://arxiv.org/pdf/1110.5773v2,/home/admin/dev/VRA/Novelty/math_search/papers/Counting_orbits_of_integral_points_in_families_of_affine_homogeneous_varieties_and_diagonal_flows.pdf,,,unit circle representation modular exponentiation,"In this paper, we study the distribution of integral points on parametric
+families of affine homogeneous varieties. By the work of Borel and
+Harish-Chandra, the set of integral points on each such variety consists of
+finitely many orbits of arithmetic groups, and we establish an asymptotic
+formula (on average) for the number of the orbits indexed by their Siegel
+weights. In particular, we deduce asymptotic formulas for the number of
+inequivalent integral representations by decomposable forms and by norm forms
+in division algebras, and for the weighted number of equivalence classes of
+integral points on sections of quadratic surfaces. Our arguments use the
+exponential mixing property of diagonal flows on homogeneous spaces."
+arxiv,Minimum uncertainty measurements of angle and angular momentum,,http://arxiv.org/abs/quant-ph/0605137v1,http://arxiv.org/pdf/quant-ph/0605137v1,/home/admin/dev/VRA/Novelty/math_search/papers/Minimum_uncertainty_measurements_of_angle_and_angular_momentum.pdf,,,unit circle representation modular exponentiation,"The uncertainty relations for angle and angular momentum are revisited. We
+use the exponential of the angle instead of the angle itself and adopt
+dispersion as a natural measure of resolution. We find states that minimize the
+uncertainty product under the constraint of a given uncertainty in angle or in
+angular momentum. These states are described in terms of Mathieu wave functions
+and may be approximated by a von Mises distribution, which is the closest
+analogous of the Gaussian on the unit circle. We report experimental results
+using beam optics that confirm our predictions."
+crossref,"Modular Addition, Multiplication, and Exponentiation",10.3840/001914,https://doi.org/10.3840/001914,,,2007,Wolfram Demonstrations Project,unit circle representation modular exponentiation,
+crossref,Hardware design for end-to-end modular exponentiation in redundant number representation,10.1109/sips.2005.1579840,https://doi.org/10.1109/sips.2005.1579840,,,,"IEEE Workshop on Signal Processing Systems Design and Implementation, 2005.",unit circle representation modular exponentiation,
+crossref,Design and Implementation of High-Performance Modular Exponentiation Arithmetic Unit,10.1109/icise.2009.463,https://doi.org/10.1109/icise.2009.463,,,2009,2009 First International Conference on Information Science and Engineering,unit circle representation modular exponentiation,
+crossref,"Modular Addition, Multiplication, and Exponentiation",10.3840/07001914,https://doi.org/10.3840/07001914,,,2007,Wolfram Demonstrations Project,unit circle representation modular exponentiation,
+crossref,A modular exponentiation unit based on systolic arrays,10.1007/3-540-57220-1_88,https://doi.org/10.1007/3-540-57220-1_88,,,1993,Lecture Notes in Computer Science Advances in Cryptology — AUSCRYPT '92,unit circle representation modular exponentiation,
+crossref,Where All Roads Meet: Modular Exponentiation,10.1007/978-1-4302-0026-0_6,https://doi.org/10.1007/978-1-4302-0026-0_6,,,,Cryptography in C and C++,unit circle representation modular exponentiation,
+crossref,"Modular Exponentiation, Modular Logarithm, and One-Way Functions",10.1017/cbo9781139084772.012,https://doi.org/10.1017/cbo9781139084772.012,,,2014,A Cryptography Primer,unit circle representation modular exponentiation,
+crossref,Efficient Randomized Regular Modular Exponentiation using Combined Montgomery and Barrett Multiplications,10.5220/0005998503680375,https://doi.org/10.5220/0005998503680375,,,2016,Proceedings of the 13th International Joint Conference on e-Business and Telecommunications,unit circle representation modular exponentiation,
+crossref,High-Performance RNS Modular Exponentiation by Sum-Residue Reduction,10.21203/rs.3.rs-86431/v1,https://doi.org/10.21203/rs.3.rs-86431/v1,,,2020,,unit circle representation modular exponentiation,"<jats:title>Abstract</jats:title>
+        <jats:p>Modular exponentiation is fundamental in computer arithmetic and is widely applied in cryptography such as ElGamal cryptography, Diffie-Hellman key exchange protocol, and RSA cryptography. Implementation of modular exponentiation in residue number system leads to high parallelism in computation, and has been applied in many hardware architectures. While most RNS based architectures utilizes RNS Montgomery algorithm with two residue number systems, the recent modular multiplication algorithm with sum-residues performs modular reduction in only one residue number system with about the same parallelism. In this work, it is shown that high-performance modular exponentiation and RSA cryptography can be implemented in RNS. Both the algorithm and architecture are improved to achieve high performance with extra area overheads, where a 1024-bit modular exponentiation can be completed in 0.567 ms in Xilinx XC6VLX195t-3 platform, costing 26,489 slices, 87,357 LUTs, 363 dedicated multipilers of $18\times 18$ bits, and 65 Block RAMs.</jats:p>"
+crossref,MODULAR EXPONENTIATION,10.47839/ijc.2.3.229,https://doi.org/10.47839/ijc.2.3.229,https://computingonline.net/computing/article/download/229/204,/home/admin/dev/VRA/Novelty/math_search/papers/MODULAR_EXPONENTIATION.pdf,2014,International Journal of Computing,unit circle representation modular exponentiation,"<jats:p>Exponentiation is a fundamental operation in computational number theory. Primality testing and cryptography are important working fields in which the exponentiation is heavily used. In this paper we survey the most popular methods for modular exponentiation: basic techniques, fixed-exponent techniques, fixed-base techniques, and techniques based on modulus particularities. Some aspects related to parallelism are also discussed.</jats:p>"
+crossref,Cost effective FPGA Implementation of Right-to-Left Modular Exponentiation with NAF-Representation,10.1016/j.procs.2019.11.049,https://doi.org/10.1016/j.procs.2019.11.049,,,2019,Procedia Computer Science,unit circle representation modular exponentiation,
+crossref,Circular Multiplicative Modular Exponentiation: A New Public Key Exchange Algorithm,10.31219/osf.io/dqaj4,https://doi.org/10.31219/osf.io/dqaj4,,,2023,,unit circle representation modular exponentiation,"<p>The major objective of this paper is to present a theoretical model for an algorithm that has not been previously described in the literature, capable of generating a secret key through the transmission of data over a public channel. We explain how the method creates a shared secret key by attaining commutativity through the multiplication of the modular exponentiation of a minimum of two bases and an equal number of private exponents for each party involved in the exchange. In addition, we explore the relationship between CMME and the traditional Diffie-Hellman scheme. We just briefly discuss the algorithm’s security, opting to leave the essential investigation to cryptanalysts, while we elucidate on the algorithm’s mechanism by illustrating some cases.</p>"
+crossref,Bit Forwarding Techniques for Efficient Modular Exponentiation,10.1007/978-3-030-74524-0_9,https://doi.org/10.1007/978-3-030-74524-0_9,,,2021,Energy-Efficient Modular Exponential Techniques for Public-Key Cryptography,unit circle representation modular exponentiation,
+crossref,Semi-supervised Learning Using Local Regularizer and Unit Circle Class Label Representation,10.4304/jsw.7.5.951-958,https://doi.org/10.4304/jsw.7.5.951-958,,,2012,Journal of Software,unit circle representation modular exponentiation,
+crossref,A radix-4 modular multiplication hardware algorithm for modular exponentiation,10.1109/12.156537,https://doi.org/10.1109/12.156537,,,1992,IEEE Transactions on Computers,unit circle representation modular exponentiation,
+crossref,Implementation of Modular Exponentiation in Dual-Core,10.1007/978-3-030-74524-0_12,https://doi.org/10.1007/978-3-030-74524-0_12,,,2021,Energy-Efficient Modular Exponential Techniques for Public-Key Cryptography,unit circle representation modular exponentiation,
+crossref,Where All Roads Meet: Modular Exponentiation,10.1007/978-1-4302-1157-0_6,https://doi.org/10.1007/978-1-4302-1157-0_6,,,2001,Cryptography in C and C++,unit circle representation modular exponentiation,
+crossref,Review of Hardware Techniques for Improving Performance of Modular Exponentiation,10.1007/978-3-030-74524-0_5,https://doi.org/10.1007/978-3-030-74524-0_5,,,2021,Energy-Efficient Modular Exponential Techniques for Public-Key Cryptography,unit circle representation modular exponentiation,
+crossref,More Modular Exponentiation (MODP) Diffie-Hellman (DH) Key Exchange (KEX) Groups for Secure Shell (SSH),10.17487/rfc8268,https://doi.org/10.17487/rfc8268,,,2017,,unit circle representation modular exponentiation,
+crossref,Where All Roads Meet: Modular Exponentiation,10.1007/978-1-4302-5099-9_6,https://doi.org/10.1007/978-1-4302-5099-9_6,,,2013,Cryptography in C and C++,unit circle representation modular exponentiation,
+crossref,Image Representation on the Unit Circle and MQFTR,10.1002/9781394265183.ch8,https://doi.org/10.1002/9781394265183.ch8,,,2025,Quantum Image Processing in Practice,unit circle representation modular exponentiation,
+crossref,Spectral Modular Exponentiation,10.1109/arith.2007.34,https://doi.org/10.1109/arith.2007.34,,,2007,18th IEEE Symposium on Computer Arithmetic (ARITH '07),unit circle representation modular exponentiation,
+crossref,Montgomery modular exponentiation on reconfigurable hardware,10.1109/arith.1999.762831,https://doi.org/10.1109/arith.1999.762831,,,,Proceedings 14th IEEE Symposium on Computer Arithmetic (Cat. No.99CB36336),unit circle representation modular exponentiation,
+crossref,Shor's Factoring Algorithm and Modular Exponentiation Operators,10.12743/quanta.v12i1.235,https://doi.org/10.12743/quanta.v12i1.235,https://dankogeorgiev.com/ojs/index.php/quanta/article/download/77/77,/home/admin/dev/VRA/Novelty/math_search/papers/Shor_s_Factoring_Algorithm_and_Modular_Exponentiation_Operators.pdf,2023,Quanta,unit circle representation modular exponentiation,"<jats:p>We provide a pedagogical presentation of Shor's factoring algorithm, which is a quantum algorithm for factoring very large numbers (of order of hundreds to thousands of bits) in polynomial time. In contrast, all known classical algorithms for the factoring problem take an exponential time to factor such large numbers. Shor's algorithm therefore has profound implication for public-key encryption such as RSA and Diffie–Hellman key exchange. We assume no prior knowledge of Shor's algorithm beyond a basic familiarity with the circuit model of quantum computing. Shor's algorithm contains a number of moving parts, and can be rather daunting at first. The literature is replete with derivations and expositions of Shor's algorithm, but most of them seem to be lacking in essential details, and none of them provide a pedagogical presentation. They require a thicket of appendices and assume a knowledge of quantum algorithms and classical mathematics with which the reader might not be familiar. We therefore start with first principle derivations of the quantum Fourier transform (QFT) and quantum phase estimation (QPE), which are the essential building blocks of Shor's algorithm. We then go on to develop the theory of modular exponentiation (ME) operators, one of the fundamental components of Shor's algorithm, and the place where most of the quantum resources are deployed. We also delve into the number theory that establishes the link between factorization and the period of the modular exponential function. We then apply the QPE algorithm to obtain Shor's factoring algorithm. We also discuss the post-quantum processing and the method of continued fractions, which is used to extract the exact period of the modular exponential function from the approximately measured phase angles of the ME operator. The manuscript then moves on to a series of examples. We first verify the formalism by factoring N=15, the smallest number accessible to Shor's algorithm. We then proceed to factor larger integers, developing a systematic procedure that will find the ME operators for any semi-prime N=p×q (where q and p are prime). Finally, we factor the composite numbers N=21, 33, 35, 143, 247 using the Qiskit simulator. It is observed that the ME operators are somewhat forgiving, and truncated approximate forms are able to extract factors just as well as the exact operators. This is because the method of continued fractions only requires an approximate phase value for its input, which suggests that implementing Shor's algorithm might not be as difficult as first suspected.
+Quanta 2023; 12: 41–130.</jats:p>"
+crossref,Unit circle representation of aperiodic arrays,10.1109/8.467654,https://doi.org/10.1109/8.467654,,,1995,IEEE Transactions on Antennas and Propagation,unit circle representation modular exponentiation,
+crossref,Review of Algorithmic Techniques for Improving the Performance of Modular Exponentiation,10.1007/978-3-030-74524-0_4,https://doi.org/10.1007/978-3-030-74524-0_4,,,2021,Energy-Efficient Modular Exponential Techniques for Public-Key Cryptography,unit circle representation modular exponentiation,
+crossref,An algorithm for modular exponentiation,10.1109/arith.1981.6159298,https://doi.org/10.1109/arith.1981.6159298,,,1981,1981 IEEE 5th Symposium on Computer Arithmetic (ARITH),unit circle representation modular exponentiation,
+crossref,Montgomery modular exponentiation on FPGA,10.1109/icm.2012.6471439,https://doi.org/10.1109/icm.2012.6471439,,,2012,2012 24th International Conference on Microelectronics (ICM),unit circle representation modular exponentiation,
+crossref,Truncated Modular Exponentiation Operators: A Strategy for Quantum Factoring,10.12743/quanta.v13i1.277,https://doi.org/10.12743/quanta.v13i1.277,https://dankogeorgiev.com/ojs/index.php/quanta/article/download/88/88,/home/admin/dev/VRA/Novelty/math_search/papers/Truncated_Modular_Exponentiation_Operators_A_Strategy_for_Quantum_Factoring.pdf,2024,Quanta,unit circle representation modular exponentiation,"<jats:p>Modular exponentiation (ME) operators are one of the fundamental components of Shor's algorithm, and the place where most of the quantum resources are deployed. These operators are often referred to as the bottleneck of the algorithm. I propose a method for constructing the ME operators that requires only $3n + 1$ qubits with no ancillary qubits. The method relies upon the simple observation that the work register starts in state $\vert 1 \rangle$. Therefore, we do not have to create an ME operator $U$ that accepts a general input, but rather, one that takes an input from the periodic sequence of states $\vert f(x) \rangle$ for $x \in \{0, 1, \cdots, r-1\}$. Here, the ME function with base $a$ is defined by $f(x) = a^x ~({\textrm mod}~N)$ and has a period of $r$. For an $n$-bit number $N$, the operator $U$ can be partitioned into $r$ levels, where the gates in level $x \in \{0, 1, \cdots, r-1\}$ increment the state $\vert f(x) \rangle = \vert w_{n-1} \cdots w_1 w_0 \rangle$ to the state $\vert f(x+1) \rangle = \vert w_{n-1}^\prime \cdots w_1^\prime w_0^\prime\rangle$. The gates below $x$ do not affect the state $\vert f(x+1) \rangle$. This amounts to transforming an $n$-bit binary number $w_{n-1} \cdots w_1 w_0$ into another binary number $w_{n-1}^\prime \cdots w_1^\prime w_0^\prime$, without altering the previous states, which can be accomplished by a set of formal rules involving multi-control-NOT gates and single-qubit NOT gates. The process of gate construction can therefore be automated, which is essential for factoring larger numbers. The obvious problem with this method is that it is self-defeating: If we knew the operator $U$, then we would know the period $r$ of the ME function, and there would be no need for Shor's algorithm. I show, however, that the ME operators are very forgiving, and truncated approximate forms in which levels have been omitted are able to extract factors just as well as the exact operators. I demonstrate this by factoring the numbers $N = 21, 33, 35, 143, 247$ by using less than half the requisite number of levels in the ME operators. This procedure works because the method of continued fractions only requires an approximate phase value, which suggests that implementing Shor's algorithm might not be as difficult as first suspected. This is the basis for a factorization strategy in which one level at a time is iterated over using an automated script. In this way, we fill the circuits for the ME operators with more and more gates, and the correlations between the various composite operators $U^p$ (where $p$ is a power of two) compensate for the missing levels.
+Quanta 2024; 13: 47–82.</jats:p>"
+crossref,"Exponentiation, Modular Multiplication and VLSI Implementation of High-Speed RSA Cryptography",10.7146/dpb.v24i499.7027,https://doi.org/10.7146/dpb.v24i499.7027,http://ojs.statsbiblioteket.dk/index.php/daimipb/article/viewFile/7027/5988,/home/admin/dev/VRA/Novelty/math_search/papers/Exponentiation_Modular_Multiplication_and_VLSI_Implementation_of_High-Speed_RSA_Cryptography.pdf,1995,DAIMI Report Series,unit circle representation modular exponentiation,"<jats:p>This Ph.D. thesis treats the calculation of modular exponentials using very large operands. Through a top-down approach, the basic operations are identified: modular multiplication, modular addition, addition, modular reduction, and quotient determination. Various methods and optimisation techniques for these operations are decribed and compared. The focus is directed toward methods that are suited for VLSI implementation. A very fast VLSI processor has been designed, constructed, and tested.</jats:p>"
+crossref,FPGA implementation of the m-ary modular exponentiation,10.1109/idt.2013.6727140,https://doi.org/10.1109/idt.2013.6727140,,,2013,2013 8th IEEE Design and Test Symposium,unit circle representation modular exponentiation,
+crossref,Scaling Modular Exponentiation Hardware to the Minimum,10.1049/ic.2012.0216,https://doi.org/10.1049/ic.2012.0216,,,2012,IET Irish Signals and Systems Conference (ISSC 2012),unit circle representation modular exponentiation,
+crossref,High-performance modular exponentiation algorithm by using a new modified modular multiplication algorithm and common-multiplicand-multiplication method,10.1109/worldcis17046.2011.5749849,https://doi.org/10.1109/worldcis17046.2011.5749849,,,2011,2011 World Congress on Internet Security (WorldCIS-2011),unit circle representation modular exponentiation,
+crossref,Fast quantum modular exponentiation,10.1103/physreva.71.052320,https://doi.org/10.1103/physreva.71.052320,,,2005,Physical Review A,unit circle representation modular exponentiation,
+crossref,Efficient Leak Resistant Modular Exponentiation in RNS,10.1109/arith.2017.39,https://doi.org/10.1109/arith.2017.39,,,2017,2017 IEEE 24th Symposium on Computer Arithmetic (ARITH),unit circle representation modular exponentiation,
+crossref,A New Modified CMM Modular Exponentiation Algorithm,10.20533/ijicr.2042.4655.2011.0021,https://doi.org/10.20533/ijicr.2042.4655.2011.0021,,,2011,International Journal of Intelligent Computing Research,unit circle representation modular exponentiation,
+crossref,High throughput parallel montgomery modular exponentiation on FPGA,10.1109/idt.2014.7038618,https://doi.org/10.1109/idt.2014.7038618,,,2014,2014 9th International Design and Test Symposium (IDT),unit circle representation modular exponentiation,
+crossref,New Modular Multiplication Algorithms for Fast Modular Exponentiation,10.1007/3-540-68339-9_15,https://doi.org/10.1007/3-540-68339-9_15,,,1996,Lecture Notes in Computer Science Advances in Cryptology — EUROCRYPT ’96,unit circle representation modular exponentiation,
+crossref,Spectacular Exponents: A semi modular Approach to Fast Exponentiation,10.24297/jam.v16i0.8301,https://doi.org/10.24297/jam.v16i0.8301,https://cirworld.com/index.php/jam/article/download/8301/7769,,2019,JOURNAL OF ADVANCES IN MATHEMATICS,unit circle representation modular exponentiation,"<jats:p>This paper introduces a computational scheme for calculating the exponential bw where b and w are positive integers. This two-step method is based on elementary number theory that is used routinely in this and similar contexts, especially the Chinese remainder theorem (CRT), Lagrange’s theorem, and a variation on Garner’s algorithm for inverting the CRT isomorphism. We compare the performance of the new method to the standard fast algorithm and show that for a certain class of exponents it is significantly more efficient as measured by the number of required extended multiplications.    </jats:p>"
+crossref,A New CMM-NAF Modular Exponentiation Algorithm by using a New Modular Multiplication Algorithm,10.3923/tasr.2012.240.247,https://doi.org/10.3923/tasr.2012.240.247,,,2012,Trends in Applied Sciences Research,unit circle representation modular exponentiation,
+crossref,Study on Several Fast Algorithm of Modular Exponentiation in RSA,10.1109/ncis.2011.82,https://doi.org/10.1109/ncis.2011.82,,,2011,2011 International Conference on Network Computing and Information Security,unit circle representation modular exponentiation,
+crossref,Modular exponentiation on fine-grained FPGA,10.1109/sbcci.2000.876021,https://doi.org/10.1109/sbcci.2000.876021,,,,Proceedings 13th Symposium on Integrated Circuits and Systems Design (Cat. No.PR00843),unit circle representation modular exponentiation,
+crossref,"On the logarithmic mean convergence and the representation of
+              the regular functions in the unit circle",10.1215/s0012-7094-59-02639-0,https://doi.org/10.1215/s0012-7094-59-02639-0,,,1959,Duke Mathematical Journal,unit circle representation modular exponentiation,
+crossref,Computing Modular Exponentiation for Fixed-Exponent,10.1145/2835043.2835046,https://doi.org/10.1145/2835043.2835046,,,2015,Proceedings of the 8th Annual ACM India Conference,unit circle representation modular exponentiation,
+crossref,The alternative Method to Finish Modular Exponentiation and Point Multiplication Processes,10.3837/tiis.2021.07.017,https://doi.org/10.3837/tiis.2021.07.017,,,2021,KSII Transactions on Internet and Information Systems,unit circle representation modular exponentiation,
+crossref,Low power modular integer exponentiation using discrete logarithm transformation,10.1109/mnrc.2008.4683391,https://doi.org/10.1109/mnrc.2008.4683391,,,2008,2008 1st Microsystems and Nanoelectronics Research Conference,unit circle representation modular exponentiation,
+crossref,Systolic modular exponentiation,10.1007/3-540-63371-5_49,https://doi.org/10.1007/3-540-63371-5_49,,,1997,Lecture Notes in Computer Science Parallel Computing Technologies,unit circle representation modular exponentiation,
+crossref,Joint equidistribution on the product of the circle and the unit cotangent bundle of the modular surface,10.1016/j.jnt.2021.03.010,https://doi.org/10.1016/j.jnt.2021.03.010,,,2021,Journal of Number Theory,unit circle representation modular exponentiation,
+crossref,High-radix Montgomery modular exponentiation on reconfigurable hardware,10.1109/12.936241,https://doi.org/10.1109/12.936241,,,2001,IEEE Transactions on Computers,unit circle representation modular exponentiation,
+crossref,Quantum representation of 1-D signals on the unit circle,10.1007/s11128-021-03237-3,https://doi.org/10.1007/s11128-021-03237-3,https://link.springer.com/content/pdf/10.1007/s11128-021-03237-3.pdf,/home/admin/dev/VRA/Novelty/math_search/papers/Quantum_representation_of_1-D_signals_on_the_unit_circle.pdf,2021,Quantum Information Processing,unit circle representation modular exponentiation,
+arxiv,Regular dessins with primitive automorphism groups,,http://arxiv.org/abs/2303.11808v1,http://arxiv.org/pdf/2303.11808v1,/home/admin/dev/VRA/Novelty/math_search/papers/Regular_dessins_with_primitive_automorphism_groups.pdf,,,exponential map finite group elements cyclic,"We classify the dessins $\mathcal D$ for which the automorphism group $G$
+acts primitively and faithfully on the points over one of the three critical
+values (without loss of generality the black vertices in the usual bipartite
+map representation). We show that they are all generalised Paley dessins, in
+which the black vertices are the elements of a finite field ${\mathbb F}_q$,
+and $G$ is a subgroup of the affine group ${\rm AGL}_1(q)$. Using earlier
+results obtained with Streit and Wolfart, we determine the orbits of the
+absolute Galois group on these dessins, we show that they are all defined over
+certain cyclotomic fields, and we obtain defining equations in some special
+cases. Relaxing the condition of a faithful action allows only cyclic regular
+coverings of these dessins."
+arxiv,On the number of cyclic subgroups of a finite abelian group,,http://arxiv.org/abs/1203.6201v2,http://arxiv.org/pdf/1203.6201v2,/home/admin/dev/VRA/Novelty/math_search/papers/On_the_number_of_cyclic_subgroups_of_a_finite_abelian_group.pdf,,,exponential map finite group elements cyclic,"We prove by using simple number-theoretic arguments formulae concerning the
+number of elements of a fixed order and the number of cyclic subgroups of a
+direct product of several finite cyclic groups. We point out that certain
+multiplicative properties of related counting functions for finite Abelian
+groups are immediate consequences of these formulae."
+arxiv,Finite groups with an automorphism cubing a large fraction of elements,,http://arxiv.org/abs/0710.4289v1,http://arxiv.org/pdf/0710.4289v1,/home/admin/dev/VRA/Novelty/math_search/papers/Finite_groups_with_an_automorphism_cubing_a_large_fraction_of_elements.pdf,,,exponential map finite group elements cyclic,"We investigate the possible structures imposed on a finite group by its
+possession of an automorphism sending a large fraction of the group elements to
+their cubes, the philosophy being that this should force the group to be, in
+some sense, close to abelian. We prove two theorems. In the first, we
+completely classify all finite groups with an automorphism cubing more than
+half their elements. All such groups are either nilpotent class 2 or have an
+abelian subgroup of index at most 2. For our second theorem we show that, if a
+group possesses an automorphism sending more than 4/15 of its elements to their
+cubes, then it must be solvable. The group A_5 shows that this result is best
+possible.
+  Both our main findings closely parallel results of previous authors on finite
+groups possessing an automorphism which inverts many group elements. The
+technicalities of the new proofs are somewhat more subtle, and also throw up a
+nice connection to a basic problem in combinatorial number theory, namely the
+study of subsets of finite cyclic groups which avoid non-trivial solutions to
+one or more translation invariant linear equations."
+arxiv,Almost cyclic groups,,http://arxiv.org/abs/math/0511400v1,http://arxiv.org/pdf/math/0511400v1,/home/admin/dev/VRA/Novelty/math_search/papers/Almost_cyclic_groups.pdf,,,exponential map finite group elements cyclic,"A group G is almost cyclic if there is an element x in G, such that for all g
+in G, there is an element y in G and an integer n with ygy^{-1} = x^n (that is,
+every element is conjugate to some power of x). W. Ziller asked whether there
+are finitely-presented almost cyclic groups which are not cyclic in connection
+with work on closed geodesics. V. Guba constructed an infinite (non-cyclic)
+finitely generated almost cyclic group. The principal results of this paper
+are: Solvable almost cyclic groups are cyclic, and one-relator almost cyclic
+groups are cyclic."
+arxiv,Free-by-cyclic groups have solvable conjugacy problem,,http://arxiv.org/abs/math/0405178v2,http://arxiv.org/pdf/math/0405178v2,/home/admin/dev/VRA/Novelty/math_search/papers/Free-by-cyclic_groups_have_solvable_conjugacy_problem.pdf,,,exponential map finite group elements cyclic,"We show that the conjugacy problem is solvable in [finitely generated
+free]-by-cyclic groups, by using a result of O. Maslakova that one can
+algorithmically find generating sets for the fixed subgroups of free group
+automorphisms, and one of P. Brinkmann that one can determine whether two
+cyclic words in a free group are mapped to each other by some power of a given
+automorphism. The algorithm effectively computes a conjugating element, if it
+exists. We also solve the power conjugacy problem and give an algorithm to
+recognize if two given elements of a finitely generated free group are
+Reidemeister equivalent with respect to a given automorphism."
+arxiv,Relative hyperbolicity of free-by-cyclic extensions,,http://arxiv.org/abs/1802.08570v3,http://arxiv.org/pdf/1802.08570v3,/home/admin/dev/VRA/Novelty/math_search/papers/Relative_hyperbolicity_of_free-by-cyclic_extensions.pdf,,,exponential map finite group elements cyclic,"Given a finite rank free group $\mathbb{F}$ of $\mathsf{rank}(\mathbb{F})\geq
+3$, we show that the mapping torus of $\phi$ is (strongly) relatively
+hyperbolic if $\phi$ is exponentially growing. We combine our result with the
+work of Button-Kropholler to answer a question asked by Minasyan-Osin regarding
+the acylindrical hyperbolicity of such free-by-cyclic extensions. As an
+application we construct new examples of free-by-free hyperbolic extensions
+where the elements of the quotient group are not necessarily fully irreducible.
+We also give a new proof of the Bridson-Groves quadratic isoperimetric
+inequality theorem."
+arxiv,"Residual finiteness and strict distortion of cyclic subgroups of
+  solvable groups",,http://arxiv.org/abs/1903.08123v3,http://arxiv.org/pdf/1903.08123v3,/home/admin/dev/VRA/Novelty/math_search/papers/Residual_finiteness_and_strict_distortion_of_cyclic_subgroups_of_solvable_groups.pdf,,,exponential map finite group elements cyclic,"We provide polynomial lower bounds for residual finiteness of residually
+finite, finitely generated solvable groups that admit infinite order elements
+in the Fitting subgroup of strict distortion at least exponential. For this
+class of solvable groups which include polycyclic groups with a nontrivial
+exponential radical and the metabelian Baumslag-Solitar groups, we improve the
+lower bounds found in the literature. Additionally, for the class of residually
+finite, finitely generated solvable groups of infinite Pr\""{u}fer rank that
+satisfy the conditions of our theorem, we provide the first nontrivial lower
+bounds."
+arxiv,"On computations with Double Schubert Automaton and stable maps of
+  Multivariate Cryptography",,http://arxiv.org/abs/2108.08288v1,http://arxiv.org/pdf/2108.08288v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_computations_with_Double_Schubert_Automaton_and_stable_maps_of_Multivariate_Cryptography.pdf,,,exponential map finite group elements cyclic,"The families of bijective transformations $G_n$ of affine space $K^n$ over
+general commutative ring $K$ of increasing order with the property of stability
+will be constructed. Stability means that maximal degree of elements of cyclic
+subgroup generated by the transformation of degree $d$ is bounded by $d$. In
+the case $K=F_q$ these transformations of $K^n$ can be of an exponential order.
+We introduce large groups formed by quadratic transformations and numerical
+encryption algorithm protected by secure protocol of Noncommutative
+Cryptography. The construction of transformations is presented in terms of
+walks on Double Schubert Graphs."
+arxiv,On groups whose geodesic growth is polynomial,,http://arxiv.org/abs/1009.5051v3,http://arxiv.org/pdf/1009.5051v3,/home/admin/dev/VRA/Novelty/math_search/papers/On_groups_whose_geodesic_growth_is_polynomial.pdf,,,exponential map finite group elements cyclic,"This note records some observations concerning geodesic growth functions. If
+a nilpotent group is not virtually cyclic then it has exponential geodesic
+growth with respect to all finite generating sets. On the other hand, if a
+finitely generated group $G$ has an element whose normal closure is abelian and
+of finite index, then $G$ has a finite generating set with respect to which the
+geodesic growth is polynomial (this includes all virtually cyclic groups)."
+arxiv,Power maps in finite groups,,http://arxiv.org/abs/1707.06696v4,http://arxiv.org/pdf/1707.06696v4,/home/admin/dev/VRA/Novelty/math_search/papers/Power_maps_in_finite_groups.pdf,,,exponential map finite group elements cyclic,"In recent work, Pomerance and Shparlinski have obtained results on the number
+of cycles in the functional graph of the map $x \mapsto x^a$ in
+$\mathbb{F}_p^*$. We prove similar results for other families of finite groups.
+In particular, we obtain estimates for the number of cycles for cyclic groups,
+symmetric groups, dihedral groups and $SL_2(\mathbb{F}_q)$. We also show that
+the cyclic group of order $n$ minimizes the number of cycles among all
+nilpotent groups of order $n$ for a fixed exponent. Finally, we pose several
+problems."
+arxiv,Hamiltonian Groups with Perfect Order Classes,,http://arxiv.org/abs/2010.09178v3,http://arxiv.org/pdf/2010.09178v3,/home/admin/dev/VRA/Novelty/math_search/papers/Hamiltonian_Groups_with_Perfect_Order_Classes.pdf,,,exponential map finite group elements cyclic,"A finite group is said to have ""perfect order classes"" if the number of
+elements of any given order is either zero or a divisor of the order of the
+group.
+  The purpose of this note is to describe explicitly the finite Hamiltonian
+groups with perfect order classes. We show that a finite Hamiltonian group has
+perfect order classes if, and only if, it is isomorphic to the direct product
+of the quaternion group of order $8$, a non-trivial cyclic $3$-group and a
+group of order at most $2$.
+  Theorem. A finite Hamiltonian group has perfect order classes if, and only
+if, it is isomorphic either to $Q\times C_{3^k}$ or to $Q\times C_{2}\times
+C_{3^k}$, for some positive integer $k$."
+arxiv,Symmetric Complete Sum-free Sets in Cyclic Groups,,http://arxiv.org/abs/1703.04118v2,http://arxiv.org/pdf/1703.04118v2,/home/admin/dev/VRA/Novelty/math_search/papers/Symmetric_Complete_Sum-free_Sets_in_Cyclic_Groups.pdf,,,exponential map finite group elements cyclic,"We present constructions of symmetric complete sum-free sets in general
+finite cyclic groups. It is shown that the relative sizes of the sets are dense
+in $[0,\frac{1}{3}]$, answering a question of Cameron, and that the number of
+those contained in the cyclic group of order $n$ is exponential in $n$. For
+primes $p$, we provide a full characterization of the symmetric complete
+sum-free subsets of $\mathbb{Z}_p$ of size at least $(\frac{1}{3}-c) \cdot p$,
+where $c&gt;0$ is a universal constant."
+arxiv,"Embedding finitely generated free-by-cyclic groups in {finitely
+  generated free}-by-cyclic groups",,http://arxiv.org/abs/2510.10178v1,http://arxiv.org/pdf/2510.10178v1,/home/admin/dev/VRA/Novelty/math_search/papers/Embedding_finitely_generated_free-by-cyclic_groups_in_finitely_generated_free_-by-cyclic_groups.pdf,,,exponential map finite group elements cyclic,"We refine Feighn--Handel's results on subgroups of mapping tori of free
+groups to the special case of free-by-cyclic groups. We use these refinements
+to show that any finitely generated free-by-cyclic group embeds in a {finitely
+generated free}-by-cyclic group. When the free-by-cyclic group is hyperbolic,
+it embeds in a hyperbolic {finitely generated free}-by-cyclic group as a
+quasi-convex subgroup. Combined with a result of Hagen--Wise, this implies that
+all hyperbolic free-by-cyclic groups are cocompactly cubulated."
+arxiv,Inverse zero-sum problems and algebraic invariants,,http://arxiv.org/abs/0806.3676v2,http://arxiv.org/pdf/0806.3676v2,/home/admin/dev/VRA/Novelty/math_search/papers/Inverse_zero-sum_problems_and_algebraic_invariants.pdf,,,exponential map finite group elements cyclic,"In this article, we study the maximal cross number of long zero-sumfree
+sequences in a finite Abelian group. Regarding this inverse-type problem, we
+formulate a general conjecture and prove, among other results, that this
+conjecture holds true for finite cyclic groups, finite Abelian p-groups and for
+finite Abelian groups of rank two. Also, the results obtained here enable us to
+improve, via the resolution of a linear integer program, a result of W. Gao and
+A. Geroldinger concerning the minimal number of elements with maximal order in
+a long zero-sumfree sequence of a finite Abelian group of rank two."
+arxiv,The Amit-Ashurst conjecture for finite metacyclic p-groups,,http://arxiv.org/abs/2201.04860v3,http://arxiv.org/pdf/2201.04860v3,/home/admin/dev/VRA/Novelty/math_search/papers/The_Amit-Ashurst_conjecture_for_finite_metacyclic_p-groups.pdf,,,exponential map finite group elements cyclic,"The Amit conjecture about word maps on finite nilpotent groups has been shown
+to hold for certain classes of groups. The generalised Amit conjecture says
+that the probability of an element occurring in the image of a word map on a
+finite nilpotent group G is either 0, or at least 1/|G|. Noting the work of
+Ashurst, we name the generalised Amit conjecture the Amit-Ashurst conjecture
+and show that the Amit-Ashurst conjecture holds for finite p-groups with a
+cyclic maximal subgroup."
+arxiv,On the automorphisms of the Drinfeld modular groups,,http://arxiv.org/abs/2401.04604v1,http://arxiv.org/pdf/2401.04604v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_the_automorphisms_of_the_Drinfeld_modular_groups.pdf,,,exponential map finite group elements cyclic,"Let $A$ be the ring of elements in an algebraic function field $K$ over
+$\mathbb{F}_q$ which are integral outside a fixed place $\infty$. In contrast
+to the classical modular group $SL_2(\mathbb{Z})$ and the Bianchi groups, the
+{\it Drinfeld modular group} $G=GL_2(A)$ is not finitely generated and its
+automorphism group $\mathrm{Aut}(G)$ is uncountable. Except for the simplest
+case $A=\mathbb{F}_q[t]$ not much is known about the generators of
+$\mathrm{Aut}(G)$ or even its structure. We find a set of generators of
+$\mathrm{Aut}(G)$ for a new case. \par On the way, we show that {\it every}
+automorphism of $G$ acts on both, the {\it cusps} and the {\it elliptic points}
+of $G$. Generalizing a result of Reiner for $A=\mathbb{F}_q[t]$ we describe for
+each cusp an uncountable subgroup of $\mathrm{Aut}(G)$ whose action on $G$ is
+essentially defined on the stabilizer of that cusp. In the case where $\delta$
+(the degree of $\infty$) is $1$, the elliptic points are related to the
+isolated vertices of the quotient graph $G\setminus\mathcal{T}$ of the
+Bruhat-Tits tree. We construct an infinite group of automorphisms of $G$ which
+fully permutes the isolated vertices with cyclic stabilizer."
+arxiv,"On the second cohomology of the norm one group of a p-adic division
+  algebra",,http://arxiv.org/abs/2206.12775v1,http://arxiv.org/pdf/2206.12775v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_the_second_cohomology_of_the_norm_one_group_of_a_p-adic_division_algebra.pdf,,,exponential map finite group elements cyclic,"Let $F$ be a $p$-adic field, that is, a finite extension of $\mathbb Q_p$.
+Let $D$ be a finite-dimensional central division algebra over $F$ and let
+$SL_1(D)$ be the group of elements of reduced norm $1$ in $D$. Prasad and
+Raghunathan proved that $H^2(SL_1(D),\mathbb R/\mathbb Z)$ is a cyclic
+$p$-group whose order is bounded from below by the number of $p$-power roots of
+unity in $F$, unless $D$ is a quaternion algebra over $\mathbb Q_2$. In this
+paper we give an explicit upper bound for the order of $H^2(SL_1(D),\mathbb
+R/\mathbb Z)$ for $p\geq 5$ and determine $H^2(SL_1(D),\mathbb R/\mathbb Z)$
+precisely when $F$ is cyclotomic, $p\geq 19$ and the degree of $D$ is not a
+power of $p$."
+arxiv,Vertex-reversing maps and almost Sylow-cyclic groups,,http://arxiv.org/abs/2510.07033v1,http://arxiv.org/pdf/2510.07033v1,/home/admin/dev/VRA/Novelty/math_search/papers/Vertex-reversing_maps_and_almost_Sylow-cyclic_groups.pdf,,,exponential map finite group elements cyclic,"A map is \emph{vertex-reversing} if it admits an arc-transitive automorphism
+group with dihedral vertex stabilizers. This paper classifies solvable
+vertex-reversing maps whose edge number and Euler characteristic are coprime.
+The classification establishes that such maps comprise three families: dihedral
+maps, cyclic covers of dihedral maps, and cyclic covers of $S_4$-maps. Our
+classification based on an explicit characterization of finite almost
+Sylow-cyclic groups. While Conder--Potocnik--\v{S}iran provided a
+classification for groups acting regularly on maps in
+\cite[Theorem~4.1]{reg-ASCAuto}, this work delivers a shorter proof with
+explicitly constructed generators and relations for all such groups."
+arxiv,The Spectra of Lamplighter Groups and Cayley Machines,,http://arxiv.org/abs/math/0412412v2,http://arxiv.org/pdf/math/0412412v2,/home/admin/dev/VRA/Novelty/math_search/papers/The_Spectra_of_Lamplighter_Groups_and_Cayley_Machines.pdf,,,exponential map finite group elements cyclic,"We calculate the spectra and spectral measures associated to random walks on
+restricted wreath products of finite groups with the infinite cyclic group, by
+calculating the Kesten-von Neumann-Serre spectral measures for the random walks
+on Schreier graphs of certain groups generated by automata. This generalises
+the work of Grigorchuk and Zuk on the lamplighter group. In the process we
+characterise when the usual spectral measure for a group generated by automata
+coincides with the Kesten-von Neumann-Serre spectral measure."
+crossref,Elements and cyclic subgroups of finite order of the Cremona group,10.4171/cmh/231,https://doi.org/10.4171/cmh/231,,,2011,Commentarii Mathematici Helvetici,exponential map finite group elements cyclic,"<jats:p>We give the classification of elements – respectively cyclic subgroups – of finite order of the Cremona group, up to conjugation. Natural parametrisations of conjugacy classes, related to fixed curves of positive genus, are provided.</jats:p>"
+crossref,A group-theoretic formulation for symmetric finite elements,10.1016/j.finel.2004.10.004,https://doi.org/10.1016/j.finel.2004.10.004,,,2005,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Finite element analysis of steel members under cyclic loading,10.1016/s0168-874x(02)00060-4,https://doi.org/10.1016/s0168-874x(02)00060-4,,,2002,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Rédei Actions on Finite Fields and Multiplication Map in Cyclic Group,10.1137/140993338,https://doi.org/10.1137/140993338,,,2015,SIAM Journal on Discrete Mathematics,exponential map finite group elements cyclic,
+crossref,"Maximality Degree Elements of Finite Cyclic Group Zpn, Zpmpn",10.18280/mmep.110928,https://doi.org/10.18280/mmep.110928,,,2024,Mathematical Modelling of Engineering Problems,exponential map finite group elements cyclic,
+crossref,The exponential map of a lie group,10.1007/bfb0097835,https://doi.org/10.1007/bfb0097835,,,,Lecture Notes in Mathematics Introduction to Lie Groups and Transformation Groups,exponential map finite group elements cyclic,
+crossref,Investigation of effective parameters on composite patch debonding under static and cyclic loading using cohesive elements,10.1016/j.finel.2013.06.003,https://doi.org/10.1016/j.finel.2013.06.003,,,2013,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Blocks with Cyclic Defect Groups,10.1017/9781108349307.007,https://doi.org/10.1017/9781108349307.007,,,,The Block Theory of Finite Group Algebras,exponential map finite group elements cyclic,
+crossref,Analysis of behaviour of soils under cyclic loading using EPR-based finite element method,10.1016/j.finel.2012.04.005,https://doi.org/10.1016/j.finel.2012.04.005,,,2012,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,4 Basic elements of finite group theory,10.1515/9783111201535-004,https://doi.org/10.1515/9783111201535-004,,,2023,"Discrete, Finite and Lie Groups",exponential map finite group elements cyclic,
+crossref,The non-cancellation group of a direct power of a (finite cyclic)-by-cyclic group,10.1007/s00229-004-0474-9,https://doi.org/10.1007/s00229-004-0474-9,http://link.springer.com/content/pdf/10.1007/s00229-004-0474-9.pdf,/home/admin/dev/VRA/Novelty/math_search/papers/The_non-cancellation_group_of_a_direct_power_of_a_finite_cyclic_-by-cyclic_group.pdf,2004,manuscripta mathematica,exponential map finite group elements cyclic,
+crossref,Exponential Map and Automorphism Group of a Connected Lie Group,10.2307/2373994,https://doi.org/10.2307/2373994,,,1977,American Journal of Mathematics,exponential map finite group elements cyclic,
+crossref,Swan classes and realisable classes for integral group rings over finite cyclic groups,10.54014/vm24-1n5d,https://doi.org/10.54014/vm24-1n5d,,,,,exponential map finite group elements cyclic,
+crossref,Cyclic codes and primitive idempotents in the finite cyclic group algebras,10.28919/ejma.2022.2.10,https://doi.org/10.28919/ejma.2022.2.10,,,2022,European Journal of Mathematics and Applications,exponential map finite group elements cyclic,
+crossref,Central elements in topological algebras with‎ ‎the exponential map,10.15352/afa/1399900198,https://doi.org/10.15352/afa/1399900198,,,2011,Annals of Functional Analysis,exponential map finite group elements cyclic,
+crossref,Almost cyclic elements in cross-characteristic representations of finite groups of Lie type,10.1515/jgth-2018-0162,https://doi.org/10.1515/jgth-2018-0162,,,2019,Journal of Group Theory,exponential map finite group elements cyclic,"<jats:title>Abstract</jats:title>
+               <jats:p>This paper is a significant contribution to a general programme aimed to classify all projective irreducible representations of finite simple groups over an algebraically closed field, in which the image of at least one element is represented by an almost cyclic matrix (that is, a square matrix <jats:italic>M</jats:italic> of size <jats:italic>n</jats:italic> over a field <jats:inline-formula id=""j_jgth-2018-0162_ineq_9999_w2aab3b8e1374b1b7b1aab1c15b1b5Aa"">
+                     <jats:alternatives>
+                        <m:math xmlns:m=""http://www.w3.org/1998/Math/MathML"">
+                           <m:mi>𝔽</m:mi>
+                        </m:math>
+                        <jats:inline-graphic xmlns:xlink=""http://www.w3.org/1999/xlink"" xlink:href=""graphic/j_jgth-2018-0162_eq_1062.png"" />
+                        <jats:tex-math>{\mathbb{F}}</jats:tex-math>
+                     </jats:alternatives>
+                  </jats:inline-formula> with the property that there exists <jats:inline-formula id=""j_jgth-2018-0162_ineq_9998_w2aab3b8e1374b1b7b1aab1c15b1b7Aa"">
+                     <jats:alternatives>
+                        <m:math xmlns:m=""http://www.w3.org/1998/Math/MathML"">
+                           <m:mrow>
+                              <m:mi>α</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>𝔽</m:mi>
+                           </m:mrow>
+                        </m:math>
+                        <jats:inline-graphic xmlns:xlink=""http://www.w3.org/1999/xlink"" xlink:href=""graphic/j_jgth-2018-0162_eq_0729.png"" />
+                        <jats:tex-math>{\alpha\in\mathbb{F}}</jats:tex-math>
+                     </jats:alternatives>
+                  </jats:inline-formula> such that <jats:italic>M</jats:italic> is similar to <jats:inline-formula id=""j_jgth-2018-0162_ineq_9997_w2aab3b8e1374b1b7b1aab1c15b1c11Aa"">
+                     <jats:alternatives>
+                        <m:math xmlns:m=""http://www.w3.org/1998/Math/MathML"">
+                           <m:mrow>
+                              <m:mi>diag</m:mi>
+                              <m:mo>⁡</m:mo>
+                              <m:mrow>
+                                 <m:mo>(</m:mo>
+                                 <m:mrow>
+                                    <m:mi>α</m:mi>
+                                    <m:mo>⋅</m:mo>
+                                    <m:msub>
+                                       <m:mi>Id</m:mi>
+                                       <m:mi>k</m:mi>
+                                    </m:msub>
+                                 </m:mrow>
+                                 <m:mo>,</m:mo>
+                                 <m:msub>
+                                    <m:mi>M</m:mi>
+                                    <m:mn>1</m:mn>
+                                 </m:msub>
+                                 <m:mo>)</m:mo>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:math>
+                        <jats:inline-graphic xmlns:xlink=""http://www.w3.org/1999/xlink"" xlink:href=""graphic/j_jgth-2018-0162_eq_1134.png"" />
+                        <jats:tex-math>{\operatorname{diag}(\alpha\cdot\mathrm{Id}_{k},M_{1})}</jats:tex-math>
+                     </jats:alternatives>
+                  </jats:inline-formula>, where <jats:inline-formula id=""j_jgth-2018-0162_ineq_9996_w2aab3b8e1374b1b7b1aab1c15b1c13Aa"">
+                     <jats:alternatives>
+                        <m:math xmlns:m=""http://www.w3.org/1998/Math/MathML"">
+                           <m:msub>
+                              <m:mi>M</m:mi>
+                              <m:mn>1</m:mn>
+                           </m:msub>
+                        </m:math>
+                        <jats:inline-graphic xmlns:xlink=""http://www.w3.org/1999/xlink"" xlink:href=""graphic/j_jgth-2018-0162_eq_0671.png"" />
+                        <jats:tex-math>{M_{1}}</jats:tex-math>
+                     </jats:alternatives>
+                  </jats:inline-formula> is cyclic and <jats:inline-formula id=""j_jgth-2018-0162_ineq_9995_w2aab3b8e1374b1b7b1aab1c15b1c15Aa"">
+                     <jats:alternatives>
+                        <m:math xmlns:m=""http://www.w3.org/1998/Math/MathML"">
+                           <m:mrow>
+                              <m:mn>0</m:mn>
+                              <m:mo>≤</m:mo>
+                              <m:mi>k</m:mi>
+                              <m:mo>≤</m:mo>
+                              <m:mi>n</m:mi>
+                           </m:mrow>
+                        </m:math>
+                        <jats:inline-graphic xmlns:xlink=""http://www.w3.org/1999/xlink"" xlink:href=""graphic/j_jgth-2018-0162_eq_0353.png"" />
+                        <jats:tex-math>{0\leq k\leq n}</jats:tex-math>
+                     </jats:alternatives>
+                  </jats:inline-formula>).
+While a previous paper dealt with the Weil representations of finite classical groups, which play a key role in the general picture, the present paper provides a conclusive answer for all cross-characteristic projective irreducible representations of the finite quasi-simple groups of Lie type and their automorphism groups.</jats:p>"
+crossref,Bound for mixed exponential sums associated to binary good cyclic codes,10.1016/j.ffa.2019.04.007,https://doi.org/10.1016/j.ffa.2019.04.007,,,2019,Finite Fields and Their Applications,exponential map finite group elements cyclic,
+crossref,A time increment control for return mapping algorithm applied to cyclic viscoplastic constitutive models,10.1016/j.finel.2015.04.006,https://doi.org/10.1016/j.finel.2015.04.006,,,2015,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Appendix 4: Exponential Distribution,10.1002/9781394401727.app4,https://doi.org/10.1002/9781394401727.app4,,,2025,Multi‐physics Optimization,exponential map finite group elements cyclic,
+crossref,Notes on a $p$-adic Exponential Map for the Picard Group,10.3836/tjm/1502179262,https://doi.org/10.3836/tjm/1502179262,,,2019,Tokyo Journal of Mathematics,exponential map finite group elements cyclic,
+crossref,Graph coloration and group theory in dynamic analysis of symmetric finite element models,10.1016/j.finel.2007.06.002,https://doi.org/10.1016/j.finel.2007.06.002,,,2007,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Technical note: Finite element formulations to map discrete fracture elements in three-dimensional groundwater models,10.5194/hess-2024-289,https://doi.org/10.5194/hess-2024-289,,,2024,,exponential map finite group elements cyclic,"<jats:p>Abstract. Typically, in finite element groundwater models, fractures are represented by two-dimensional triangular or quadrilateral elements. When embedded in a three-dimensional space, the Jacobian matrix governing the transformation from the global three-dimensional space to the local two-dimensional space is rectangular and thus not invertible. There exist different approaches to obtain a unique mapping from local to global space even though the Jacobian matrix is not invertible. These approaches are discussed in this study. It is illustrated that all approaches yield the same result and may be applied to curved elements. The mapping of anisotropic hydraulic conductivity tensors for possibly curved fracture elements is also discussed.
+                        </jats:p>"
+crossref,Cyclic Shear-Friction Constitutive Model for Finite Element Analysis of Reinforced Concrete Membrane Elements,10.14359/51682348,https://doi.org/10.14359/51682348,,,2011,ACI Structural Journal,exponential map finite group elements cyclic,
+crossref,Numerical implementation of bounding-surface model for simulating cyclic inelastic response of metal piping components,10.1016/j.finel.2020.103493,https://doi.org/10.1016/j.finel.2020.103493,,,2021,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Index of the Exponential Map of a Semi-Algebraic Group,10.2307/2373912,https://doi.org/10.2307/2373912,,,1978,American Journal of Mathematics,exponential map finite group elements cyclic,
+crossref,An extension of Miyata's Theorem on the transfer map from the classgroup of a finite dihedral group to that of its cyclic maximal subgroup,10.1007/bfb0092497,https://doi.org/10.1007/bfb0092497,,,1981,Lecture Notes in Mathematics Integral Representations and Applications,exponential map finite group elements cyclic,
+crossref,Fredholm properties of the $L^{2}$ exponential map on the symplectomorphism group,10.3934/jgm.2016.8.1,https://doi.org/10.3934/jgm.2016.8.1,,,2016,Journal of Geometric Mechanics,exponential map finite group elements cyclic,
+crossref,"Finite-dimensional representations of the quantum group GL<sub>p,q</sub>(2) using the exponential map from U<sub>p,q</sub>(gl(2))",10.1088/0305-4470/28/10/013,https://doi.org/10.1088/0305-4470/28/10/013,,,1995,Journal of Physics A: Mathematical and General,exponential map finite group elements cyclic,
+crossref,Changing the Ground Ring: Splitting Fields and the Decomposition Map,10.1017/cbo9781316677216.010,https://doi.org/10.1017/cbo9781316677216.010,,,2016,A Course in Finite Group Representation Theory,exponential map finite group elements cyclic,
+crossref,Wavelet transformation based multi-time scale crystal plasticity FEM for cyclic deformation in titanium alloys under dwell load,10.1016/j.finel.2010.12.014,https://doi.org/10.1016/j.finel.2010.12.014,,,2011,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,6. Finite element modelling of reinforced concrete,10.1680/rceucl.35485.0007,https://doi.org/10.1680/rceucl.35485.0007,,,1996,RC ELEMENTS UNDER CYCLIC LOADING,exponential map finite group elements cyclic,
+crossref,Cyclic Chalcogenides Containing Group 13-15 Elements,10.1080/10426500108040532,https://doi.org/10.1080/10426500108040532,,,2001,"Phosphorus, Sulfur, and Silicon and the Related Elements",exponential map finite group elements cyclic,
+crossref,Numerical analysis of dynamic behavior of stream turbine blade group,10.1016/s0168-874x(99)00074-8,https://doi.org/10.1016/s0168-874x(99)00074-8,,,2000,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Figure 3: Contour map of exponential kernel FD.,10.7717/peerjcs.1873/fig-3,https://doi.org/10.7717/peerjcs.1873/fig-3,,,,,exponential map finite group elements cyclic,
+crossref,Benchmarks for Accelerated Cyclic Plasticity Models with Finite Elements,10.3390/met10060781,https://doi.org/10.3390/met10060781,,,2020,Metals,exponential map finite group elements cyclic,"<jats:p>In numerical simulations of components subjected to low-cycle fatigue loading, the material cyclic plasticity behavior must be modelled until complete stabilization, which occurs approximately at half the number of cycles to failure. If the plastic strain per cycle is small, a huge number of cycles must be simulated, which results into a huge and thus unaffordable simulation time. Acceleration techniques for shortening this time are useful, although their accuracy needs to be checked. This work aims to compare different approaches (nonlinear kinematic with “initial” and “stabilized” parameters and combined nonlinear kinematic and isotropic with the speed of stabilization fictitiously increased). It considers two benchmarks taken from the literature, in which the material has opposite cyclic behaviors (hardening, softening). A plane finite element model can be used in both benchmarks, thus permitting a simulation up to complete stabilization. Results confirm that the common approach of considering only the kinematic model (calibrated on “initial” or “stabilized” material state) from the very first cycle could lead to relevant errors. The acceleration technique based on a fictitious increase in the speed of stabilization leads to accurate results. Guidelines for calibrating this technique on a material’s hardening or softening behavior are, finally, proposed.</jats:p>"
+crossref,Cheap and stable quadrature on polyhedral elements,10.1016/j.finel.2025.104409,https://doi.org/10.1016/j.finel.2025.104409,,,2025,Finite Elements in Analysis and Design,exponential map finite group elements cyclic,
+crossref,Elements of Representation Theory,10.1142/9789811274763_0004,https://doi.org/10.1142/9789811274763_0004,,,2023,Group Theory,exponential map finite group elements cyclic,
+crossref,Exponential Finite Elements for a Phase Field Fracture Model,10.1002/pamm.201010053,https://doi.org/10.1002/pamm.201010053,https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fpamm.201010053,,2010,PAMM,exponential map finite group elements cyclic,"<jats:title>Abstract</jats:title><jats:p>Sharp interface material models can be related to phase field models by introducing an order parameter, whose value is assigned to the different phases of a material. The elastic material law is coupled to the evolution equation of the order parameter and cracking is addressed as a phase transition problem instead of a moving boundary value problem. A regularization parameter ϵ controls the width of the diffuse cracks represented by the order parameter and the underlying sharp interface model can be recovered from the phase field model by the limit ϵ → 0. However, in numerical simulations using standard finite elements with linear shape functions, the minimum value of ϵ is restricted by the grid size and therefore the discretization of the crack field requires extensive mesh refinement for small values of ϵ. In this work, we construct special 2d shape functions which take into account the exponential character of the crack field and its dependence on the parameter ϵ. Especially in simulations with small values of ϵ and a rather coarse mesh, the elements with exponential shape functions perform significantly better than standard linear elements. (© 2010 Wiley‐VCH Verlag GmbH &amp; Co. KGaA, Weinheim)</jats:p>"
+crossref,Cyclic Chalcogenides Containing Group 13–15 Elements,10.1080/10426500108546529,https://doi.org/10.1080/10426500108546529,,,2001,"Phosphorus, Sulfur, and Silicon and the Related Elements",exponential map finite group elements cyclic,
+crossref,Finite group actions on 3-manifolds and cyclic branched covers of knots,10.1112/topo.12052,https://doi.org/10.1112/topo.12052,https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1112%2Ftopo.12052,,2018,Journal of Topology,exponential map finite group elements cyclic,
+crossref,Finite groups with few non-cyclic subgroups,10.1515/jgt.2007.018,https://doi.org/10.1515/jgt.2007.018,,,2007,Journal of Group Theory,exponential map finite group elements cyclic,
+crossref,Exponential finite elements for diffusion–advection problems,10.1002/nme.1249,https://doi.org/10.1002/nme.1249,,,2005,International Journal for Numerical Methods in Engineering,exponential map finite group elements cyclic,"<jats:title>Abstract</jats:title><jats:p>A new finite element method for the solution of the diffusion–advection equation is proposed. The method uses non‐isoparametric exponentially‐varying interpolation functions, based on exact, one‐ and two‐dimensional solutions of the Laplace‐transformed differential equation. Two eight‐noded elements are developed and tested for convergence, stability, Peclet number limit, anisotropy, material heterogeneity, Dirichlet and Neumann boundary conditions and tolerance for mesh distortions. Their performance is compared to that of conventional, eight‐ and 12‐noded polynomial elements.</jats:p><jats:p>The exponential element based on two‐dimensional analytical solutions fails basic tests of convergence. The one based on one‐dimensional solutions performs particularly well. It reduces by about 75% the number of elements and degrees of freedom required for convergence, yielding an error that is one order of magnitude smaller than that of the eight‐noded polynomial element. The exponential element is stable and robust under relatively high degrees of heterogeneity, anisotropy and mesh distortions. Copyright © 2005 John Wiley &amp; Sons, Ltd.</jats:p>"
+crossref,"The flabby class group of a finite cyclic
+                    group",10.1090/amsip/048/14,https://doi.org/10.1090/amsip/048/14,,,2010,"AMS/IP Studies in Advanced
+                        Mathematics Fourth International Congress of Chinese
+                    Mathematicians",exponential map finite group elements cyclic,
+crossref,"The Complex Exponential, the Natural Exponential and the GD-Exponential - General Examples and Finite Periodicity",10.1016/b978-044450273-5/50047-1,https://doi.org/10.1016/b978-044450273-5/50047-1,,,1999,Biomathematics,exponential map finite group elements cyclic,
+crossref,Compound orthomorphisms of the cyclic group,10.1016/j.ffa.2010.04.001,https://doi.org/10.1016/j.ffa.2010.04.001,,,2010,Finite Fields and Their Applications,exponential map finite group elements cyclic,
+crossref,Endpoint Map and Exponential Map,10.1017/9781108677325.010,https://doi.org/10.1017/9781108677325.010,,,2019,A Comprehensive Introduction to Sub-Riemannian Geometry,exponential map finite group elements cyclic,
+crossref,Two-dimensional simulation of the damped Kuramoto–Sivashinsky equation via radial basis function-generated finite difference scheme combined with an exponential time discretization,10.1016/j.enganabound.2019.06.007,https://doi.org/10.1016/j.enganabound.2019.06.007,,,2019,Engineering Analysis with Boundary Elements,exponential map finite group elements cyclic,
+crossref,"A non-cyclic, locally free, free-by-cyclic group all of whose finite factor groups are cyclic",10.1017/s000497270004452x,https://doi.org/10.1017/s000497270004452x,,,1972,Bulletin of the Australian Mathematical Society,exponential map finite group elements cyclic,<jats:p>We construct a group <jats:italic>G</jats:italic> with the properties stated in the title.</jats:p>
+crossref,Almost cyclic elements in primitive finite linear groups,10.1007/s40879-024-00767-9,https://doi.org/10.1007/s40879-024-00767-9,https://link.springer.com/content/pdf/10.1007/s40879-024-00767-9.pdf,/home/admin/dev/VRA/Novelty/math_search/papers/Almost_cyclic_elements_in_primitive_finite_linear_groups.pdf,2024,European Journal of Mathematics,exponential map finite group elements cyclic,
+crossref,Finite regular semigroups with permutations that map elements to inverses,10.1007/s00233-024-10430-0,https://doi.org/10.1007/s00233-024-10430-0,https://link.springer.com/content/pdf/10.1007/s00233-024-10430-0.pdf,/home/admin/dev/VRA/Novelty/math_search/papers/Finite_regular_semigroups_with_permutations_that_map_elements_to_inverses.pdf,2024,Semigroup Forum,exponential map finite group elements cyclic,"<jats:title>Abstract</jats:title><jats:p>We give an account on what is known on the subject of <jats:italic>permutation matchings</jats:italic>, which are bijections of a finite regular semigroup that map each element to one of its inverses. This includes partial solutions to some open questions, including a related novel combinatorial problem.</jats:p>"
+arxiv,An Efficient Algorithm for Power Dominating Set,,http://arxiv.org/abs/2306.09870v1,http://arxiv.org/pdf/2306.09870v1,/home/admin/dev/VRA/Novelty/math_search/papers/An_Efficient_Algorithm_for_Power_Dominating_Set.pdf,,,coherent averaging complex spectra before magnitude,"The problem Power Dominating Set (PDS) is motivated by the placement of
+phasor measurement units to monitor electrical networks. It asks for a minimum
+set of vertices in a graph that observes all remaining vertices by exhaustively
+applying two observation rules. Our contribution is twofold. First, we
+determine the parameterized complexity of PDS by proving it is $W[P]$-complete
+when parameterized with respect to the solution size. We note that it was only
+known to be $W[2]$-hard before. Our second and main contribution is a new
+algorithm for PDS that efficiently solves practical instances.
+  Our algorithm consists of two complementary parts. The first is a set of
+reduction rules for PDS that can also be used in conjunction with previously
+existing algorithms. The second is an algorithm for solving the remaining
+kernel based on the implicit hitting set approach. Our evaluation on a set of
+power grid instances from the literature shows that our solver outperforms
+previous state-of-the-art solvers for PDS by more than one order of magnitude
+on average. Furthermore, our algorithm can solve previously unsolved instances
+of continental scale within a few minutes."
+arxiv,"Selection Combining for Differential Amplify-and-Forward Relaying Over
+  Rayleigh-Fading Channel",,http://arxiv.org/abs/1403.8130v1,http://arxiv.org/pdf/1403.8130v1,/home/admin/dev/VRA/Novelty/math_search/papers/Selection_Combining_for_Differential_Amplify-and-Forward_Relaying_Over_Rayleigh-Fading_Channel.pdf,,,coherent averaging complex spectra before magnitude,"This paper proposes and analyses selection combining (SC) at the destination
+for differential amplify-andforward (D-AF) relaying over slow Rayleigh-fading
+channels. The selection combiner chooses the link with the maximum magnitude of
+the decision variable to be used for non-coherent detection of the transmitted
+symbols. Therefore, in contrast to the maximum ratio combining (MRC), no
+channel information is needed at the destination. The exact average
+bit-error-rate (BER) of the proposed SC is derived and verified with simulation
+results. It is also shown that the performance of the SC method is very close
+to that of the MRC method, albeit with lower complexity"
+arxiv,"Metastability, Spectra, and Eigencurrents of the Lennard-Jones-38
+  Network",,http://arxiv.org/abs/1408.5630v2,http://arxiv.org/pdf/1408.5630v2,/home/admin/dev/VRA/Novelty/math_search/papers/Metastability_Spectra_and_Eigencurrents_of_the_Lennard-Jones-38_Network.pdf,,,coherent averaging complex spectra before magnitude,"We develop computational tools for spectral analysis of stochastic networks
+representing energy landscapes of atomic and molecular clusters. Physical
+meaning and some properties of eigenvalues, left and right eigenvectors, and
+eigencurrents are discussed. We propose an approach to compute a collection of
+eigenpairs and corresponding eigencurrents describing the most important
+relaxation processes taking place in the system on its way to the equilibrium.
+It is suitable for large and complex stochastic networks where pairwise
+transition rates, given by the Arrhenius law, vary by orders of magnitude. The
+proposed methodology is applied to the network representing the
+Lennard-Jones-38 cluster created by Wales's group. Its energy landscape has a
+double funnel structure with a deep and narrow face-centered cubic funnel and a
+shallower and wider icosahedral funnel. Contrary to the expectations, there is
+no appreciable spectral gap separating the eigenvalue corresponding to the
+escape from the icosahedral funnel. We provide a detailed description of the
+escape process from the icosahedral funnel using the eigencurrent and
+demonstrate a superexponential growth of the corresponding eigenvalue. The
+proposed spectral approach is compared to the methodology of the Transition
+Path Theory. Finally, we discuss whether the Lennard-Jones-38 cluster is
+metastable from the points of view of a mathematician and a chemical physicist,
+and make a connection with experimental works."
+arxiv,"Enhancement of Vibronic and Ground-State Vibrational Coherences in 2D
+  Spectra of Photosynthetic Complexes",,http://arxiv.org/abs/1211.4397v1,http://arxiv.org/pdf/1211.4397v1,/home/admin/dev/VRA/Novelty/math_search/papers/Enhancement_of_Vibronic_and_Ground-State_Vibrational_Coherences_in_2D_Spectra_of_Photosynthetic_Complexes.pdf,,,coherent averaging complex spectra before magnitude,"A vibronic-exciton model is applied to investigate the mechanism of
+enhancement of coherent oscillations due to mixing of electronic and nuclear
+degrees of freedom recently proposed as the origin of the long-lived
+oscillations in 2D spectra of the FMO complex [Christensson et al. J. Phys.
+Chem. B 116 (2012) 7449]. We reduce the problem to a model BChl dimer to
+elucidate the role of resonance coupling, site energies, nuclear mode and
+energy disorder in the enhancement of vibronic-exciton and ground-state
+vibrational coherences, and to identify regimes where this enhancement is
+significant. For a heterodimer representing the two coupled BChls 3 and 4 of
+the FMO complex, the initial amplitude of the vibronic-exciton and vibrational
+coherences are enhanced by up to 15 and 5 times, respectively, compared to the
+vibrational coherences in the isolated monomer. This maximum initial amplitude
+enhancement occurs when there is a resonance between the electronic energy gap
+and the frequency of the vibrational mode. The bandwidth of this enhancement is
+about 100 cm-1 for both mechanisms. The excitonic mixing of electronic and
+vibrational DOF leads to additional dephasing relative to the vibrational
+coherences. We evaluate the dephasing dynamics by solving the quantum master
+equation in Markovian approximation and observe a strong dependence of the
+life-time enhancement on the mode frequency. Long-lived vibronic-exciton
+coherences are found to be generated only when the frequency of the mode is in
+the vicinity of the electronic resonance. Although the vibronic-exciton
+coherences exhibit a larger initial amplitude compared to the ground-state
+vibrational coherences, we conclude that both type have a similar magnitude at
+long time for the present model. The ability to distinguish between
+vibronic-exciton and ground-state vibrational coherences in the general case of
+molecular aggregate is discussed."
+arxiv,Advanced Automata Minimization,,http://arxiv.org/abs/1210.6624v1,http://arxiv.org/pdf/1210.6624v1,/home/admin/dev/VRA/Novelty/math_search/papers/Advanced_Automata_Minimization.pdf,,,coherent averaging complex spectra before magnitude,"We present an efficient algorithm to reduce the size of nondeterministic
+Buchi word automata, while retaining their language. Additionally, we describe
+methods to solve PSPACE-complete automata problems like universality,
+equivalence and inclusion for much larger instances (1-3 orders of magnitude)
+than before. This can be used to scale up applications of automata in formal
+verification tools and decision procedures for logical theories. The algorithm
+is based on new transition pruning techniques. These use criteria based on
+combinations of backward and forward trace inclusions. Since these relations
+are themselves PSPACE-complete, we describe methods to compute good
+approximations of them in polynomial time. Extensive experiments show that the
+average-case complexity of our algorithm scales quadratically. The size
+reduction of the automata depends very much on the class of instances, but our
+algorithm consistently outperforms all previous techniques by a wide margin. We
+tested our algorithm on Buchi automata derived from LTL-formulae, many classes
+of random automata and automata derived from mutual exclusion protocols, and
+compared its performance to the well-known automata tool GOAL."
+arxiv,Nonadiabatic Sunlight-harvesting,,http://arxiv.org/abs/1909.05029v1,http://arxiv.org/pdf/1909.05029v1,/home/admin/dev/VRA/Novelty/math_search/papers/Nonadiabatic_Sunlight-harvesting.pdf,,,coherent averaging complex spectra before magnitude,"Experimental and theoretical evidence point out to the crucial role of
+specific resonant intramolecular vibrational modes in the interpretation of
+long-lived coherences observed in two-dimensional spectra of some natural and
+synthetic light harvesting complexes. For the natural situation of illumination
+by incoherent (sun)light, the relevance of these vibrations is analyzed here
+for light-harvesting vibronic prototype dimers. The detailed analysis of the
+density matrix dynamics reveals that the inclusion of the intramolecular
+vibrational modes reinforce up to one order of magnitude the exciton coherence
+and may increase the populations of lowest energy single exciton states, as
+well as populations and coherences in the site basis. In sharp contrast to the
+case of initial-state preparation by coherent (laser)light-sources, the initial
+thermal state of the local vibrational modes, as well as that of the
+anti-correlated mode, evolves devoid of non-classical correlations as confirmed
+by the absence of negative values of its phase-space quasi-probability
+distribution at all times. Therefore, not only the long-lived coherences
+observed in two-dimensional spectra are induced by the coherent character of
+pulsed laser sources, but it is unambiguously shown here that the non-classical
+character generally assigned to the anti-correlated vibrational mode also comes
+as the result of the preparation of the initial state by coherent pulsed laser
+sources."
+arxiv,"Reducing multi-qubit interactions in adiabatic quantum computation
+  without adding auxiliary qubits. Part 1: The ""deduc-reduc"" method and its
+  application to quantum factorization of numbers",,http://arxiv.org/abs/1508.04816v2,http://arxiv.org/pdf/1508.04816v2,/home/admin/dev/VRA/Novelty/math_search/papers/Reducing_multi-qubit_interactions_in_adiabatic_quantum_computation_without_adding_auxiliary_qubits._Part_1_The_deduc-reduc_method_and_its_application_to_quantum_factorization_of_nu,,,coherent averaging complex spectra before magnitude,"Adiabatic quantum computing has recently been used to factor 56153 [Dattani &amp;
+Bryans, arXiv:1411.6758] at room temperature, which is orders of magnitude
+larger than any number attempted yet using Shor's algorithm (circuit-based
+quantum computation). However, this number is still vastly smaller than RSA-768
+which is the largest number factored thus far on a classical computer. We
+address a major issue arising in the scaling of adiabatic quantum factorization
+to much larger numbers. Namely, the existence of many 4-qubit, 3-qubit and
+2-qubit interactions in the Hamiltonians. We showcase our method on various
+examples, one of which shows that we can remove 94% of the 4-qubit interactions
+and 83% of the 3-qubit interactions in the factorization of a 25-digit number
+with almost no effort, without adding any auxiliary qubits. Our method is not
+limited to quantum factoring. Its importance extends to the wider field of
+discrete optimization. Any CSP (constraint-satisfiability problem),
+psuedo-boolean optimization problem, or QUBO (quadratic unconstrained Boolean
+optimization) problem can in principle benefit from the ""deduction-reduction""
+method which we introduce in this paper. We provide an open source code which
+takes in a Hamiltonian (or a discrete discrete function which needs to be
+optimized), and returns a Hamiltonian that has the same unique ground state(s),
+no new auxiliary variables, and as few multi-qubit (multi-variable) terms as
+possible with deduc-reduc."
+arxiv,"A Quantum-Search-Aided Dynamic Programming Framework for Pareto Optimal
+  Routing in Wireless Multihop Networks",,http://arxiv.org/abs/1802.08676v1,http://arxiv.org/pdf/1802.08676v1,/home/admin/dev/VRA/Novelty/math_search/papers/A_Quantum-Search-Aided_Dynamic_Programming_Framework_for_Pareto_Optimal_Routing_in_Wireless_Multihop_Networks.pdf,,,coherent averaging complex spectra before magnitude,"Wireless Multihop Networks (WMHNs) have to strike a trade-off among diverse
+and often conflicting Quality-of-Service (QoS) requirements. The resultant
+solutions may be included by the Pareto Front under the concept of Pareto
+Optimality. However, the problem of finding all the Pareto-optimal routes in
+WMHNs is classified as NP-hard, since the number of legitimate routes increases
+exponentially, as the nodes proliferate. Quantum Computing offers an attractive
+framework of rendering the Pareto-optimal routing problem tractable. In this
+context, a pair of quantum-assisted algorithms have been proposed, namely the
+Non-Dominated Quantum Optimization (NDQO) and the Non-Dominated Quantum
+Iterative Optimization (NDQIO). However, their complexity is proportional to
+$\sqrt{N}$, where $N$ corresponds to the total number of legitimate routes,
+thus still failing to find the solutions in ""polynomial time"". As a remedy, we
+devise a dynamic programming framework and propose the so-called Evolutionary
+Quantum Pareto Optimization (EQPO) algorithm. We analytically characterize the
+complexity imposed by the EQPO algorithm and demonstrate that it succeeds in
+solving the Pareto-optimal routing problem in polynomial time. Finally, we
+demonstrate by simulations that the EQPO algorithm achieves a complexity
+reduction, which is at least an order of magnitude, when compared to its
+predecessors, albeit at the cost of a modest heuristic accuracy reduction."
+arxiv,Stable Recovery from the Magnitude of Symmetrized Fourier Measurements,,http://arxiv.org/abs/1310.5895v1,http://arxiv.org/pdf/1310.5895v1,/home/admin/dev/VRA/Novelty/math_search/papers/Stable_Recovery_from_the_Magnitude_of_Symmetrized_Fourier_Measurements.pdf,,,coherent averaging complex spectra before magnitude,"In this note we show that stable recovery of complex-valued signals
+$x\in\mathbb{C}^n$ up to global sign can be achieved from the magnitudes of
+$4n-1$ Fourier measurements when a certain ""symmetrization and zero-padding"" is
+performed before measurement ($4n-3$ is possible in certain cases). For real
+signals, symmetrization itself is linear and therefore our result is in this
+case a statement on uniform phase retrieval. Since complex conjugation is
+involved, such measurement procedure is not complex-linear but recovery is
+still possible from magnitudes of linear measurements on, for example,
+$(\Re(x),\Im(x))$."
+arxiv,Witnessing quantum coherence in the presence of noise,,http://arxiv.org/abs/1312.5724v1,http://arxiv.org/pdf/1312.5724v1,/home/admin/dev/VRA/Novelty/math_search/papers/Witnessing_quantum_coherence_in_the_presence_of_noise.pdf,,,coherent averaging complex spectra before magnitude,"We address the problem of assessing the coherent character of physical
+evolution. We take the quantum Zeno effect (QZE) as a characteristic trait of
+quantum dynamics, and derive relations among transfer rates as a function of
+the strength of a measurement. These relations support the intuition that only
+quantum dynamics is susceptible to QZE. With the derived bounds on the
+magnitude of coherent dynamics, we propose an experimentally accessible
+coherence witness. Our results have potential application in assessing
+coherence of quantum transport in biological and other complex many-body
+systems."
+arxiv,Randomized Quantum Singular Value Transformation,,http://arxiv.org/abs/2510.06851v1,http://arxiv.org/pdf/2510.06851v1,/home/admin/dev/VRA/Novelty/math_search/papers/Randomized_Quantum_Singular_Value_Transformation.pdf,,,coherent averaging complex spectra before magnitude,"We introduce the first randomized algorithms for Quantum Singular Value
+Transformation (QSVT), a unifying framework for many quantum algorithms.
+Standard implementations of QSVT rely on block encodings of the Hamiltonian,
+which are costly to construct, requiring a logarithmic number of ancilla
+qubits, intricate multi-qubit control, and circuit depth scaling linearly with
+the number of Hamiltonian terms. In contrast, our algorithms use only a single
+ancilla qubit and entirely avoid block encodings. We develop two methods: (i) a
+direct randomization of QSVT, where block encodings are replaced by importance
+sampling, and (ii) an approach that integrates qDRIFT into the generalized
+quantum signal processing framework, with the dependence on precision
+exponentially improved through classical extrapolation. Both algorithms achieve
+gate complexity independent of the number of Hamiltonian terms, a hallmark of
+randomized methods, while incurring only quadratic dependence on the degree of
+the target polynomial. We identify natural parameter regimes where our methods
+outperform even standard QSVT, making them promising for early fault-tolerant
+quantum devices. We also establish a fundamental lower bound showing that the
+quadratic dependence on the polynomial degree is optimal within this framework.
+We apply our framework to two fundamental tasks: solving quantum linear systems
+and estimating ground-state properties of Hamiltonians, obtaining polynomial
+advantages over prior randomized algorithms. Finally, we benchmark our
+ground-state property estimation algorithm on electronic structure Hamiltonians
+and the transverse-field Ising model with long-range interactions. In both
+cases, our approach outperforms prior work by several orders of magnitude in
+circuit depth, establishing randomized QSVT as a practical and
+resource-efficient alternative for early fault-tolerant quantum devices."
+arxiv,"Spatially-resolved decoherence of donor spins in silicon strained by a
+  metallic electrode",,http://arxiv.org/abs/2101.04391v1,http://arxiv.org/pdf/2101.04391v1,/home/admin/dev/VRA/Novelty/math_search/papers/Spatially-resolved_decoherence_of_donor_spins_in_silicon_strained_by_a_metallic_electrode.pdf,,,coherent averaging complex spectra before magnitude,"Electron spins are amongst the most coherent solid-state systems known,
+however, to be used in devices for quantum sensing and information processing
+applications, they must be typically placed near interfaces. Understanding and
+mitigating the impacts of such interfaces on the coherence and spectral
+properties of electron spins is critical to realize such applications, but is
+also challenging: inferring such data from single-spin studies requires many
+measurements to obtain meaningful results, while ensemble measurements
+typically give averaged results that hide critical information. Here, we report
+a comprehensive study of the coherence of near-surface bismuth donor spins in
+28-silicon at millikelvin temperatures. In particular, we use strain-induced
+frequency shifts caused by a metallic electrode to make spatial maps of spin
+coherence as a function of depth and position relative to the electrode. By
+measuring magnetic-field-insensitive clock transitions we separate magnetic
+noise caused by surface spins from charge noise. Our results include
+quantitative models of the strain-split spin resonance spectra and extraction
+of paramagnetic impurity concentrations at the silicon surface. The interplay
+of these decoherence mechanisms for such near-surface electron spins is
+critical for their application in quantum technologies, while the combination
+of the strain splitting and clock transition extends the coherence lifetimes by
+up to two orders of magnitude, reaching up to 300 ms at a mean depth of only
+100nm. The technique we introduce here to spatially map coherence in
+near-surface ensembles is directly applicable to other spin systems of active
+interest, such as defects in diamond, silicon carbide, and rare earth ions in
+optical crystals."
+arxiv,Single Ion Quantum Lock-In Amplifier,,http://arxiv.org/abs/1101.4885v1,http://arxiv.org/pdf/1101.4885v1,/home/admin/dev/VRA/Novelty/math_search/papers/Single_Ion_Quantum_Lock-In_Amplifier.pdf,,,coherent averaging complex spectra before magnitude,"We report on the implementation of a quantum analog to the classical lock-in
+amplifier. All the lock-in operations: modulation, detection and mixing, are
+performed via the application of non-commuting quantum operators on the
+electronic spin state of a single trapped Sr+ ion. We significantly increase
+its sensitivity to external fields while extending phase coherence by three
+orders of magnitude, to more than one second. With this technique we measure
+magnetic fields with sensitivity of 25 pT/sqrt(Hz) and light shifts with an
+uncertainty below 140 mHz after 1320 seconds of averaging. These sensitivities
+are limited by quantum projection noise and, to our knowledge, are more than
+two orders of magnitude better than with other single-spin probe technologies.
+In fact, our reported sensitivity is sufficient for the measurement of parity
+non-conservation, as well as the detection of the magnetic field of a single
+electronic-spin one micrometer from an ion-detector with nanometer resolution.
+As a first application we perform light shift spectroscopy of a narrow optical
+quadruple transition. Finally, we emphasize that the quantum lock-in technique
+is generic and can potentially enhance the sensitivity of any quantum sensor."
+arxiv,"On Deterministic Sketching and Streaming for Sparse Recovery and Norm
+  Estimation",,http://arxiv.org/abs/1206.5725v1,http://arxiv.org/pdf/1206.5725v1,/home/admin/dev/VRA/Novelty/math_search/papers/On_Deterministic_Sketching_and_Streaming_for_Sparse_Recovery_and_Norm_Estimation.pdf,,,coherent averaging complex spectra before magnitude,"We study classic streaming and sparse recovery problems using deterministic
+linear sketches, including l1/l1 and linf/l1 sparse recovery problems (the
+latter also being known as l1-heavy hitters), norm estimation, and approximate
+inner product. We focus on devising a fixed matrix A in R^{m x n} and a
+deterministic recovery/estimation procedure which work for all possible input
+vectors simultaneously. Our results improve upon existing work, the following
+being our main contributions:
+  * A proof that linf/l1 sparse recovery and inner product estimation are
+equivalent, and that incoherent matrices can be used to solve both problems.
+Our upper bound for the number of measurements is m=O(eps^{-2}*min{log n, (log
+n / log(1/eps))^2}). We can also obtain fast sketching and recovery algorithms
+by making use of the Fast Johnson-Lindenstrauss transform. Both our running
+times and number of measurements improve upon previous work. We can also obtain
+better error guarantees than previous work in terms of a smaller tail of the
+input vector.
+  * A new lower bound for the number of linear measurements required to solve
+l1/l1 sparse recovery. We show Omega(k/eps^2 + klog(n/k)/eps) measurements are
+required to recover an x' with |x - x'|_1 &lt;= (1+eps)|x_{tail(k)}|_1, where
+x_{tail(k)} is x projected onto all but its largest k coordinates in magnitude.
+  * A tight bound of m = Theta(eps^{-2}log(eps^2 n)) on the number of
+measurements required to solve deterministic norm estimation, i.e., to recover
+|x|_2 +/- eps|x|_1.
+  For all the problems we study, tight bounds are already known for the
+randomized complexity from previous work, except in the case of l1/l1 sparse
+recovery, where a nearly tight bound is known. Our work thus aims to study the
+deterministic complexities of these problems."
+arxiv,"Smoothed Analysis of Algorithms: Why the Simplex Algorithm Usually Takes
+  Polynomial Time",,http://arxiv.org/abs/cs/0111050v7,http://arxiv.org/pdf/cs/0111050v7,/home/admin/dev/VRA/Novelty/math_search/papers/Smoothed_Analysis_of_Algorithms_Why_the_Simplex_Algorithm_Usually_Takes_Polynomial_Time.pdf,,,coherent averaging complex spectra before magnitude,"We introduce the smoothed analysis of algorithms, which is a hybrid of the
+worst-case and average-case analysis of algorithms. In smoothed analysis, we
+measure the maximum over inputs of the expected performance of an algorithm
+under small random perturbations of that input. We measure this performance in
+terms of both the input size and the magnitude of the perturbations. We show
+that the simplex algorithm has polynomial smoothed complexity."
+arxiv,The Second Order Spectrum and Optimal Convergence,,http://arxiv.org/abs/1309.0533v1,http://arxiv.org/pdf/1309.0533v1,/home/admin/dev/VRA/Novelty/math_search/papers/The_Second_Order_Spectrum_and_Optimal_Convergence.pdf,,,coherent averaging complex spectra before magnitude,"The method of second order relative spectra has been shown to reliably
+approximate the discrete spectrum for a self-adjoint operator. We extend the
+method to normal operators and find optimal convergence rates for eigenvalues
+and eigenspaces. The convergence to eigenspaces is new, while the convergence
+rate for eigenvalues improves on the previous estimate by an order of
+magnitude."
+arxiv,Sequence Pairs with Lowest Combined Autocorrelation and Crosscorrelation,,http://arxiv.org/abs/1711.02229v3,http://arxiv.org/pdf/1711.02229v3,/home/admin/dev/VRA/Novelty/math_search/papers/Sequence_Pairs_with_Lowest_Combined_Autocorrelation_and_Crosscorrelation.pdf,,,coherent averaging complex spectra before magnitude,"Pursley and Sarwate established a lower bound on a combined measure of
+autocorrelation and crosscorrelation for a pair $(f,g)$ of binary sequences
+(i.e., sequences with terms in $\{-1,1\}$). If $f$ is a nonzero sequence, then
+its autocorrelation demerit factor, $\text{ADF}(f)$, is the sum of the squared
+magnitudes of the aperiodic autocorrelation values over all nonzero shifts for
+the sequence obtained by normalizing $f$ to have unit Euclidean norm. If
+$(f,g)$ is a pair of nonzero sequences, then their crosscorrelation demerit
+factor, $\text{CDF}(f,g)$, is the sum of the squared magnitudes of the
+aperiodic crosscorrelation values over all shifts for the sequences obtained by
+normalizing both $f$ and $g$ to have unit Euclidean norm. Pursley and Sarwate
+showed that for binary sequences, the sum of $\text{CDF}(f,g)$ and the
+geometric mean of $\text{ADF}(f)$ and $\text{ADF}{(g)}$ must be at least $1$.
+For randomly selected pairs of long binary sequences, this quantity is
+typically around $2$. In this paper, we show that Pursley and Sarwate's bound
+is met for binary sequences precisely when $(f,g)$ is a Golay complementary
+pair. We also prove a generalization of this result for sequences whose terms
+are arbitrary complex numbers. We investigate constructions that produce
+infinite families of Golay complementary pairs, and compute the asymptotic
+values of autocorrelation and crosscorrelation demerit factors for such
+families."
+arxiv,Minmax-optimal list searching with $O(\log_2\log_2 n)$ average cost,,http://arxiv.org/abs/2105.11919v1,http://arxiv.org/pdf/2105.11919v1,/home/admin/dev/VRA/Novelty/math_search/papers/Minmax-optimal_list_searching_with_O_log_2_log_2_n_average_cost.pdf,,,coherent averaging complex spectra before magnitude,"We find a searching method on ordered lists that surprisingly outperforms
+binary searching with respect to average query complexity while retaining
+minmax optimality. The method is shown to require $O(\log_2\log_2 n)$ queries
+on average while never exceeding $\lceil \log_2 n \rceil$ queries in the worst
+case, i.e. the minmax bound of binary searching. Our average results assume a
+uniform distribution hypothesis similar to those of prevous authors under which
+the expected query complexity of interpolation search of $O(\log_2\log_2 n)$ is
+known to be optimal. Hence our method turns out to be optimal with respect to
+both minmax and average performance. We further provide robustness guarantees
+and perform several numerical experiments with both artificial and real data.
+Our results suggest that time savings range roughly from a constant factor of
+10\% to 50\% to a logarithmic factor spanning orders of magnitude when
+different metrics are considered."
+arxiv,"The central tree property and algorithmic problems on subgroups of free
+  groups",,http://arxiv.org/abs/2303.14697v2,http://arxiv.org/pdf/2303.14697v2,/home/admin/dev/VRA/Novelty/math_search/papers/The_central_tree_property_and_algorithmic_problems_on_subgroups_of_free_groups.pdf,,,coherent averaging complex spectra before magnitude,"We study the average case complexity of the uniform membership problem for
+subgroups of free groups, and we show that it is orders of magnitude smaller
+than the worst case complexity of the best known algorithms. This applies to
+subgroups given by a fixed number of generators as well as to subgroups given
+by an exponential number of generators. The main idea behind this result is to
+exploit a generic property of tuples of words, called the central tree
+property. An application is given to the average case complexity of the
+relative primitivity problem, using Shpilrain's recent algorithm to decide
+primitivity, whose average case complexity is a constant depending only on the
+rank of the ambient free group."
+arxiv,Suffixient Arrays: a New Efficient Suffix Array Compression Technique,,http://arxiv.org/abs/2407.18753v2,http://arxiv.org/pdf/2407.18753v2,/home/admin/dev/VRA/Novelty/math_search/papers/Suffixient_Arrays_a_New_Efficient_Suffix_Array_Compression_Technique.pdf,,,coherent averaging complex spectra before magnitude,"The Suffix Array is a classic text index enabling on-line pattern matching
+queries via simple binary search. The main drawback of the Suffix Array is that
+it takes linear space in the text's length, even if the text itself is
+extremely compressible. Several works in the literature showed that the Suffix
+Array can be compressed, but they all rely on complex succinct data structures
+which in practice tend to exhibit poor cache locality and thus significantly
+slow down queries. In this paper, we propose a new simple and very efficient
+solution to this problem by presenting the \emph{Suffixient Array}: a tiny
+subset of the Suffix Array \emph{sufficient} to locate on-line one pattern
+occurrence (in general, all its Maximal Exact Matches) via binary search,
+provided that random access to the text is available. We prove that: (i) the
+Suffixient Array length $\chi$ is a strong repetitiveness measure, (ii) unlike
+most existing repetition-aware indexes such as the $r$-index, our new index is
+efficient in the I/O model, and (iii) Suffixient Arrays can be computed in
+linear time and compressed working space. We show experimentally that, when
+using well-established compressed random access data structures on repetitive
+collections, the Suffixient Array $\SuA$ is \emph{simultaneously} (i) faster
+and orders of magnitude smaller than the Suffix Array $\SA$ and (ii) smaller
+and \emph{one to two orders of magnitude faster} than the $r$-index. With an
+average pattern matching query time as low as 3.5 ns per character, our new
+index gets very close to the ultimate lower bound: the RAM throughput of our
+workstation (1.18 ns per character)."
+arxiv,Fast and simple algorithms for computing both $LCS_{k}$ and $LCS_{k+}$,,http://arxiv.org/abs/1705.07279v3,http://arxiv.org/pdf/1705.07279v3,/home/admin/dev/VRA/Novelty/math_search/papers/Fast_and_simple_algorithms_for_computing_both_LCS__k_and_LCS__k_.pdf,,,coherent averaging complex spectra before magnitude,"Longest Common Subsequence ($LCS$) deals with the problem of measuring
+similarity of two strings. While this problem has been analyzed for decades,
+the recent interest stems from a practical observation that considering single
+characters is often too simplistic. Therefore, recent works introduce the
+variants of $LCS$ based on shared substrings of length exactly or at least $k$
+($LCS_k$ and $LCS_{k+}$ respectively). The main drawback of the
+state-of-the-art algorithms for computing $LCS_k$ and $LCS_{k+}$ is that they
+work well only in a limited setting: they either solve the average case well
+while being suboptimal in the pathological situations or they achieve a good
+worst-case performance, but fail to exploit the input data properties to speed
+up the computation. Furthermore, these algorithms are based on non-trivial data
+structures which is not ideal from a practitioner's point of view. We present a
+single algorithm to compute both $LCS_k$ and $LCS_{k+}$ which outperforms the
+state-of-the art algorithms in terms of runtime complexity and requires only
+basic data structures. In addition, we implement an algorithm to reconstruct
+the solution which offers significant improvement in terms of memory
+consumption. Our empirical validation shows that we save several orders of
+magnitude of memory on human genome data. The C++ implementation of our
+algorithms is made available at: https://github.com/google/fast-simple-lcsk"
+arxiv,Computing Top-k Closeness Centrality in Fully-dynamic Graphs,,http://arxiv.org/abs/1710.01143v1,http://arxiv.org/pdf/1710.01143v1,/home/admin/dev/VRA/Novelty/math_search/papers/Computing_Top-k_Closeness_Centrality_in_Fully-dynamic_Graphs.pdf,,,coherent averaging complex spectra before magnitude,"Closeness is a widely-studied centrality measure. Since it requires all
+pairwise distances, computing closeness for all nodes is infeasible for large
+real-world networks. However, for many applications, it is only necessary to
+find the k most central nodes and not all closeness values. Prior work has
+shown that computing the top-k nodes with highest closeness can be done much
+faster than computing closeness for all nodes in real-world networks. However,
+for networks that evolve over time, no dynamic top-k closeness algorithm exists
+that improves on static recomputation. In this paper, we present several
+techniques that allow us to efficiently compute the k nodes with highest
+(harmonic) closeness after an edge insertion or an edge deletion. Our
+algorithms use information obtained during earlier computations to omit
+unnecessary work. However, they do not require asymptotically more memory than
+the static algorithms (i. e., linear in the number of nodes). We propose
+separate algorithms for complex networks (which exhibit the small-world
+property) and networks with large diameter such as street networks, and we
+compare them against static recomputation on a variety of real-world networks.
+On many instances, our dynamic algorithms are two orders of magnitude faster
+than recomputation; on some large graphs, we even reach average speedups
+between $10^3$ and $10^4$."
+arxiv,Coherent storage of microwave excitations in rare-earth nuclear spins,,http://arxiv.org/abs/1412.7298v1,http://arxiv.org/pdf/1412.7298v1,/home/admin/dev/VRA/Novelty/math_search/papers/Coherent_storage_of_microwave_excitations_in_rare-earth_nuclear_spins.pdf,,,coherent averaging complex spectra before magnitude,"Interfacing between various elements of a computer - from memory to
+processors to long range communication - will be as critical for quantum
+computers as it is for classical computers today. Paramagnetic rare earth doped
+crystals, such as Nd$^{3+}$:Y$_2$SiO$_5$ (YSO), are excellent candidates for
+such a quantum interface: they are known to exhibit long optical coherence
+lifetimes (for communication via optical photons), possess a nuclear spin
+(memory) and have in addition an electron spin that can offer hybrid coupling
+with superconducting qubits (processing). Here we study two of these three
+elements, demonstrating coherent storage and retrieval between electron and
+$^{145}$Nd nuclear spin states in Nd$^{3+}$:YSO. We find nuclear spin coherence
+times can reach 9 ms at $\approx 5$ K, about two orders of magnitude longer
+than the electron spin coherence, while quantum state and process tomography of
+the storage/retrieval operation reveal an average state fidelity of 0.86. The
+times and fidelities are expected to further improve at lower temperatures and
+with more homogeneous radio-frequency excitation."
+arxiv,A decision procedure for well-formed linear quantum cellular automata,,http://arxiv.org/abs/cs/9906024v2,http://arxiv.org/pdf/cs/9906024v2,/home/admin/dev/VRA/Novelty/math_search/papers/A_decision_procedure_for_well-formed_linear_quantum_cellular_automata.pdf,,,coherent averaging complex spectra before magnitude,"In this paper we introduce a new quantum computation model, the linear
+quantum cellular automaton. Well-formedness is an essential property for any
+quantum computing device since it enables us to define the probability of a
+configuration in an observation as the squared magnitude of its amplitude. We
+give an efficient algorithm which decides if a linear quantum cellular
+automaton is well-formed. The complexity of the algorithm is $O(n^2)$ in the
+algebraic model of computation if the input automaton has continuous
+neighborhood."
+arxiv,External Time-Varying Fields and Electron Coherence,,http://arxiv.org/abs/quant-ph/0402028v2,http://arxiv.org/pdf/quant-ph/0402028v2,/home/admin/dev/VRA/Novelty/math_search/papers/External_Time-Varying_Fields_and_Electron_Coherence.pdf,,,coherent averaging complex spectra before magnitude,"The effect of time-varying electromagnetic fields on electron coherence is
+investigated. A sinusoidal electromagnetic field produces a time varying
+Aharonov-Bohm phase. In a measurement of the interference pattern which
+averages over this phase, the effect is a loss of contrast. This is effectively
+a form of decoherence. We calculate the magnitude of this effect for various
+electromagnetic field configurations. The result seems to be sufficiently large
+to be observable."
+arxiv,Entanglement sharing across a damping-dephasing channel,,http://arxiv.org/abs/2405.06231v2,http://arxiv.org/pdf/2405.06231v2,/home/admin/dev/VRA/Novelty/math_search/papers/Entanglement_sharing_across_a_damping-dephasing_channel.pdf,,,coherent averaging complex spectra before magnitude,"Entanglement distillation is a fundamental information processing task whose
+implementation is key to quantum communication and modular quantum computing.
+Noise experienced by such communication and computing platforms occurs not only
+in the form of Pauli noise such as dephasing (sometimes called $T_2$) but also
+non-Pauli noise such as amplitude damping (sometimes called $T_1$). We initiate
+a study of practical and asymptotic distillation over what we call the joint
+damping-dephasing noise channel. In the practical setting, we propose a
+distillation scheme that completely isolates away the damping noise. In the
+asymptotic setting we derive lower bounds on the entanglement sharing
+capacities including the coherent and reverse coherent information. Like the
+protocol achieving the reverse coherent information, our scheme uses only
+backward classical communication. However, for realistic damping noise ($T_1
+\neq 2T_2$) our strategy can exceed the reverse coherent strategy, which is the
+best known for pure damping. In the forward communication setting we
+numerically exceed the single-letter coherent information strategy by observing
+the channel displays non-additivity at the two-letter level. The work shows
+non-additivity can also be found in realistic noise models with magnitudes of
+non-additivity similar to those found in more idealized noise channels."
