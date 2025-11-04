@@ -6,14 +6,7 @@ This directory contains all supplementary documentation for the VRA project, org
 
 ### [`novelty/`](Novelty/)
 Novelty validation and statistical proof documents:
-- **NOVELTY_PROOF.md** - Formal statistical validation with bootstrap CIs and permutation tests
-- **NOVELTY_ANALYSIS.md** - Comprehensive novelty evaluation and methodology
-- **NOVELTY_CONFIRMED.md** - Executive summary confirming VRA novelty
-- **FINAL_SUMMARY.md** - Complete project summary with all deliverables
-
-### [`publication/`](publication/)
-Publication and submission materials:
-- **SUBMISSION_PACKAGE.md** - Complete guide for submitting VRA to academic venues (arXiv, journals, conferences)
+- **VRA_NOVELTY_ASSESSMENT.md** - Comprehensive novelty assessment with literature review (550 papers analyzed) and head-to-head RPT comparison (3.3× better precision, p < 0.0001)
 
 ### [`replication/`](replication/)
 Replication and reproducibility guides:
@@ -39,38 +32,40 @@ Complete formal theory and proofs:
 - **Phase_Alignment/** - Phase coherence and separation bounds
 - **Regime_Map/** - Three-regime characterization
 - **Operating_Guide/** - Practical engineering handbook
-
-### [`experiments/`](experiments/)
-Experimental findings and validation:
-- **Tier1/** - E1-E3 theoretical foundations (√M scaling, phase coherence)
-- **Tier4/** - E9-E10 robustness testing
-- **Tier5/** - E11-E16 AI/ML integration (see `../Experiments/Tier5_AI_ML/TIER5_SUMMARY.md`)
+- **VRA_Comprehensive_Validation_And_Theoretical_Framework.md** - Complete 30K comprehensive theory document
 
 ## Quick Links
 
 **Main Documentation**: See [`../README.md`](../README.md) for project overview
 
-**Experimental Results**: See [`../Experiments/`](../Experiments/) for E1-E16 complete validation
+**Experimental Results**: See [`../Experiments/`](../Experiments/) for E1-E27 complete validation
+- Each experiment has its own directory with Code/, Data/, Docs/, and Figures/
+- Theoretical Suite: [`../Experiments/Theoretical_Suite/`](../Experiments/Theoretical_Suite/) for A1-L1 experiments
 
-**Tier 5 AI/ML Summary**: See [`../Experiments/Tier5_AI_ML/TIER5_SUMMARY.md`](../Experiments/Tier5_AI_ML/TIER5_SUMMARY.md)
+**Publication Materials**: See [`../Manuscript/`](../Manuscript/) for publication-ready paper and figures
+
+**Testing & Verification**:
+- **Test Vectors**: See [`../Test_Vectors/`](../Test_Vectors/) for Bronze Replication Challenge (10 canonical test cases)
+- **Unit Tests**: See [`../Tests/`](../Tests/) for comprehensive pytest suite
 
 **Formal Proofs**: See [`theory/`](theory/) for all mathematical proofs
 
 **Code**: See [`../Code/`](../Code/) for implementation
 
-## Recent Updates (October 2025)
+## Recent Updates (November 2025)
 
-**Tier 5 Experiments Complete (E11-E16)**:
-- ✅ **√M Scaling Confirmed**: +3.0 dB per doubling (R² = 0.987)
-- ✅ **√L Scaling Validated**: +5.87 dB per doubling (R² = 0.999)
-- ✅ **Professional SNR**: 36-58 dB across applications
-- ✅ **ML Few-Shot**: 80% accuracy with 1 sample (synthetic data)
-- ✅ **GPU Acceleration**: 80,000 FFTs/60s on NVIDIA GB10
-- ⚠️ **Phase Incoherence**: R̄ = 0.137 (fundamental, optimization-resistant)
-- ❌ **Negative Results**: Phase learning (0.5% gain), coherence optimization (-0.9 dB)
+**Complete Experimental Validation (E1-E27)**:
+- **√M Scaling Confirmed**: +3.0 dB per doubling (R² = 0.987)
+- **√L Scaling Validated**: +5.87 dB per doubling (R² = 0.999)
+- **Professional SNR**: 36-58 dB across applications
+- **ML Few-Shot**: 80% accuracy with 1 sample (synthetic data)
+- **GPU Acceleration**: 80,000 FFTs/60s on NVIDIA GB10
+- **Phase Incoherence**: R̄ = 0.137 (fundamental, optimization-resistant)
+- **Negative Results**: Phase learning (0.5% gain), coherence optimization (-0.9 dB)
+- **Verification Status**: 21/21 experiments validated (November 3, 2025)
 
 **Key Finding**: L-scaling is the primary optimization lever (reliable +6 dB/doubling), M-scaling limited by fundamental phase incoherence.
 
 **Data**: See [`../Data/`](../Data/) for experimental results
 
-**Paper**: See [`../Manuscript/vra_complete_paper.pdf`](../Manuscript/vra_complete_paper.pdf) for the publication-ready paper
+**Manuscript**: See [`../Manuscript/`](../Manuscript/) for publication-ready LaTeX source and generated PDFs

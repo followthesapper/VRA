@@ -41,7 +41,13 @@ We welcome pull requests! Here's the process:
 
 3. **Test your changes**
    ```bash
-   make test
+   # Run unit tests (requires pytest: pip install pytest)
+   cd Tests
+   python3 -m pytest test_vra_core.py -v
+
+   # Run verification tests
+   cd Test_Vectors
+   python3 verify_test_vectors.py
    ```
 
 4. **Commit your changes** with clear, descriptive messages
@@ -69,12 +75,28 @@ We welcome pull requests! Here's the process:
 
 2. Install dependencies:
    ```bash
-   make install
+   # Core dependencies
+   pip install numpy scipy matplotlib
+
+   # GPU support (optional, for E17-E27)
+   pip install cupy-cuda12x  # or cupy-cuda11x
+
+   # Testing (optional)
+   pip install pytest
+
+   # Or install from requirements.txt
+   pip install -r requirements.txt
    ```
 
 3. Run tests:
    ```bash
-   make test
+   # Unit tests
+   cd Tests
+   python3 -m pytest test_vra_core.py -v
+
+   # Verification tests
+   cd Test_Vectors
+   python3 verify_test_vectors.py
    ```
 
 ## Code Style
@@ -101,10 +123,12 @@ def compute_concentration(mag2):
 
 ## Testing
 
-- Add tests for new features
-- Ensure existing tests pass
+- Add tests for new features in `Tests/test_vra_core.py`
+- Ensure existing tests pass (30+ unit tests)
 - Include edge cases and error conditions
 - Use descriptive test names
+- Run verification tests: `cd Test_Vectors && python3 verify_test_vectors.py`
+- All 10 test vectors should pass (100% success rate)
 
 ## Documentation
 
@@ -119,13 +143,13 @@ When contributing, please update:
 
 ### High Priority
 
-1. **Cross-modulus validation**
-   - Test with N=997, N=1013, N=2017
-   - Validate regime boundaries hold across moduli
+1. **Extended modulus testing**
+   - ✅ DONE: 30 moduli tested (997, 1009, 1013, etc.)
+   - Future: Test prime powers, larger composites
 
-2. **Uncertainty quantification**
-   - Bootstrap confidence intervals for √M fits
-   - Sensitivity analysis for regime boundaries
+2. **Advanced statistical analysis**
+   - ✅ DONE: Bootstrap CIs, permutation tests
+   - Future: Bayesian inference, higher-order moments
 
 3. **Additional windows**
    - Implement Tukey, Kaiser, and other window functions

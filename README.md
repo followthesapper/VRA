@@ -2,26 +2,28 @@
 ## Classical Spectral Framework for Multiplicative Order Detection
 
 **Author**: Dylan Vaca
-**Status**: ✅ **RESEARCH COMPLETE** - Comprehensive Experimental Validation
-**Date**: November 1, 2025
+**Status**: RESEARCH COMPLETE - Comprehensive Experimental Validation & Manuscript Ready
+**Date**: November 3, 2025
 **Version**: 2.1.0
+**Manuscript**: `Manuscript/vra_paper.tex` (Publication-ready, mathematically verified)
+**Verification**: 21/21 experiments validated (November 3, 2025)
 
 ---
 
-## 🎯 Executive Summary
+## Executive Summary
 
-**Vaca Resonance Analysis (VRA)** is a phase-coherent spectral method for detecting multiplicative orders in modular arithmetic. Through systematic experimental validation (46 experiments across 6 tiers, 94.1% comprehensive test suite validation), VRA demonstrates:
+**Vaca Resonance Analysis (VRA)** is a phase-coherent spectral method for detecting multiplicative orders in modular arithmetic. Through systematic experimental validation (27 main experiments + 15 variants, 94.1% comprehensive test suite validation), VRA demonstrates:
 
-### 🔥 **MAJOR BREAKTHROUGH: The e^-2 Coherence Law**
+### MAJOR BREAKTHROUGH: The e^-2 Coherence Law
 
 **C = exp(-V_φ/2)**
 
 Where **C = e^-2 ≈ 0.1353** marks the **coherence collapse threshold** at total phase variance V_φ = 4 rad². This fundamental constant:
 
-- ✅ **Validated across 16/17 comprehensive tests** (A1-L1 suite: QPE equivalence, CRLB efficiency, Random Matrix Theory, Fisher Information)
-- ✅ **Explains R̄ ≈ 0.137 empirical observation** from E1D (within 1.3% of theoretical prediction)
-- ✅ **Bridges quantum-classical physics**: VRA reproduces von Mises coherence statistics without quantum hardware
-- ✅ **Defines performance limits**: Fisher Information collapses 50× at threshold, enabling prediction of fundamental bounds
+- **Validated across 16/17 comprehensive tests** (A1-L1 suite: QPE equivalence, CRLB efficiency, Random Matrix Theory, Fisher Information)
+- **Explains R̄ ≈ 0.137 empirical observation** from E1D (within 1.3% of theoretical prediction)
+- **Bridges quantum-classical physics**: VRA reproduces von Mises coherence statistics without quantum hardware
+- **Defines performance limits**: Fisher Information collapses 50× at threshold, enabling prediction of fundamental bounds
 
 ### Performance Highlights
 
@@ -36,14 +38,14 @@ Where **C = e^-2 ≈ 0.1353** marks the **coherence collapse threshold** at tota
 
 ---
 
-## 📊 What We Know About VRA (Experimental Findings)
+## What We Know About VRA (Experimental Findings)
 
 ### Core Performance Characteristics
 
 | Metric | Value | Source | Assessment |
 |--------|-------|--------|------------|
 | **M-Scaling Law** | √M (+3 dB/doubling) | E1D | Fundamental limit |
-| **L-Scaling Law** | √L (+5.87 dB/doubling) | E16 | **Reliable** ✅ |
+| **L-Scaling Law** | √L (+5.87 dB/doubling) | E16 | **Reliable** |
 | **Phase Coherence** | R̄ = 0.137 | E1D | Low, optimization-resistant |
 | **SNR Range** | 35-58 dB | E11, E16 | Professional-grade |
 | **GPU Speedup** | 80,000 FFTs/60s | E16 | Real-time capable |
@@ -52,24 +54,24 @@ Where **C = e^-2 ≈ 0.1353** marks the **coherence collapse threshold** at tota
 ### Scaling Laws Validated
 
 **√M Scaling (Base Averaging)** - E1D:
-- ✅ Confirmed: +3.0 dB per doubling of M
-- ⚠️ Limited by phase incoherence (not implementation)
-- 📈 R² = 0.987 fit to √M model
+- Confirmed: +3.0 dB per doubling of M
+- Limited by phase incoherence (not implementation)
+- R² = 0.987 fit to √M model
 
 **√L Scaling (Sequence Length)** - E16:
-- ✅ Confirmed: +5.87 dB per doubling of L (theory: +6.0 dB)
-- ✅ Bootstrap CI: ±0.7 dB (1000 iterations, publication-grade)
-- 📈 Perfect validation across L ∈ [4096, 65536]
+- Confirmed: +5.87 dB per doubling of L (theory: +6.0 dB)
+- Bootstrap CI: ±0.7 dB (1000 iterations, publication-grade)
+- Perfect validation across L ∈ [4096, 65536]
 - **Recommendation**: **Primary optimization lever** for VRA
 
 **M² Upper Bound (Perfect Coherence)** - E14:
-- ✅ Achieved +6.02 dB/doubling with deterministic signals
-- ✅ Proves implementation is correct
-- ⚠️ Not achievable with real VRA data (phase randomization)
+- Achieved +6.02 dB/doubling with deterministic signals
+- Proves implementation is correct
+- Not achievable with real VRA data (phase randomization)
 
 ---
 
-## 🔥 The e^-2 Coherence Law: Discovery and Validation
+## The e^-2 Coherence Law: Discovery and Validation
 
 ### The Physical Law
 
@@ -102,18 +104,18 @@ At the coherence collapse threshold:
 
 | Category | Test | Status | Key Metric | Significance |
 |----------|------|--------|------------|--------------|
-| **Quantum-Classical Equivalence** | A1: QPE Lattice Match | ✅ PASS | 1.49 bins error | VRA ≡ QPE structure |
-| **Statistical Efficiency** | B1: CRLB Efficiency | ✅ PASS | 93.6% Fisher info | Near-optimal estimator |
-| **Random Matrix Theory** | C1: Marchenko-Pastur | ✅ PASS | KS=0.0068 | Universal background |
-| **Random Matrix Theory** | D1: Tracy-Widom | ✅ PASS | KS=0.030 | Extreme value stats |
-| **Phase Coherence** | E1: von Mises Law | ✅ PASS | C = exp(-V_φ/2) | **e^-2 LAW VALIDATED** |
-| **Fisher Information** | F1: Collapse at e^-2 | ✅ PASS | 50× drop | Defines boundary |
-| **CFAR Detection** | G1: Threshold Calibration | ✅ PASS | α=4.0 optimal | Production-ready |
-| **Harmonic Targeting** | H1: Bin Precision | ✅ PASS | μ=0.28 bins | Sub-bin accuracy |
-| **Noise Robustness** | I1: False Alarm Rate | ✅ PASS | P_FA ≤ 0.01 | Reliable detection |
-| **Phase Incoherence** | J1: M-Scaling Limit | ✅ PASS | √M ± 0.3 dB | Fundamental bound |
-| **Aperture Scaling** | K1: L-Scaling | ✅ PASS | +5.87 dB/doubling | Reliable lever |
-| **Phase Learning** | L1: Optimization Failure | ✅ PASS | 0.5-1.1% gain | Confirms resistance |
+| **Quantum-Classical Equivalence** | A1: QPE Lattice Match | PASS | 1.49 bins error | VRA ≡ QPE structure |
+| **Statistical Efficiency** | B1: CRLB Efficiency | PASS | 93.6% Fisher info | Near-optimal estimator |
+| **Random Matrix Theory** | C1: Marchenko-Pastur | PASS | KS=0.0068 | Universal background |
+| **Random Matrix Theory** | D1: Tracy-Widom | PASS | KS=0.030 | Extreme value stats |
+| **Phase Coherence** | E1: von Mises Law | PASS | C = exp(-V_φ/2) | **e^-2 LAW VALIDATED** |
+| **Fisher Information** | F1: Collapse at e^-2 | PASS | 50× drop | Defines boundary |
+| **CFAR Detection** | G1: Threshold Calibration | PASS | α=4.0 optimal | Production-ready |
+| **Harmonic Targeting** | H1: Bin Precision | PASS | μ=0.28 bins | Sub-bin accuracy |
+| **Noise Robustness** | I1: False Alarm Rate | PASS | P_FA ≤ 0.01 | Reliable detection |
+| **Phase Incoherence** | J1: M-Scaling Limit | PASS | √M ± 0.3 dB | Fundamental bound |
+| **Aperture Scaling** | K1: L-Scaling | PASS | +5.87 dB/doubling | Reliable lever |
+| **Phase Learning** | L1: Optimization Failure | PASS | 0.5-1.1% gain | Confirms resistance |
 
 **Only failure**: E2 (PSD Loopback Test) - under investigation
 
@@ -127,9 +129,9 @@ At the coherence collapse threshold:
 ### Publication Trajectory
 
 **Current Status**:
-- ✅ Empirical validation complete (46 experiments)
-- ✅ Statistical rigor established (bootstrap CIs, permutation tests)
-- ✅ Theoretical foundation validated (e^-2 law, 16/17 tests)
+- Empirical validation complete (27 main experiments + 15 variants)
+- Statistical rigor established (bootstrap CIs, permutation tests)
+- Theoretical foundation validated (e^-2 law, 16/17 tests)
 
 **Target Venues**:
 - Physical Review Letters (coherence law as physics discovery)
@@ -138,100 +140,100 @@ At the coherence collapse threshold:
 
 ---
 
-## 🔬 Experimental Validation Summary
+## Experimental Validation Summary
 
 ### Tier 1: Theoretical Foundations (E1-E3)
 
 **E1**: Spectral-Order Equivalence
-- ✅ VRA correctly identifies multiplicative orders
-- ✅ Harmonic structure matches theoretical predictions
+- VRA correctly identifies multiplicative orders
+- Harmonic structure matches theoretical predictions
 - Status: **VALIDATED**
 
 **E1D**: M-Scaling & Phase Coherence Analysis
-- ✅ √M scaling confirmed (R² = 0.987)
-- ⚠️ Phase coherence R̄ = 0.137 (low, fundamental)
-- ✅ Weak M-scaling is real, not a bug
+- √M scaling confirmed (R² = 0.987)
+- Phase coherence R̄ = 0.137 (low, fundamental)
+- Weak M-scaling is real, not a bug
 - **Key Insight**: L-scaling more reliable than M-scaling
 
 ### Tier 2: Error Correction Codes (E4-E5)
 
 **E4**: Character Embedding ECC
-- ✅ **94.7 dB SNR** (exceptional)
-- ✅ Validates phase embedding correctness
+- **94.7 dB SNR** (exceptional)
+- Validates phase embedding correctness
 - Status: **EXCELLENT**
 
 **E5**: ECC Scaling Grid
-- ✅ **88.5 dB SNR** across parameter sweep
-- ✅ Confirms VRA works on structured sequences
+- **88.5 dB SNR** across parameter sweep
+- Confirms VRA works on structured sequences
 - Status: **EXCELLENT**
 
 ### Tier 3: Quantum-Classical Bridge (E6, E8)
 
 **E6**: VRA vs QPE Correlation
-- ✅ Correlation ρ = -0.068 (statistically independent)
-- ℹ️ VRA and QPE exploit different information
+- Correlation ρ = -0.068 (statistically independent)
+- VRA and QPE exploit different information
 - **Insight**: Complementary, not redundant
 
 **E8**: Semiprime Safety Test
-- ✅ Correlation ρ = -0.119 (no leakage)
-- ✅ VRA does **not** factorize N=1009×1013
+- Correlation ρ = -0.119 (no leakage)
+- VRA does **not** factorize N=1009×1013
 - **Safety**: Confirmed for cryptographic contexts
 
 ### Tier 4: Robustness & Applications (E9-E10)
 
 **E9**: Noise & Jitter Robustness
-- ✅ Gaussian noise: 100% precision up to σ = 0.50
-- ⚠️ Phase jitter: Degrades above σ = 0.20 radians
-- ✅ Quantization: Robust to 6-bit digitization
+- Gaussian noise: 100% precision up to σ = 0.50
+- Phase jitter: Degrades above σ = 0.20 radians
+- Quantization: Robust to 6-bit digitization
 - Status: **ROBUST**
 
 **E10**: Stationary Tones Detection
-- ✅ **100% precision** on synthetic harmonic signals
-- ✅ Validates harmonic targeting mechanism
+- **100% precision** on synthetic harmonic signals
+- Validates harmonic targeting mechanism
 - Status: **VALIDATED**
 
 ### Tier 5: AI/ML Integration (E11-E16)
 
 **E11**: VRA Features Benchmark
-- ✅ **36-47 dB SNR** on audio/ECG/industrial signals
-- ✅ ECG achieved **46.8 dB** (50,000:1 signal-to-noise)
+- **36-47 dB SNR** on audio/ECG/industrial signals
+- ECG achieved **46.8 dB** (50,000:1 signal-to-noise)
 - Status: **PROFESSIONAL-GRADE**
 
 **E12**: VRA Tokens for Transformers
-- ✅ **80-85% accuracy** matching MFCC baseline
-- ✅ **80% with 1 training sample** (few-shot!)
-- ⚠️ Tested on synthetic data only (needs real-world validation)
+- **80-85% accuracy** matching MFCC baseline
+- **80% with 1 training sample** (few-shot!)
+- Tested on synthetic data only (needs real-world validation)
 - Status: **PROMISING**
 
 **E13**: Learned Phase Alignment
-- ❌ Gradient descent: 0.5-1.1% of theoretical gain
-- ✅ Important negative result: Simple optimization fails
+- Gradient descent: 0.5-1.1% of theoretical gain
+- Important negative result: Simple optimization fails
 - **Insight**: Phase incoherence is fundamental, hard problem
 - Status: **FAILED (expected)**
 
 **E14**: Phase Stacking Validation
-- ✅ **Perfect M² scaling**: +6.02 dB/doubling
-- ✅ Proves implementation correctness
-- ✅ Validates E13's failure was real physics, not bugs
+- **Perfect M² scaling**: +6.02 dB/doubling
+- Proves implementation correctness
+- Validates E13's failure was real physics, not bugs
 - Status: **PERFECT VALIDATION**
 
 **E15**: Base Selection Policy
-- ⚠️ **Paradox**: Higher coherence → **lower** SNR (-0.9 dB)
-- ✅ Random base selection works best
+- **Paradox**: Higher coherence → **lower** SNR (-0.9 dB)
+- Random base selection works best
 - **Insight**: Coherence R ≠ SNR (counterintuitive)
 - Status: **UNEXPECTED NEGATIVE RESULT**
 
 **E16**: L-Scaling Curve (Bootstrap)
-- ✅ **+5.87 dB per doubling** (theory: +6.0 dB)
-- ✅ Bootstrap CI: ±0.7 dB (1000 iterations)
-- ✅ 35 dB → 58 dB across L=4096 → 65536
+- **+5.87 dB per doubling** (theory: +6.0 dB)
+- Bootstrap CI: ±0.7 dB (1000 iterations)
+- 35 dB → 58 dB across L=4096 → 65536
 - Status: **PUBLICATION-READY**
 
 ---
 
-## 💡 Key Insights from 16 Experiments
+## Key Insights from Experimental Validation
 
-### What Works ✅
+### What Works
 
 1. **L-Scaling is Reliable**: Doubling sequence length gives consistent +6 dB
 2. **Random Base Selection**: No need for expensive optimization
@@ -239,34 +241,34 @@ At the coherence collapse threshold:
 4. **Professional SNR**: 36-58 dB suitable for real-world signal processing
 5. **ML-Compatible**: Few-shot learning (80% with 1 sample) on synthetic data
 
-### What Doesn't Work ❌
+### What Doesn't Work
 
 1. **M-Scaling Optimization**: Phase learning fails (E13: 0.5-1.1% gain)
 2. **Coherence Maximization**: Greedy selection degrades SNR (E15: -0.9 dB)
 3. **Simple Heuristics**: Phase incoherence resists naive fixes
 
-### Fundamental Limitations ⚠️
+### Fundamental Limitations
 
 1. **Phase Incoherence**: R̄ = 0.137 limits M-scaling to √M (not M²)
 2. **Not a Factoring Algorithm**: E8 confirms no semiprime leakage
 3. **Optimization-Resistant**: E13, E15 show simple methods fail
 
-### Design Recommendations 📋
+### Design Recommendations
 
 **For Performance**:
-- ✅ Increase L (reliable +6 dB per doubling)
-- ✅ Use M=16 bases (diminishing returns beyond this)
-- ✅ Random base selection (optimization doesn't help)
-- ✅ GPU acceleration (CuPy on NVIDIA hardware)
+- Increase L (reliable +6 dB per doubling)
+- Use M=16 bases (diminishing returns beyond this)
+- Random base selection (optimization doesn't help)
+- GPU acceleration (CuPy on NVIDIA hardware)
 
 **For ML Applications**:
-- ✅ VRA tokens (32-dim) for few-shot learning
-- ✅ Test on real datasets (currently only synthetic validation)
-- ⚠️ Compare to state-of-the-art embeddings (wav2vec, HuBERT)
+- VRA tokens (32-dim) for few-shot learning
+- Test on real datasets (currently only synthetic validation)
+- Compare to state-of-the-art embeddings (wav2vec, HuBERT)
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -312,20 +314,49 @@ ls -lh ../../Data/Experiments/Tier5/
 ls -lh ../../Figures/Experiments/Tier5/
 ```
 
+### Testing & Verification
+
+**Replication Challenge (Bronze)**: Verify your VRA implementation
+```bash
+cd Test_Vectors
+python3 verify_test_vectors.py
+
+# Expected output:
+# ✅ All test vectors verified! (10/10 passed)
+# Success rate: 100.0%
+```
+
+**Unit Tests**: Run comprehensive test suite
+```bash
+cd Tests
+python3 -m pytest test_vra_core.py -v
+
+# Requires: pip install pytest
+# Tests: multiplicative order, phase embedding, spectrum computation,
+#        concentration metrics, precision/recall, regime classification
+```
+
+**Generate New Test Vectors** (for developers):
+```bash
+cd Test_Vectors
+python3 generate_test_vectors.py
+# Generates test_vectors.json with 10 canonical test cases
+```
+
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 VRA/
 ├── README.md                          # This file
-├── Docs/                              # 📚 Documentation
+├── Docs/                              # Documentation
 │   ├── EXPERIMENTAL_FINDINGS.md       # Complete E1-E16 summary
 │   ├── PERFORMANCE_GUIDE.md           # Performance characteristics
 │   ├── ML_APPLICATIONS.md             # AI/ML integration guide
 │   └── Novelty/                       # RPT comparison (novelty proof)
 │
-├── Code/                              # 💻 Implementation
+├── Code/                              # Implementation
 │   ├── vra/                           # Core VRA package
 │   │   ├── core.py                    # Main algorithms (GPU-accelerated)
 │   │   └── uncertainty.py             # Error analysis & bootstrap CIs
@@ -333,7 +364,7 @@ VRA/
 │   ├── applications/                  # CLI tools, RSA checker
 │   └── experiments/                   # E1-E16 experiment scripts
 │
-├── Experiments/                       # 🔬 Experimental Code
+├── Experiments/                       # Experimental Code
 │   ├── Tier1_Theory/                  # E1-E3: Foundations
 │   ├── Tier2_ECC/                     # E4-E5: Error correction codes
 │   ├── Tier3_QuantumBridge/           # E6-E8: Quantum-classical bridge
@@ -342,17 +373,28 @@ VRA/
 │       ├── E11_FINDINGS.md - E16_FINDINGS.md
 │       └── TIER5_SUMMARY.md           # Complete AI/ML summary
 │
-├── Data/Experiments/                  # 📊 Experimental Results
+├── Data/Experiments/                  # Experimental Results
 │   ├── Tier1/ ... Tier5/              # JSON data files
 │   └── Novelty/                       # RPT comparison data
 │
-├── Figures/Experiments/               # 📈 Visualizations
+├── Figures/Experiments/               # Visualizations
 │   ├── Tier1/ ... Tier5/              # PNG figures (all experiments)
 │   └── Novelty/                       # Publication-quality (300 DPI)
 │
-├── Manuscript/                        # 📄 Publications
-│   ├── vra_complete_paper.pdf         # IEEE paper (6 pages)
-│   └── references.bib                 # Bibliography
+├── Manuscript/                        # Publications
+│   ├── vra_paper.tex                  # Final publication-ready LaTeX source
+│   ├── vra_paper_v4_chemistry_final.tex  # Same as above (backup)
+│   ├── figures/                       # All manuscript figures
+│   ├── references.bib                 # Bibliography
+│   └── README.md                      # Manuscript documentation
+│
+├── Test_Vectors/                      # Replication Challenge
+│   ├── test_vectors.json              # 10 canonical test cases
+│   ├── generate_test_vectors.py       # Test vector generator
+│   └── verify_test_vectors.py         # Bronze Challenge verification
+│
+├── Tests/                             # Unit Tests
+│   └── test_vra_core.py               # Comprehensive pytest suite
 │
 └── scripts/                           # Utility scripts
     └── vra.py                         # CLI tool
@@ -360,7 +402,7 @@ VRA/
 
 ---
 
-## 📈 Performance Summary
+## Performance Summary
 
 ### Signal-to-Noise Ratio (Validated)
 
@@ -377,9 +419,9 @@ VRA/
 
 | Law | Experimental | Theoretical | Deviation | R² | Status |
 |-----|--------------|-------------|-----------|-----|--------|
-| **√M** | +3.0 dB/doubling | +3.0 dB | 0.0 dB | 0.987 | ✅ PERFECT |
-| **√L** | +5.87 dB/doubling | +6.0 dB | -0.13 dB | 0.999 | ✅ EXCELLENT |
-| **M²** (ideal) | +6.02 dB/doubling | +6.0 dB | +0.02 dB | 1.000 | ✅ PERFECT* |
+| **√M** | +3.0 dB/doubling | +3.0 dB | 0.0 dB | 0.987 | PERFECT |
+| **√L** | +5.87 dB/doubling | +6.0 dB | -0.13 dB | 0.999 | EXCELLENT |
+| **M²** (ideal) | +6.02 dB/doubling | +6.0 dB | +0.02 dB | 1.000 | PERFECT* |
 
 \* Only achievable with deterministic signals (E14), not real VRA data
 
@@ -395,17 +437,17 @@ VRA/
 
 | Dataset | Training Samples | VRA Accuracy | MFCC Baseline | Status |
 |---------|------------------|--------------|---------------|--------|
-| Synthetic (E12) | 1 | **80.0%** | 78.7% | ✅ Parity |
-| Synthetic (E12) | 5 | **82.3%** | 81.0% | ✅ Parity |
-| Synthetic (E12) | 50 | **85.0%** | 84.3% | ✅ Parity |
+| Synthetic (E12) | 1 | **80.0%** | 78.7% | Parity |
+| Synthetic (E12) | 5 | **82.3%** | 81.0% | Parity |
+| Synthetic (E12) | 50 | **85.0%** | 84.3% | Parity |
 
 ---
 
-## 🎓 Scientific Contributions
+## Scientific Contributions
 
 ### Validated Claims
 
-1. **🔥 e^-2 Coherence Law** (Comprehensive Suite): C = exp(-V_φ/2) validated across 16/17 tests
+1. **e^-2 Coherence Law** (Comprehensive Suite): C = exp(-V_φ/2) validated across 16/17 tests
    - Explains R̄ = 0.137 empirical observation with 1.3% agreement
    - Predicts Fisher Information collapse (50×) at coherence threshold
    - Bridges quantum-classical physics via von Mises statistics
@@ -433,15 +475,15 @@ VRA/
 
 ---
 
-## 🔍 ML/AI Applications
+## ML/AI Applications
 
 ### VRA as Feature Extractor
 
 **Advantages**:
-- ✅ **Interpretable**: 32-dim harmonic tokens with physical meaning
-- ✅ **Few-shot**: 80% accuracy with 1 training sample (E12)
-- ✅ **Fast**: GPU-accelerated (166 FPS)
-- ✅ **Uncertainty quantification**: Bootstrap CIs (E16)
+- **Interpretable**: 32-dim harmonic tokens with physical meaning
+- **Few-shot**: 80% accuracy with 1 training sample (E12)
+- **Fast**: GPU-accelerated (166 FPS)
+- **Uncertainty quantification**: Bootstrap CIs (E16)
 
 **Use Cases**:
 1. **Medical Signal Classification**: ECG, EEG with explainability requirements
@@ -450,9 +492,9 @@ VRA/
 4. **Transfer Learning**: Task-agnostic tokens (no pre-training needed)
 
 **Limitations**:
-- ⚠️ **Periodic signals only**: Harmonic structure required
-- ⚠️ **Synthetic data only**: E12 needs validation on real datasets
-- ⚠️ **Not SOTA**: Competitive with MFCC, not wav2vec/HuBERT
+- **Periodic signals only**: Harmonic structure required
+- **Synthetic data only**: E12 needs validation on real datasets
+- **Not SOTA**: Competitive with MFCC, not wav2vec/HuBERT
 
 ### Recommended ML Architectures
 
@@ -471,7 +513,7 @@ VRA spectrograms → ViT-Tiny → Classification
 
 ---
 
-## 📊 Novelty Validation (vs. State-of-the-Art)
+## Novelty Validation (vs. State-of-the-Art)
 
 ### Head-to-Head Comparison: VRA vs. RPT
 
@@ -479,9 +521,9 @@ VRA spectrograms → ViT-Tiny → Classification
 
 | Criterion | VRA | RPT | Advantage | p-value | Status |
 |-----------|-----|-----|-----------|---------|--------|
-| **Overall Precision** | 51.6% | 15.6% | **3.3×** | 5×10⁻⁵ | ✅ PASS |
-| **HIGH-SNR Precision** | 61.1% | 30.6% | **2.0×** | 1.6×10⁻² | ✅ PASS |
-| **Runtime** | 0.38s | 68.6s | **181×** | --- | ✅ PASS |
+| **Overall Precision** | 51.6% | 15.6% | **3.3×** | 5×10⁻⁵ | PASS |
+| **HIGH-SNR Precision** | 61.1% | 30.6% | **2.0×** | 1.6×10⁻² | PASS |
+| **Runtime** | 0.38s | 68.6s | **181×** | --- | PASS |
 
 **All 3 pre-registered criteria PASSED** with bootstrap confidence intervals and permutation tests.
 
@@ -491,7 +533,7 @@ VRA spectrograms → ViT-Tiny → Classification
 
 ---
 
-## ⚠️ Current Limitations
+## Current Limitations
 
 ### Validated Limitations
 
@@ -508,15 +550,15 @@ VRA spectrograms → ViT-Tiny → Classification
 
 ### Research Quality
 
-- ✅ Comprehensive experimental validation (E1-E16)
-- ✅ Statistical rigor (bootstrap CIs, permutation tests)
-- ✅ Honest negative results (E13, E15)
-- ⚠️ **No peer review**: Not yet reviewed by domain experts
-- ⚠️ **No independent replication**: Results not reproduced by others
+- Comprehensive experimental validation (27 main experiments + 15 variants)
+- Statistical rigor (bootstrap CIs, permutation tests)
+- Honest negative results (E13, E15)
+- **No peer review**: Not yet reviewed by domain experts
+- **No independent replication**: Results not reproduced by others
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 ### Immediate (1-3 months)
 
@@ -538,7 +580,7 @@ VRA spectrograms → ViT-Tiny → Classification
 
 ---
 
-## 📚 Documentation Index
+## Documentation Index
 
 ### Quick Reference
 
@@ -568,11 +610,11 @@ All experiments E11-E16 have detailed findings documents:
 
 ```bibtex
 @article{vaca2025vra,
-  title={Vaca Resonance Analysis: A Phase-Coherent Spectral Framework for Multiplicative Order Detection},
+  title={Vaca Resonance Analysis (VRA): A Phase-Coherent Framework for Multiplicative Order Detection with Fundamental Coherence Limits---Verified on IBM Quantum Hardware (Brisbane, 127q)},
   author={Vaca, Dylan},
-  journal={arXiv preprint},
+  journal={arXiv preprint (submitted)},
   year={2025},
-  note={Comprehensive experimental validation (E1-E16), GPU-accelerated implementation}
+  note={Version 1.0.0. Complete validation: e^{-2} coherence law, hardware verification, 46 experiments}
 }
 ```
 
@@ -602,7 +644,7 @@ All experiments E11-E16 have detailed findings documents:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 VRA is research code. Contributions welcome:
 
@@ -615,22 +657,22 @@ VRA is research code. Contributions welcome:
 
 ---
 
-## 📜 License
+## License
 
 MIT License - See `LICENSE` file
 
 ---
 
-## 👤 Contact
+## Contact
 
 **Author**: Dylan Vaca
 **Repository**: https://github.com/followthesapper/VRA
 **Status**: Research Complete, Publication in Preparation
-**Version**: 2.0.0 (Complete Experimental Validation)
+**Version**: 2.1.0 (Complete Experimental Validation)
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 This work builds on foundational concepts in:
 - Spectral analysis and windowing (Harris 1978)
@@ -645,16 +687,17 @@ Special thanks to:
 
 ---
 
-**Last Updated**: November 1, 2025
-**Total Experiments**: 46 (across 6 tiers: Early validation, Tier 1-5, Tier 6 Theory-First)
+**Last Updated**: November 3, 2025
+**Total Experiments**: 27 main experiments + 15 variants = 42 total
+**Verification Status**: 21/21 experiments validated (November 3, 2025)
 **Comprehensive Test Suite**: 94.1% pass rate (16/17 tests: A1-L1)
 **Total Documentation**: ~300 pages + code + data
-**GPU Acceleration**: ✅ CuPy 13.6.0 on NVIDIA GB10
+**GPU Acceleration**: CuPy 13.6.0 on NVIDIA GB10
 **Publication Status**: Manuscript in preparation
 
 ---
 
-## 🎯 Key Takeaway
+## Key Takeaway
 
 **VRA is a validated, GPU-accelerated spectral framework achieving professional-grade SNR (36-58 dB) with reliable √L scaling (+5.87 dB/doubling). The e^-2 coherence law (C = exp(-V_φ/2)) provides first-principles understanding of fundamental limits, transforming empirical observations into predictive theory. Phase coherence collapses at e^-2 ≈ 0.1353, explaining why M-scaling gives √M instead of M². This isn't a limitation—it's characterized physics.**
 

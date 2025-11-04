@@ -1,0 +1,16 @@
+# Results
+results/
+*.json
+*.png
+*.pdf
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IBM Quantum credentials (keep private!)
+.qiskit/

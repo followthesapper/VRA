@@ -3,20 +3,36 @@
 include README.md
 include LICENSE
 include requirements.txt
-include REPRODUCTION.md
-include REPLICATION_CHALLENGE.md
-
-# Include test vectors
-recursive-include Test_Vectors *.json *.py
+include CITATION.cff
+include Makefile
+include Dockerfile
 
 # Include documentation
-recursive-include Manuscript *.tex *.bib
-recursive-include Publication *.md
+recursive-include Docs *.md
+recursive-include Manuscript *.tex *.bib *.pdf
+recursive-include Tutorials *.ipynb *.html
+
+# Include code and tests
+recursive-include Code *.py
+recursive-include Tests *.py
+recursive-include Test_Vectors *.json *.py *.md
+
+# Include experiments (structure only, data regenerated)
+recursive-include Experiments *.py *.md
 
 # Exclude unnecessary files
 global-exclude *.pyc
 global-exclude __pycache__
 global-exclude *.so
 global-exclude .DS_Store
+global-exclude Thumbs.db
+global-exclude *.log
+
+# Exclude data and figures (regenerated during reproduction)
+prune Experiments/*/Data
+prune Experiments/*/Figures
 prune Data
 prune Figures
+
+# Exclude historical archive
+prune Archive

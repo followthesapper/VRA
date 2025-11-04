@@ -17,7 +17,7 @@ Date: October 2025
 
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent / "Code" / "Core"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "Code" / "VRA"))
 
 import json
 import numpy as np

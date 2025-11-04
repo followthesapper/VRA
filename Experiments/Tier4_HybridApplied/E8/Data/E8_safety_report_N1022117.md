@@ -1,1 +1,0 @@
-# E8 Safety Report — N=1022117\n**p = 1009, q = 1013, φ(N) = 1020096**\n\nCorrelation(concentration, true_order) = -0.1190\n✅ Safe: No leakage correlation detected.\n\nAll diagnostic results confirm VRA acts as a spectral profiler only, not a shortcut to factoring.\n

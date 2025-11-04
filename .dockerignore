@@ -31,3 +31,10 @@ ENV/
 *.log
 *.tmp
 temp/
+
+# Historical archive (excluded from Docker builds)
+Archive/
+
+# OS files
+.DS_Store
+Thumbs.db
